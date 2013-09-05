@@ -1,0 +1,318 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+\input{mathcommands}
+% ------------------------------------------------------------------------------
+% Document formatting
+% ------------------------------------------------------------------------------
+\setlength{\parskip}{2ex} %--skip lines between paragraphs
+\linespread{1.2}
+
+% ------------------------------------------------------------------------------
+% Document Begins Here!
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\title{Math 313 - Problem Set 5\vspace{-2ex}}%replace X with the appropriate number
+\author{George Lamperis - UIN:664714097} %if necessary, replace with your course title
+\date{\vspace{-2ex}}
+\maketitle
+
+
+\begin{enumerate}[label=\bfseries1\alph*)]
+
+% ------------------------------------------------------------------------------
+% 1a)
+% ------------------------------------------------------------------------------
+\item Let $(n_k)_{k \geq 1}$ be a strictly monotone increasing sequence of 
+natural numbers. Then $n_k \geq k$ for every $k$.
+\begin{proof} 
+	We will induct on $k$:
+
+	For every $m \in \N$, we have $m \geq 1$. Hence, $n_1 \geq 1$.
+
+	Suppose for inductive hypothesis that $n_k \geq k$ for some natural 
+	number $k$. Because $(n_k)_{k \geq 1}$ is strictly monotone increasing, 
+	we have $n_k < n_{k+1}$. This implies $n_k + 1 \leq n_{k+1}$.
+
+	\begin{align*}
+		k \leq n_k 	&\implies k+1 \leq n_k + 1 \leq n_{k+1} \\
+					&\implies k+1 \leq n_{k+1}
+	\end{align*}
+
+	Hence, by induction, $n_k \geq k$ for every $k$.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 1b)
+% ------------------------------------------------------------------------------
+\item Let $(x_n)_{n \geq 1}$ be a sequence of real numbers and suppose that 
+$(x_n)_{n \geq 1}$ is a null sequence. Let $(n_k)_{k \geq 1}$ be a strictly 
+monotone increasing sequence of natural numbers. Then every subsequence 
+$(x_{n_k})_{k \geq 1}$ is a null sequence.
+
+\begin{proof}
+	Let $\epsilon > 0$ be given. 
+
+	Since $(x_n)_{n \geq 1}$ is a null sequence, there is an $N$ such that for all
+	$n \geq N$, we have $|x_n| < \epsilon$. 
+
+	Because $\seq{n}{k}$ is strictly monotone increasing, by (1a) we have that 
+	$k \leq n_k$ for every $k$. Then for every $k \geq N$, we have $N \leq k \leq n_k$.
+
+	Then for every $k \geq N$, we have $|x_{n_k}| < \epsilon$, i.e. 
+	$(x_{n_k})_{k \geq 1}$ is a null sequence.
+
+	Hence, every subsequence of a null sequence is a null sequence.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 1c)
+% ------------------------------------------------------------------------------
+\item Let $\seq{x}{n}$ be a sequence of real numbers converging to a limit
+$L$. Then every subsequence of $\seq{x}{n}$ converges to $L$
+
+\begin{proof}
+	The sequence $\seq{x}{n}$ converges to $L$, and so by definition, $\seq{x_n -L}{n}$
+	is a null sequence. 
+
+	Let $(n_k)_{k \geq 1}$ be a strictly monotone increasing sequence of natural 
+	numbers.
+
+	By (1b), we have that $(x_{n_k}-L)_{k \geq 1}$ is a null sequence. By definition, 
+	$(x_{n_k}-L)_{k \geq 1}$ is a null sequence if and only if $(x_{n_k})_{k \geq 1}$
+	converges to $L$.
+
+	Hence, every subsequence of $\seq{x}{n}$ converges to $L$.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 1d)
+% ------------------------------------------------------------------------------
+\item Let $\seq{x}{n}$ be a sequence of real numbers. If $(x_{2k})_{k\geq1}$ and
+$(x_{2k-1})_{k\geq1}$ are null sequences, then $\seq{x}{n}$ is a null sequence.
+
+\begin{proof}
+	The sequences $\seq{2k}{k}$ and $\seq{2k-1}{k}$ are strictly monotone increasing, 
+	since $2k-1 < 2(k+1) -1$ and $2k < 2(k+1)$.
+
+	Suppose that $(x_{2k})_{k\geq1}$ and $(x_{2k-1})_{k\geq1}$ are null sequences.
+	
+	Then by definition, for every $\epsilon > 0$, there is a $K_1$ such that
+	for all $k \geq K_1$, we have $|x_{2k}| < \epsilon$.
+
+	Similarly, for every $\epsilon > 0$, there is a $K_2$ such that
+	for all $k \geq K_2$, we have $|x_{2k-1}| < \epsilon$.
+
+	Set $K = max(K_1, K_2)$ and let $\epsilon > 0$ be given. Then for every 
+	$k \geq K$, we have $|x_{2k}| < \epsilon$ and $|x_{2k-1}| < \epsilon$.
+
+	Now set $N=2K$. Then for every $n \geq N$, we have $|x_n| < \epsilon$. 
+
+	Hence, if $(x_{2k})_{k\geq1}$ and $(x_{2k-1})_{k\geq1}$ are null sequences,
+	$\seq{x}{n}$ is a null sequence. 
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 1e) 
+% ------------------------------------------------------------------------------
+\item Let $\seq{x}{n}$ be a sequence of real numbers. If $(x_{2k})_{k\geq1}$ and
+$(x_{2k-1})_{k\geq1}$ converge to $L$, then $\seq{x}{n}$ also converges to $L$.
+
+\begin{proof}
+	Suppose $(x_{2k})_{k\geq1}$ and $(x_{2k-1})_{k\geq1}$ converge to $L$. 
+
+	Then by definition, $(x_{2k} - L)_{k\geq1}$ and $(x_{2k-1} - L)_{k\geq1}$ 
+	are null sequences.
+
+	Because these are null sequences, by (1d), we have that $(x_n -L)_{k\geq }$
+	is also a null sequence. Then by definition, we have that $\seq{x}{n}$ converges to $L$.
+
+	Hence, if $(x_{2k})_{k\geq1}$ and $(x_{2k-1})_{k\geq1}$ converge to $L$, then 
+	$\seq{x}{n}$ also converges to $L$.
+\end{proof}
+\end{enumerate}
+
+
+% Problem 2 --------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries2\alph*)]
+
+% ------------------------------------------------------------------------------
+% 2a) 
+% ------------------------------------------------------------------------------
+\item Let $\sum_{i=1}^{\infty} u_i$ be a series of real numbers. Assume 
+$\seq{u}{i}$ is a null sequence, and that the series $\sum_{i=1}^{\infty} (u_{2j-1} + u_{2j})$
+converges to a sum $S$.
+
+Then $\sum_{i=1}^{\infty} u_i$ converges to $S$.
+
+\begin{proof}
+	% Let \[T_n = \sum_{i=1}^{n} u_i = u_1 + u_2 + ... + u_n \].
+	
+	% Then $(T_n)_{n\geq1}$ is the sequence of partial sums for $\sum_{i=1}^{\infty} u_i$
+	
+	% Then the subsequence $(T_{2n})_{n\geq1}$
+
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 2b) 
+% ------------------------------------------------------------------------------
+\item The series \[\sum_{i=1}^{\infty} \frac{(-1)^{i-1}}{i} = 1 - \frac{1}{2} 
++ \frac{1}{3} - \frac{1}{4} + ...\] converges. Also, the series does not converge
+absolutely.
+
+\begin{proof}
+	The sequence \[ (x_i)_{i\geq1} = \left(\frac{(-1)^{i-1}}{i}\right)_{i\geq1}\] is a null sequence.
+
+	Define two subsequences \[x_{2j-1} = \left(\frac{1}{2j-1}\right)_{j\geq1}\]
+	and \[x_{2j} = \left(-\frac{1}{2j}\right)_{j\geq1}\]
+
+	The sequence $\sum_{j=1}^{\infty} (\frac{1}{2})^j$ converges, and for all $j$,
+	\[x_{2j-1} - x_{2j} = \frac{1}{(2j)(2j-1)} \leq \left(\frac{1}{2}\right)^j\].
+
+	Then by the Comparison Test, $\sum_{j=1}^{\infty}(x_{2j-1} - x_{2j})$
+	converges, say, to some number $S$. 
+
+	Because $(x_i)_{i\geq1}$ is a null sequence and $\sum_{j=1}^{\infty}(x_{2j-1} - x_{2j})$ 
+	converges to $S$, then by (4a), $\sum_{i=1}^{\infty} x_i$ also converges
+	to $S$.
+
+	Hence, the series \[\sum_{i=1}^{\infty} \frac{(-1)^{i-1}}{i} \] converges.
+
+	However, \[\sum_{i=1}^{\infty} \frac{(-1)^{i-1}}{i} = \sum_{i=1}^{\infty} \frac{1}{i}\]
+	is the Harmonic series, which diverges. Hence, the series
+	\[\sum_{i=1}^{\infty} \frac{(-1)^{i-1}}{i} \] is not absolutely convergent.
+\end{proof}
+\end{enumerate}
+
+
+% Problem 3 --------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries3\alph*)]
+
+% ------------------------------------------------------------------------------
+% 3a) 
+% ------------------------------------------------------------------------------
+\item placeholder
+
+% ------------------------------------------------------------------------------
+% 3b) 
+% ------------------------------------------------------------------------------
+\item placeholder
+
+% ------------------------------------------------------------------------------
+% 3c) 
+% ------------------------------------------------------------------------------
+\item placeholder
+
+\end{enumerate}
+
+
+% % Problem 4 --------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries4\alph*)]
+
+% ------------------------------------------------------------------------------
+% 4a) 
+% ------------------------------------------------------------------------------
+\item Let $\seq{x}{n}$ be a monotone increasing sequence of positive real numbers.
+Assume that some subsequence $\aseq{x}{n_k}{k}$ is a null sequence.
+
+Then $\seq{x}{n}$ is a null sequence.
+
+\begin{proof}
+	$\aseq{x}{n_k}{k}$ is a null sequence, and so for every $\epsilon > 0$, there
+	is a $K$ such that for all $k \geq K$, we have ${|x_{n_k}| < \epsilon}$.
+
+	But for every $k$, there is an $N$ such that $N = n_k$. 
+
+	Hence, for every $\epsilon > 0$, there is an $N = n_k$ such that for all 
+	$n \geq N$, we have ${|x_n| < \epsilon}$.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 4b) 
+% ------------------------------------------------------------------------------
+\item Show that $({1/\sqrt{n}})_{n\geq1}$ is a null sequence.
+
+\begin{proof}
+	
+	The sequence $({1/\sqrt{n}})_{n\geq1}$ is strictly monotone decreasing because
+	$1/\sqrt{n} > 1/\sqrt{n+1}$. 
+
+	The sequence $(k^2)_{k\geq1}$ is strictly monotone increasing because 
+	$n^2 < (n+1)^2$. Also, all of its terms are natural numbers.
+
+	Then $(1/\sqrt{k^2})_{k\geq1} = (1/k)_{k\geq1}$ is a subsequence of 
+	$({1/\sqrt{n}})_{n\geq1}$. It was shown in class that $(1/k)_{k\geq1}$ is a 
+	null sequence.
+
+	Now we can apply (4a), and we have that $({1/\sqrt{n}})_{n\geq1}$ is a null sequence.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 4c) 
+% ------------------------------------------------------------------------------
+\item Let $\seq{x}{n}$ and $\seq{y}{n}$ be sequences of real numbers. Assume that
+$\seq{x}{n}$ is a null sequence and that $|y_n| \leq |x_n|$ for every $n$. 
+
+Then $\seq{y}{n}$ is a null sequence.
+
+\begin{proof}
+	Since $\seq{x}{n}$ is a null sequence, for all $\epsilon > 0$, there is an
+	$N$ such that for all $n \geq N$, $|x_n| < \epsilon$. 
+
+	For all $n$, $|y_n| \leq |x_n|$. Then for all $\epsilon > 0$, there is 
+	an $N$ such that for all $n \geq N$, $|y_n| \leq |x_n| < \epsilon$.
+
+	Hence, $\seq{y}{n}$ is a null sequence.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 4d) 
+% ------------------------------------------------------------------------------
+\item Prove that $\nseq{\sqrt{n+1} - \sqrt{n}}{n}$ is a null sequence.
+
+\begin{proof}
+	As shown in (4b), $({1/\sqrt{n}})_{n\geq1}$ is a null sequence. 
+
+	For all $n$, we have \[\frac{1}{\sqrt{n+1}} < \frac{1}{\sqrt{n}}\]
+	Then by (4c), we have that $\left(1/\sqrt{n+1}\right)_{n\geq1}$ is a null sequence. 
+
+	The sum of two null sequences is also a null sequence. Hence:
+	\[ \left(\frac{1}{\sqrt{n+1} + \sqrt{n}}\right)_{n \geq 1}\]
+	is a null sequence. 
+
+	Notice that $(\sqrt{n+1} - \sqrt{n}) (\sqrt{n+1} + \sqrt{n}) = 1$. 
+	And so, \[ \frac{1}{\sqrt{n+1} + \sqrt{n}} = \sqrt{n+1} - \sqrt{n} \]
+
+	Therefore, $\nseq{\sqrt{n+1} - \sqrt{n}}{n}$ is a null sequence.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 4e) 
+% ------------------------------------------------------------------------------
+\item The series \[\sum_{i=1}^{\infty} \sqrt{i+1} - \sqrt{i} \]
+is divergent.
+
+\begin{proof}
+	For every $n$, $1 \leq \sqrt{n}$ and $1 < \sqrt{2} \leq \sqrt{n+1}$. And so, 
+	$2 < \sqrt{n} + \sqrt{n+1}$ for every $n$.
+
+	The sequence $(2)_{n \geq 1}$ is not a null sequence (Take $\epsilon < 2$).
+	As shown in class, this is sufficent to prove that the series $\sum_{i=1}^{\infty} 2$
+	does not converge.
+
+	Since $2 < \sqrt{n} + \sqrt{n+1}$ for every $n$ and the series 
+	$\sum_{i=1}^{\infty} 2$ does not converge, then by the Comparison Test,
+	\[\sum_{i=1}^{\infty} \sqrt{i+1} - \sqrt{i} \] does not converge.
+
+
+\end{proof}
+\end{enumerate}
+% ------------------------------------------------------------------------------
+% Don't edit below this!
+% ------------------------------------------------------------------------------
+\end{document}

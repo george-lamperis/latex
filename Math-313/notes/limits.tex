@@ -1,0 +1,150 @@
+% ------------------------------------------------------------------------------
+% Limits
+% ------------------------------------------------------------------------------
+
+\begin{defn}[Interval]
+    An interval is a set of real numbers having a similar form to: 
+    \[[a,b] = \{x \in \R : a \leq x \leq b, a<b \}\].
+
+    Intervals can be open, e.g. $(a,b)$ and intervals can be infinite e.g. 
+    $(-\infty, \infty ) = \R$.
+\end{defn}
+
+
+\begin{defn}[Limit]
+    Let $I$ be an interval and let $c \in I$ be given. Suppose $f$ is a real valued
+    function defined for every point in $I$, except for perhaps $c$.
+
+    We say that a number $L$ is a limit of $f$ as $x \rightarrow c$ if for every 
+    sequence $\seq{x_n}{n}$ such that $x_n \in I$, $x_n \neq c$ and $\seq{x_n}{n}$
+    converges to $c$, then we have that $(f(x_n))_{n \geq 1}$ converges to $L$.
+
+    If we write $\lim\limits_{x \to c} f(x) = L $, it means that $f$ has a limit
+    when $x \rightarrow c$ and that limit equals $L$.
+\end{defn}
+
+
+\begin{prop}
+    A function $f$ defined on an interval $I$, except perhaps at $c \in I$, has
+    at most one limit.
+\end{prop}
+\begin{proof}
+    Suppose $L$ and $L'$ are limits of $f$ as $x \rightarrow c$. Choose a 
+    sequence $\seq{x}{n}$ of points in $I$ such that $x_n \neq c$ and $\seq{x}{n}$ 
+    converges to $c$.
+
+    Then $\seq{f(x_n)}{n}$ converges to $L$ and $L'$. Limits are unique for 
+    sequences, and so $L = L'$.
+\end{proof}
+
+
+\begin{prop}
+    Let $f(x)$ and $g(x)$ be real valued functions. If $\lim\limits_{x \to c} f(x) = L $
+    and  $\lim\limits_{x \to c} g(x) = L' $, then:
+
+    \begin{enumerate}
+        \item $\lim\limits_{x \to c} f(x)+g(x) = L+L'$,
+        \item $\lim\limits_{x \to c} f(x)g(x) = LL'$,
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Reduce this problem to sums and products of sequences.
+\end{proof}
+
+
+\begin{corollary}
+    If $\lim\limits_{x \to c} f(x) = L $ and $\lim\limits_{x \to c} g(x) = L' $, then
+    $\lim\limits_{x \to c} f(x)-g(x) = L-L'$,
+\end{corollary}
+
+
+\begin{remark}
+    If $f$ is a constant function with $f(x)=k$ for all $x \in I$, then 
+    $\lim\limits_{x \to c} f(x) = k$.
+\end{remark}
+
+
+\begin{prop}
+    If $g(x)$ is defined and nonzero on $I$ and if $\lim\limits_{x \to c} g(x) = L \neq 0 $,
+    then \[\lim_{x \to c} \frac{1}{g(x)} = \frac{1}{L} \].
+\end{prop}
+
+
+\begin{corollary}
+    Let $f(x)$ and $g(x)$ are defined on $I$ (except perhaps at $c$). Suppose 
+    $g(x)$ is nonzero for all $x\in\R$. 
+
+    If $\lim\limits_{x \to c} f(x) = L $ and $\lim\limits_{x \to c} g(x) = L' \neq 0 $, 
+    then \[\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{L'}\].
+\end{corollary}
+
+
+\begin{remark}
+    Saying $\lim\limits_{x \to c} f(x)=L$ means that for every sequence $\seqxn$
+    with $x_n \in I$, $x_n \neq c$, and $x_n \to c$ we have $f(x) \to L$.
+
+    Roughly, this means that when $x$ gets really close to $c$ but $x \neq c$, 
+    $f(x)$ is getting very close to $L$.
+\end{remark}
+
+
+\begin{prop}
+    Let $f(x)$ be defined on $I$ except possibly at $c \in I$. Let $L$ be given.
+
+    Then $\lim\limits_{x \to c} f(x)=L$ if and only if the following holds:
+
+    For every $\epsilon >  0$ there is a $\delta > 0$ such that for every
+    $x \in I$ with $0 < |x-c| < \delta$ we have $|f(x) - L| < \epsilon$.
+\end{prop}
+
+% ------------------------------------------------------------------------------
+% Continuity
+% ------------------------------------------------------------------------------
+
+\begin{defn}[Continuous Function]
+    Let $f$ be defined on some interval $I$. We say that $f$ is continuous at 
+    $c \in I$ if $\lim\limits_{x \to c} f(x) = f(c)$.
+
+    We say $f$ is continuous if $f$ is continuous at $c$ for all $c \in I$.
+\end{defn}
+
+
+\begin{lemma}
+    The function $f(x)=x$ and any constant functions are continuous on $\R$.
+\end{lemma}
+
+
+\begin{prop}
+    If $f(x)$ and $g(x)$ are continuous at a point $c$, then $f(x)+g(x)$ and
+    $f(x)g(x)$ are also continuous at $c$.
+\end{prop}
+
+
+\begin{prop}
+    Let $f$ be defined on $I$. Let $c \in I$ be given.
+
+    Then $f$ is continuous if and only if for every sequence $\seqxn$ of points
+    in $I$ converging to $c$, the sequence $\seq{f(x_n)}{n}$ converges to $f(c)$.
+\end{prop}
+
+
+\begin{theorem}[Intermediate Value Theorem]
+    Suppose a function $f$ is continuous on an interval $[a,b]$ and that 
+    $f(a) \leq 0 \leq f(b)$.
+
+    Then for some $c \in [a,b]$ we have $f(c)=0$.
+\end{theorem}
+    
+
+\begin{defn}[Polynomial]
+    A degree-n polynomial is a function $f:\R \to \R$ of the form:
+    \[f(x) = a_n x^n + a_{n-a} x^{n-1} + ... + a_0\]
+    where $x \in \R$ and $n \in \Z, n \geq 0$.
+\end{defn}
+
+\begin{theorem}
+    If $n$ is odd, then for every degree-n polynomial $f$, there is a $c \in \R$ 
+    such that $f(c)=0$.
+
+    Note: This is not true for even values of $n$. For example, $f(x) = x^2 + 1$.
+\end{theorem}

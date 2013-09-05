@@ -1,0 +1,34 @@
+% ------------------------------------------------------------------------------
+% Sequences
+% ------------------------------------------------------------------------------
+\begin{definition}[Sequence]
+    A sequence of elements of an ordered field is defined by 
+    specifying an element $x_n$ of the field for every natural number $n$.
+\end{definition}
+
+
+\begin{example}
+    Let $x$ be an element of an ordered field. Define $x_1 = x$ and 
+    $x_n+1 = x^n \cdot x$.
+\end{example}
+
+
+\begin{example}
+    The sequence $0,1,0,1...$ is bounded but not convergent.
+\end{example}
+
+
+\begin{defn}[Peak]
+    Let $\seqxn$ be a bounded sequence. 
+
+    We call a natural number $N$ a peak for the sequence $\seqxn$ if $x_n < x_N$
+    for every $n > N$.
+
+    If $\seqxn$ is monotone increasing, there are no peaks. If $\seqxn$ is monotone
+    decreasing, there are infinitely many peaks.
+\end{defn}
+
+
+\begin{theorem}[Bolzano-Weierstrass Theorem]
+    Every bounded sequence of real numbers has a convergent subsequence.
+\end{theorem}

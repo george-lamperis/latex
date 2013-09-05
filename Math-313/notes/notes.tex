@@ -1,0 +1,61 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+\input{../mathcommands}
+
+\setlength{\parskip}{2ex}   %--skip lines between paragraphs
+\setlength{\parindent}{0pt} %--don't indent paragraphs
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+\theoremstyle{break}
+
+
+%theorem templates
+\newtheorem{theorem}{Theorem}[section] % master theorem
+
+\newtheorem{definition}[theorem]{Definition} % TODO deprecate this command
+\newtheorem{defn}[theorem]{Definition}
+
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% Begin Document ---------------------------------------------------------------
+\begin{document}
+\title{Math 313 - Analysis I Notes}	
+\author{Spring 2013} 
+\maketitle
+
+
+\section{Fields}
+\input{fields}
+
+\section{Efficient Square Roots}
+
+\section{Sequences}
+\input{sequences}
+
+\section{Series}
+
+% TODO go back and finish sections above this
+\section{Limits and Continuity of Functions}
+\input{limits}
+
+\section{Derivatives}
+\input{derivatives}
+ 
+\end{document}

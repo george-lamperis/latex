@@ -1,0 +1,74 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\theoremstyle{definition} % disables italics in theorems
+
+\newtheorem{theorem}{Theorem} % master theorem
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{problem}[theorem]{}
+
+% ------------------------------------------------------------------------------
+% Document Begins Here!
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\title{Math 313 - Problem Set 1}%replace X with the appropriate number
+\author{George Lamperis - UIN:664714097} %if necessary, replace with your course title
+\date{}
+ 
+\maketitle
+
+% ------------------------------------------------------------------------------
+%
+% ------------------------------------------------------------------------------
+
+\begin{problem}
+    Prove the following identities for elements $x,y,z,w$ of a field:
+
+    \begin{enumerate}[label={\bfseries{(\alph{*})}}]
+        \item $(xy)(zw)=(xz)(yw)$.
+            \begin{proof}
+            \begin{align*}
+                (xy)(zw) & = x \cdot (y \cdot (zw))  & \text{ (F6)} \\
+                         & = x \cdot ((zw) \cdot y)  & \text{ (F5)} \\
+                         & = x \cdot (z \cdot (wy))  & \text{ (F6)} \\
+                         & = (xz)(wy)                & \text{ (F6)} \\
+                         & = (xz)(yw)                & \text{ (F5)}
+            \end{align*}    
+            \end{proof}
+
+        \item $(x+y)(z+w) = xz+xw+yz+yw$.
+            \begin{proof}
+            \begin{align*}
+                (x+y)(z+w) & = (x+y) \cdot z + (x+y) \cdot w  &\text{ (F9)} \\
+                           & = z \cdot (x+y) + w \cdot (x+y)  &\text{ (F5)} \\
+                           & = (zx + zy) + (wx + wy)          &\text{ (F9)} \\
+                           & = zx + zy + wz + wy              &\text{ (F2)} \\
+                           & = xz + yz + xw + yw              &\text{ (F5)} \\
+                           & = xz + xw + yz + yw              &\text{ (F1)}   
+            \end{align*}
+            \end{proof}
+
+        \item $(-1)x = -x$.
+            \begin{proof}
+                 We have the identify $0x = 0$.
+            \begin{align*}
+                0x &= 0 \\
+                (1 + (-1))x & = 0  &\text{(F4)}\\
+                (1 \cdot x) + ((-1)\cdot x) & = 0  &\text{(F9)} \\
+                x + ((-1) \cdot x) & = 0           &\text{(F7)}  
+            \end{align*}
+
+                And so by (F4), $x+((-1) \cdot x) = 0  \implies -x = (-1) \cdot$
+            \end{proof}
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}

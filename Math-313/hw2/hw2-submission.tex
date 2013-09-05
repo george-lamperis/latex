@@ -1,0 +1,342 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+
+% ------------------------------------------------------------------------------
+% 
+% ------------------------------------------------------------------------------
+\linespread{1.3}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\alph{subsection})}
+
+% ------------------------------------------------------------------------------
+% theorem templates
+% ------------------------------------------------------------------------------
+\theoremstyle{definition} % disables italics in theorems
+
+\newtheorem*{prop}{Proposition}
+\newtheorem*{definition}{Definition}
+
+
+\newtheorem{lemma}{Lemma}[subsection]
+\renewcommand{\thelemma}{\arabic{lemma}}
+
+\newtheorem*{lemma*}{Lemma}
+
+\newtheorem{case}{Case}[subsection]
+\renewcommand{\thecase}{\arabic{case}}
+
+% ------------------------------------------------------------------------------
+% Document Begins Here!
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Title
+% ------------------------------------------------------------------------------
+\title{Math 313 - Problem Set 2}%replace X with the appropriate number
+\author{George Lamperis - UIN:664714097} %if necessary, replace with your course title
+\date{}
+\maketitle
+
+% ------------------------------------------------------------------------------
+% Problem 1 - Done
+% ------------------------------------------------------------------------------
+\section{}
+
+\begin{prop}
+    If $m$ and $n$ are natural numbers, then the product $mn$ is also a natural
+    number.
+
+    \begin{proof}
+        We will induct on $n$.
+
+        Suppose $n=1$ and $m$ is some natural number. Then $m \cdot 1 = m$, which
+        is a natural number. 
+
+        Now suppose for inductive hypothesis that $mn$ is a natural number. Then:
+        \begin{align*}
+            m(n+1) &= mn + m \cdot 1 \\
+                   &= mn + m 
+        \end{align*}
+
+        By inductive hypothesis we have that $mn$ is a natural number. Additionally, 
+        we have that the sum of two natural numbers is a natural number (proved 
+        in class). Hence, $mn + m$ is a natural number.
+    \end{proof}
+\end{prop}
+
+
+% ------------------------------------------------------------------------------
+% Problem 2 - Done
+% ------------------------------------------------------------------------------
+\section{}
+
+\begin{definition}
+    Given $m,n \in N$ such that $n > m$. Then $n = m + 1 + ... + 1$ for some 
+    finite amount of 1's, say $k$ of them. 
+
+    We define $n - m = k$ and $m - n = -k$. for some $k \in N$.
+\end{definition}
+
+\begin{prop}
+    If $m$ and $n$ are natural numbers, then one of the following is true:
+    \begin{enumerate}[label=(\roman{*})]
+        \item $n-m$ is a natural number
+        \item $m-n$ is a natural number
+        \item $m=n$
+    \end{enumerate}
+
+    \begin{proof}
+        Notice that exactly one of these three properties can hold. We will fix 
+        an arbitary natural number $m$ and induct on a natural number $n$: 
+        
+        Since $m \in \N$, either $m=1$ or $m=k+1$ for some $k \in \N$. If $m=1$,
+        then we have $1=1$. If $m=k+1$, then $m-1 = (k+1)-1 = k$, which is a 
+        natural number.
+
+        Suppose, for inductive hypothesis, that either (i), (ii), or (iii) hold 
+        for $m$ and $n$. 
+
+        \begin{case}
+            If $n-m=k$, for some $k \in \N$. Then:
+
+            \begin{align*}
+                (n+1)-m &= (n-m) + 1    \\
+                        &= k + 1
+            \end{align*}
+
+            which is a natural number.
+        \end{case}
+
+        \begin{case}
+            If $m-n=k$ for some $k \in \N$, there are two possibilities: 
+            Either $k=1$ or $k=j+1$ for some $j\in\N$
+
+            If $k=1$, then we have $m=n+1$, and so the hypothesis holds.
+
+            If $k=j+1$, then:
+            \begin{align*}
+                m -(n+1) &= (m-n) - 1   \\
+                         &= (j+1) - 1   \\
+                         &= j
+            \end{align*}
+
+            which is a natural number. 
+        \end{case}
+
+        \begin{case}
+            If $m=n$, then $(n+1)-m = 1$ which is a natural number.
+        \end{case}
+
+        Therefore, by induction, the proposition holds.
+    \end{proof}
+\end{prop} 
+
+
+% ------------------------------------------------------------------------------
+% Problem 3 - Done
+% ------------------------------------------------------------------------------
+\section{}
+
+\begin{definition}
+    Define an integer to be an element of $F$ which is either a natural number,
+    0, or of the form $-n$ for some natural number $n$.
+\end{definition}
+
+% ------------------------------------------------------------------------------
+% 3a) - Done
+% ------------------------------------------------------------------------------
+\subsection{}
+
+\begin{prop}
+    If $x$ and $y$ are integers, then $x+y$ is an integer.
+
+    \begin{proof} 
+        Let $x$ and $y$ be integers:
+
+        \begin{case} 
+            If both $x$ and $y$ are natural numbers, then this follows by a 
+            proposition proved in class.
+        \end{case}
+
+        \begin{case} 
+            If $x= -j$ and $y= -k$ for natural numbers $j,k$, then:
+
+            \begin{align*}
+                x+y &= -j - k  \\
+                    &= -(j+k)  &\text{(HW1)}
+            \end{align*}
+
+            The sum of two natural numbers is a natural number,
+            and so $j+k \in \N$. We have $x+y=-(j+k)$, and so by definition, $x+y$ 
+            is an integer.
+        \end{case}
+
+        \begin{case} 
+            If $x$ is a natural number and $y= -k$ for a natural number $k$, 
+            then $x+y = x-k$. By Problem 2, we have that either $x-k=j$, $k-x=j$
+            or $x=k$, for some natural number $j$.
+
+            If $x-k=j$ then we are done, since $j \in \N$.
+
+            If $k-x=j$, then by definition of subtraction, $x-k=-j$, which is an
+            integer.
+
+            If $x=k$, then by (F4), $x-k=0$ which is an integer.
+        \end{case}
+
+        \begin{case} 
+            If $x$ is an integer and $y=0$ then $x+0=x$, which is an integer.
+        \end{case}
+
+    \end{proof}
+\end{prop}
+
+% ------------------------------------------------------------------------------
+% 3b) Done
+% ------------------------------------------------------------------------------
+\subsection{}
+
+\begin{lemma}
+    Given an element of an ordered field $x$, $-(-x) = x$
+
+    \begin{proof}
+        By definition, $-(-x)$ is an element such that $(-x)+(-(-x)) = 0$
+
+        Given $x\in F$, we have that $x+(-x) = 0$. By 
+        applying the Commutative Property, we have $(-x)+x=0$
+
+        \begin{align*}
+            (-x) + x &= (-x) + (-(-x)) \\
+                   x &= -(-x)
+        \end{align*}
+
+        by the Cancellation Law for addition. Hence, $-(-x)=x$.
+    \end{proof}
+\end{lemma}
+
+
+\begin{prop}
+    If $x$ and $y$ are integers, then $xy$ is an integer.
+    \begin{proof}
+        \begin{case}
+            If both $x$ and $y$ are natural numbers, then this follows by 
+            Problem 1.
+        \end{case}
+
+        \begin{case}
+            If $x= -j$ and $y= -k$ for natural numbers $j,k$, then:
+
+            \begin{align*}
+                xy &= (-j)(-k) \\
+                   &= (-1)(-1)(jk) \\  
+                   &= -(-jk)    \\
+                   &= jk        & \text{(by previous lemma)}
+            \end{align*}
+
+            The product of two natural numbers is a natural number, and so $xy$ 
+            is an integer.
+        \end{case}
+
+        \begin{case}
+            If $x$ is a natural number and $y=-k$ for a natural number $k$, then:
+
+            \begin{align*}
+                xy &= x(-k) \\
+                   &= -(xk)    & \text{(HW1 - 1d)}
+            \end{align*}
+
+            The product of two natural numbers is a natural number, and so $xk$ 
+            is an integer. We have $xy=-(xk)$ and so $xy$ is an integer.
+        \end{case}
+
+        \begin{case}
+            If $x$ is an integer and $y=0$, then $xy=0$ which is an integer.
+        \end{case}
+    \end{proof}
+\end{prop}
+
+% ------------------------------------------------------------------------------
+% Problem 4
+% ------------------------------------------------------------------------------
+\section{}
+\begin{definition}
+    A rational number is defined to be an element of $F$ that has the form
+    $\dfrac{a}{b}$, where $a$ and $b$ are integers and $b \neq 0$.
+\end{definition}
+% ------------------------------------------------------------------------------
+% 4a)
+% ------------------------------------------------------------------------------
+\subsection{}
+
+\begin{lemma}
+    Given a rational number $x= \dfrac{a}{b}$, and an integer $c \neq 0$, then
+    $x=\dfrac{ac}{bc}$.
+
+    \begin{proof}
+        \begin{align*}
+            x   &= \dfrac{a}{b} \\
+                &= \dfrac{a}{b} \cdot 1 \\
+                &= \dfrac{a}{b} \cdot (cc^{-1}) \\
+                &= \dfrac{a}{b} \cdot \dfrac{c}{c} \\
+                &= \dfrac{ac}{bc}      &\text{(HW1 - 3d)}
+        \end{align*}
+    \end{proof} 
+\end{lemma}
+
+\begin{prop}
+    If $x$ and $y$ are rational numbers, then $x+y$ and $xy$ are rational 
+    numbers.
+    \begin{proof}
+        By definition of rational numbers, we have $x = \dfrac{a}{b}$
+        and $y = \dfrac{c}{d}$ for integers $a,b,c,d$ with $b \neq 0$ and 
+        $d \neq 0$. 
+
+        For addition, we have:
+        \begin{align*}
+            x+y &= \dfrac{a}{b} + \dfrac{c}{d} \\
+                &= \dfrac{ad}{bd} + \dfrac{cb}{db}  &\text{(previous lemma)} \\
+                &= \dfrac{ad}{bd} + \dfrac{bc}{bd} \\ 
+                &= (ad)(bd)^{-1} + (bc)(bd)^{-1}   \\
+                &= (bd)^{-1} (ad + bc)  \\
+                &= \dfrac{ad+bc}{bd}
+        \end{align*}
+
+        The product of two integers is an integer, and so $ad$, $bc$ and $bd$ are
+        integers. The sum of two integers is an integer, and so $ad+bc$ is an 
+        integer. Additionally, $b\neq 0$ and $d\neq 0$. Then by HW1 - (3c), 
+        $bd \neq 0$. Hence, $x+y$ is a rational number.
+
+        For multiplication, we have:
+        \begin{align*}
+            x+y &= \dfrac{a}{b} \cdot \dfrac{c}{d} \\
+                &= \dfrac{ac}{bd}   &\text{(HW1 - 3d)}
+        \end{align*}
+
+        The product of two integers is an integer, and so both $ac$ and $bd$ are
+        integers. Additionally, $b\neq 0$ and $d\neq 0$. Then by HW1 - (3c), 
+        $bd \neq 0$. Hence, $xy$ is a rational number.
+    \end{proof}
+
+\end{prop}
+% ------------------------------------------------------------------------------
+% 4b)
+% ------------------------------------------------------------------------------
+\subsection{}
+\begin{prop}
+    If $x$ is a rational number then $-x$ is a rational number, and if
+    $x \neq 0$ then $x^{-1}$ is rational.
+    \
+\end{prop}
+% ------------------------------------------------------------------------------
+% Document Ends
+% ------------------------------------------------------------------------------
+\end{document}

@@ -1,0 +1,100 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{paralist}
+\usepackage[parfill]{parskip}
+\usepackage[compact]{titlesec}
+\usepackage{url}
+
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{\uppercase}
+\titlespacing\section{0pt}{4pt}{-4pt}
+
+\pagestyle{empty}   % no page numbers
+
+% TODO clickable links
+% TODO specify font
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Heading
+\begin{center}
+    \textbf{\LARGE{George Lamperis}} \\
+    4525 N. Mozart      \hfill  (773) 332-7963  \\
+    Chicago, IL 60625   \hfill  george.lamperis@gmail.com \\
+    \line(1,0){450}
+\end{center}
+
+% ------------------------------------------------------------------------------
+% Objective --------------------------------------------------------------------
+\section*{Objective}
+Seeking a internship or position that will allow me to apply my programming 
+and/or math background.
+
+% Education --------------------------------------------------------------------
+\section*{Education}
+\textbf{Northside College Prep High School} \hfill \emph{Class of 2010} \\
+GPA: 3.61/5.0
+
+\textbf{University of Illinois at Chicago (UIC)} \hfill \emph{expected December 2014} \\
+Bachelor of Arts in Mathematics \\
+GPA: 3.11/4.0 \\
+Relevant Coursework:
+\vspace{-1ex}
+\begin{compactitem}
+    \item Data Structures I and II
+    \item Programming Practicum (C programming)
+\end{compactitem}
+
+
+% Projects ---------------------------------------------------------------------
+\section*{Projects}
+\begin{compactitem}
+    \item \url{https://github.com/Rusty-Shackleford/Rubiks-Cube} \\
+    This project renders a Rubik's Cube using OpenGL. The user can rotate the 
+    camera and turn the faces of the Rubik's Cube using the keyboard and mouse. 
+    A solver is currently in progress. I find this project to be an excellent 
+    combination of my interests and skills. My math background is particularly 
+    useful for this project.
+    \vspace{1ex}
+
+    \item \url{https://github.com/Rusty-Shackleford/CTA-Tracker} \\
+    An Android app which displays arrival predictions for CTA trains and buses 
+    using the CTA Train Tracker API and CTA Bustime API, respectively. Besides 
+    Java, I also used Python to generate a database of bus and train data.
+\end{compactitem}
+
+
+% Skills -----------------------------------------------------------------------
+\section*{Skills}
+Languages:
+\vspace{-1ex}
+\begin{compactitem}
+    \item Java
+    \item C/C++ 
+    \item Python
+    \item SQLite3.
+\end{compactitem}
+
+Linux - installation, configuration and usage.
+
+Familiar with common data structures, sorting algorithms, Object Oriented Programming, Git, and unit testing.
+
+Strong Math background: Calculus I-III, Linear Algebra I, Abstract Algebra I, 
+Analysis I  
+
+% Work Experience --------------------------------------------------------------
+\section*{Work Experience}
+\textbf{Whitetail Carpentry (Family Owned Business)} \hfill \emph{06/2009 - Present} \\
+Laboror \\
+Responsibilities:
+\vspace{-1ex}
+\begin{compactitem}
+    \item Use of various tools to accomplish a task
+    \item Communicating with tenants and building staff
+    \item Purchasing and transporting building materials
+\end{compactitem}
+
+References available on request. 
+
+\end{document}

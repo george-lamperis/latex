@@ -1,0 +1,303 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+\input{../mathcommands}
+
+\setlength{\parskip}{2ex} %--skip lines between paragraphs
+\linespread{1.2}
+
+% ------------------------------------------------------------------------------
+% Document Begins Here!
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\title{Math 313 - Problem Set 7\vspace{-2ex}}   % replace X with appropriate number
+\author{George Lamperis - UIN:664714097}        
+\date{\vspace{-2ex}}
+\maketitle
+
+
+% ------------------------------------------------------------------------------
+% Problem 1 
+% ------------------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries1\alph*)]
+
+% 1a) --------------------------------------------------------------------------
+\item Let $I$ be an arbitrary interval in $\R$. Let $f$ be a function which is 
+differentiable on the interior of $I$ and continuous at each endpoint of $I$. 
+Assume that $f^\prime(x) \geq 0$ for every $x$ in the interior of $I$. 
+
+Then $f$ is monotone increasing on $I$.
+
+\begin{proof}
+    Since $f$ is differentiable on the interior of $I$, this implies that $f$ is 
+    continuous on the interior as well. Also, $f$ is continuous at the end points
+    of $I$, so $f$ is continuous at $c$ for all $c \in I$.
+
+    Let $a,b \in I, a<b$. We have that $f$ is continuous on $[a,b]$ and 
+    differentiable on $(a,b)$. 
+
+    Apply the Mean Value Theorem. There exists a $c \in (a,b)$ such that:
+    \[f^\prime(c) = \frac{f(b) - f(a)}{b-a} \]
+
+    By hypothesis $f^\prime (c) \geq 0$ and we also have $a < b$.
+
+    \begin{align*}
+        \frac{f(b) - f(a)}{b-a} \geq 0 &\implies f(b)-f(a) \geq 0 \\
+                                       &\implies f(b) \geq f(a)
+    \end{align*}
+
+    Hence, $f$ is monotone increasing on $I$.
+\end{proof}
+
+
+% 1b) --------------------------------------------------------------------------
+\item Let $I$ be an arbitrary interval in $\R$. Let $f$ be a function which is 
+differentiable on the interior of $I$ and continuous at each endpoint of $I$. 
+Assume that $f^\prime(x) > 0$ for every $x$ in the interior of $I$. 
+
+Then $f$ is strictly monotone increasing on $I$.
+
+\begin{proof}
+    We have that $f$ is continuous at $c$ for all $c \in I$.
+
+    Let $a,b \in I, a<b$. We have that $f$ is continuous on $[a,b]$ and 
+    differentiable on $(a,b)$. 
+
+    Apply the Mean Value Theorem. There exists a $c \in (a,b)$ such that:
+    \[f^\prime(c) = \frac{f(b) - f(a)}{b-a} \]
+
+    By hypothesis $f^\prime (c) > 0$ and we also have $a < b$.
+
+    \begin{align*}
+        \frac{f(b) - f(a)}{b-a} > 0 &\implies f(b)-f(a) > 0 \\
+                                       &\implies f(b) > f(a)
+    \end{align*}
+
+    Hence, $f$ is strictly monotone increasing on $I$.
+\end{proof}
+\end{enumerate}
+
+
+% ------------------------------------------------------------------------------
+% Problem 2 
+% ------------------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries2\alph*)]
+
+% 2a) --------------------------------------------------------------------------
+\item Let $I$ be an arbitrary interval in $\R$. Let $f$ be a function which is 
+differentiable on the interior of $I$ and continuous at each endpoint of $I$. 
+Assume that $f^\prime(x) \leq 0$ for every $x$ in the interior of $I$. 
+
+Then $f$ is monotone decreasing on $I$.
+
+\begin{proof}
+    We have that $f$ is continuous at $c$ for all $c \in I$.
+
+    Let $a,b \in I, a<b$. We have that $f$ is continuous on $[a,b]$ and 
+    differentiable on $(a,b)$. 
+
+    Apply the Mean Value Theorem. There exists a $c \in (a,b)$ such that:
+    \[f^\prime(c) = \frac{f(b) - f(a)}{b-a} \]
+
+    By hypothesis $f^\prime (c) \leq 0$ and we also have $a < b$.
+
+    \begin{align*}
+        \frac{f(b) - f(a)}{b-a} \leq 0 &\implies f(b)-f(a) \leq 0 \\
+                                       &\implies f(b) \leq f(a)
+    \end{align*}
+
+    Hence, $f$ is monotone decreasing on $I$.
+\end{proof}
+
+
+% 2b) --------------------------------------------------------------------------
+\item Let $I$ be an arbitrary interval in $\R$. Let $f$ be a function which is 
+differentiable on the interior of $I$ and continuous at each endpoint of $I$. 
+Assume that $f^\prime(x) < 0$ for every $x$ in the interior of $I$. 
+
+Then $f$ is strictly monotone decreasing on $I$.
+
+\begin{proof}
+    We have that $f$ is continuous at $c$ for all $c \in I$.
+
+    Let $a,b \in I, a<b$. We have that $f$ is continuous on $[a,b]$ and 
+    differentiable on $(a,b)$. 
+
+    Apply the Mean Value Theorem. There exists a $c \in (a,b)$ such that:
+    \[f^\prime(c) = \frac{f(b) - f(a)}{b-a} \]
+
+    By hypothesis $f^\prime (c) < 0$ and we also have $a < b$.
+
+    \begin{align*}
+        \frac{f(b) - f(a)}{b-a} < 0 &\implies f(b)-f(a) < 0 \\
+                                       &\implies f(b) < f(a)
+    \end{align*}
+
+    Hence, $f$ is strictly monotone decreasing on $I$.
+\end{proof}
+\end{enumerate}
+
+
+% ------------------------------------------------------------------------------
+% Problem 3
+% ------------------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries3\alph*)]
+
+% 3a) --------------------------------------------------------------------------
+\item Let $f$ be a twice differentiable function defined on $\R$. Assume that 
+$f^{\prime\prime}(x) + f(x) = 0$ for every $x$. 
+
+Then $f(x)^2 + f^\prime(x)^2$ is constant.
+
+\begin{proof}
+    Since $f$ is differentiable and $(f(x))^\prime = f^\prime(x)$, then by
+    the product rule:
+    \begin{align*} 
+        (f(x)^2)^\prime &= (f(x)f(x))^\prime \\
+                        &= f^\prime(x)f(x) + f(x)f^\prime(x) \\
+                        &= 2f(x)f^\prime(x)
+    \end{align*}
+
+    Since $f^\prime$ is differentiable and 
+    $(f^\prime(x))^\prime = f^{\prime\prime}(x)$, then by the product rule:
+    \begin{align*} 
+        (f^\prime(x)^2)^\prime &= (f^\prime(x)f^\prime(x))^\prime \\
+                               &= f^{\prime\prime}(x)f^\prime(x) + f^\prime(x)f^{\prime\prime}(x) \\
+                               &= 2f^\prime(x)f^{\prime\prime}(x)
+    \end{align*}
+
+    Since $f(x)^2$ and $f^\prime(x)^2$ are differentiable, then by the sum rule:
+    \begin{align*}
+        (f(x)^2 + f^\prime(x)^2)^\prime &= 2f(x)f^\prime(x) + 2f^\prime(x)f^{\prime\prime}(x) \\
+                                        &= 2f^\prime(x)(f(x) + f^{\prime\prime}(x)) \\
+                                        &= 2f^\prime(x)(0)  &\text{By hypothesis}  \\
+                                        &= 0 
+    \end{align*}
+
+    Since $(f(x)^2 + f^\prime(x)^2)^\prime = 0$ for every $x \in \R$, then by
+    Corollary 1 to the mean value theorem, $f(x)^2 + f^\prime(x)^2$ is constant.
+\end{proof}
+
+
+% 3b) --------------------------------------------------------------------------
+\item Let $f$ be a twice differentiable function defined on $\R$. Assume that 
+$f^{\prime\prime}(x) + f(x) = 0$ for every $x$ and that $f(0) = f^\prime(0) = 0$. 
+
+Then $f(x) = 0$ for every $x$.
+
+\begin{proof}
+    We showed in (3a) that $f(x)^2 + f^\prime(x)^2$ is constant, i.e. there 
+    is a $C$ such that for all $x$ we have $f(x)^2 + f^\prime(x)^2=C$ 
+
+    By hypothesis, $f(0) = f^\prime(0) = 0$, and so:
+    \begin{align*}
+    C   &= f(0)^2 + f^\prime(0)^2 \\
+        &= (0)^2 + (0)^2 \\
+        &= 0   
+    \end{align*}
+
+    Hence, $f(x)^2 + f^\prime(x)^2 = 0$ for every $x$.
+
+    For any $a,b \in \R$, we have $a^2 \geq 0$ and $b^2 \geq 0$. If $a^2 + b^2 = 0$, then
+    $a=b=0$. Therefore, $f(x)=0$ for all $x$.
+\end{proof}
+\end{enumerate}
+
+
+% ------------------------------------------------------------------------------
+% Problem 4
+% ------------------------------------------------------------------------------
+\begin{enumerate}[label=\bfseries4\alph*)]
+
+% 4a) --------------------------------------------------------------------------
+\item Let $f$ be a continuous function defined on $\R$. Let $c \in \R$ be given,
+and define a sequence $\seqxn$ recursively by setting $x_1 = c$ and $x_{n+1} = f(x_n)$
+for every $n \geq 1$. Assume $\seqxn$ converges to a limit $L$.
+
+Then $f(L)=L$.
+
+\begin{proof}
+    Let $\epsilon > 0$ and choose $\delta = \epsilon$.
+
+    Since $\seqxn$ converges to $L$, there is an $N$ such that for all 
+    $n \geq N$, we have $|x_n - L| < \delta$. 
+
+    Then we have 
+    \[0 < |x_{n+1} - L| < \delta \implies |f(x_n) - L| < \epsilon\] 
+    i.e. $\lim\limits_{x \to L} f(x) = L$.
+
+    Since $f$ is continuous, $\lim\limits_{x\to L} f(x)= f(L)$, and so by transitivity, $f(L) = L$.
+\end{proof}
+
+
+% 4b) --------------------------------------------------------------------------
+\item A $k$-contraction is continuous everywhere.
+
+\begin{proof}
+    Let $c \in \R$ be given. 
+
+    Let $\epsilon > 0$ and choose $\delta = \epsilon / k$. 
+
+    Then for every $x\in \R$ we have:
+    \[ 0 < |x-c| < \delta \implies k|x-c| < \delta k = \epsilon \]
+
+    Since $f$ is a $k$-contraction, we have: 
+    \[ |f(x)-f(c)| \leq k|x-c| < \epsilon \]
+    i.e, $\lim\limits_{x\to c} f(x)=f(c)$.
+
+    Hence, a $k$-contraction is continuous everywhere.
+\end{proof}
+
+
+% 4c) --------------------------------------------------------------------------
+\item Let $k \in \R$ with $0 < k < 1$ and let $f$ be a $k$-contraction. Let $c \in R$
+be given, and define a sequence $\seqxn$ recursively by $x_1 = c$ and 
+$x_{n+1} = f(x_n)$. Set $C = |x_1 - x_2|$.
+
+Then $|x_n - x_{n+1}| \leq k^{n-1}C$ for every $n$ and the series 
+$\sum_{i=1}^\infty (x_{i+1}-x_i)$ converges absolutely.
+
+\begin{proof}
+    We will induct on $n$
+
+    We have $C = |x_1 - x_2|$ by definition. 
+
+    Now suppose that $|x_n - x_{n+1}| \leq k^{n-1}C$. Then we have that 
+    $|x_{n+1} - x_{n+2}| = |f(x_n) - f(x_{n+1})|$. Since $f$ is a $k$-contraction, 
+    $|f(x_n) - f(x_{n+1})| \leq k|x_n-x_{n+1}| \leq k^n C$.
+
+    Hence, $|x_n - x_{n+1}| \leq k^{n-1}C$ for every $n$.
+
+    Since $|k| < 1$, the series $\sum_{i=1}^\infty k^{n-1}C$ is a convergent
+    geometric series. 
+
+    Since $0 \leq |x_n - x_{n+1}| \leq k^{n-1}C$ for all $n$, then by the 
+    comparison test, $\sum_{i=1}^\infty (x_{i+1}-x_i)$ converges absolutely.
+\end{proof}
+
+% 4d) --------------------------------------------------------------------------
+\item Under the hypotheses of (4c), the sequence $\seqxn$ converges to a limit
+$L$ and that $f(L)=L$.
+
+\begin{proof}
+    Notice that
+    \begin{align*}
+    \sum_{i=1}^n (x_{i+1}-x_i) &= x_n - x_1 \\
+                               &= x_n - c
+    \end{align*}
+
+    The series $\sum_{i=1}^n (x_{i+1}-x_i)$ converges absolutely, and therefore
+    it converges. This series converges if and only $\seq{x_n-c}{n}$ is a 
+    null sequence. Hence, the sequence $\seqxn$ converges to $L$.
+
+    Then by (4a), we have that $f(L)=L$.
+\end{proof}
+\end{enumerate}
+% ------------------------------------------------------------------------------
+% Don't edit below this!
+% ------------------------------------------------------------------------------
+\end{document}

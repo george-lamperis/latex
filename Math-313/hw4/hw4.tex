@@ -1,0 +1,305 @@
+\documentclass[12pt, letterpaper]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+
+% ------------------------------------------------------------------------------
+% Document formatting
+% ------------------------------------------------------------------------------
+\setlength{\parskip}{2ex} %--skip lines between paragraphs
+\setlength{\parindent}{0pt} %--don't indent paragraphs
+
+% \linespread{1.3}
+
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                                  {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                  {2.3ex \@plus.2ex}%
+                                  {\normalfont\large\bfseries}}
+\makeatother
+
+
+% ------------------------------------------------------------------------------
+% Math commands
+% ------------------------------------------------------------------------------
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+
+% ------------------------------------------------------------------------------
+% theorem templates and formatting
+% ------------------------------------------------------------------------------
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\alph{subsection})}
+
+\theoremstyle{definition} % disables italics in theorems
+
+\newtheorem*{prop}{Proposition}
+\newtheorem*{definition}{Definition}
+
+
+\newtheorem{lemma}{Lemma}[subsection]
+\renewcommand{\thelemma}{\arabic{lemma}}
+
+\newtheorem*{lemma*}{Lemma}
+
+\newtheorem{case}{Case}[subsection]
+\renewcommand{\thecase}{\arabic{case}}
+
+% ------------------------------------------------------------------------------
+% Document Begins Here!
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\title{Math 313 - Problem Set 4}%replace X with the appropriate number
+\author{George Lamperis - UIN:664714097} %if necessary, replace with your course title
+\date{}
+\maketitle
+
+\begin{enumerate}[label=\bfseries\arabic*.]
+
+% ------------------------------------------------------------------------------
+% 1
+% ------------------------------------------------------------------------------
+\item 
+\begin{enumerate}[label=\bfseries(\alph*)]
+
+    % 1a) ----------------------------------------------------------------------
+    \item The constant sequence $(0)_{n \geq 1}$ is a null sequence.
+    \begin{proof} ~\\
+        Let $\epsilon > 0$ be given.
+
+        For every $n$, $(0)_{n \geq 1} = 0$. To see that this sequence is a null 
+        sequence, take $N=1$. Then we have $(0)_{n \geq 1} < \epsilon$ for all
+        $n \geq N$. Hence, $(0)_{n \geq 1}$ is a null sequence.
+    \end{proof}
+
+    % 1b) ----------------------------------------------------------------------
+    \item A constant sequence $(c)_{n \geq 1}$ converges to $c$.
+    \begin{proof} ~\\
+        We need to show that $(c-c)_{n \geq 1}$ is a null sequence. 
+
+        But $(c-c)_{n \geq 1} = (0)_{n \geq 1}$. By (1a), we have that  
+        $(0)_{n \geq 1}$ is a null sequence. Hence, $(c)_{n \geq 1}$ converges 
+        to $c$.
+    \end{proof}
+
+    % 1c) ----------------------------------------------------------------------
+    \item If $(x_n)_{n \geq 1}$ converges to $L$, then $(cx_n)_{n \geq 1}$ 
+    converges to $cL$ for any constant $c$.
+
+    \begin{proof} ~\\
+        Suppose that $(x_n)_{n \geq 1}$ converges to $L$.  
+
+        By (1b), the constant sequence $(c)_{n \geq 1}$ converges to $c$.
+
+        As proved in lecture, the product of two convergent sequences converges 
+        to the product of their limits. Hence, $(cx_n)_{n \geq 1}$ converges to 
+        $cL$ for any constant $c$.
+    \end{proof}
+
+    % 1d) ----------------------------------------------------------------------
+    \item If $(x_n)_{n \geq 1}$ converges to $L$ and $(y_n)_{n \geq 1}$ converges
+    to $L'$, then $(x_n - y_n)_{n \geq 1}$ converges to $L-L'$.
+
+    \begin{proof} ~\\
+        By (1c), we have that $(-y_n)_{n \geq 1}$ converges to $-L'$.
+
+        We showed in class that the sum of two convergent sequences converges to 
+        the sum of their limits. Hence, $(x_n - y_n)_{n \geq 1}$ converges to
+        $L-L'$.
+    \end{proof}
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 2 
+% ------------------------------------------------------------------------------
+\item 
+\begin{enumerate}[label=\bfseries(\alph*)]
+        
+    % 2a) ----------------------------------------------------------------------
+    \item Let $x,L,\epsilon$ be real numbers with $\epsilon > 0$. 
+    
+    Then $|x-L| < \epsilon$ if and only if $L-\epsilon < x < L+\epsilon$.
+    \begin{proof} ~\\
+        Since $\epsilon > 0$, we have $-\epsilon < 0$.
+
+        By (HW3-2b) we have that $|x-L| = \pm(x-L)$, and by (HW3-2a) we have that
+        $|x-L| \geq 0$. 
+
+
+        Suppose that $|x-L| < \epsilon$. Then:
+        \begin{equation*}
+            -\epsilon < 0 \leq |x-L| < \epsilon
+        \end{equation*}
+
+        If $|x-L| = x-L$, then:
+        \begin{eqnarray*}
+            -\epsilon < x-L < \epsilon \\
+            L - \epsilon < x < L + \epsilon 
+        \end{eqnarray*}
+
+        If $|x-L| = -(x-L)$, then:
+        \begin{eqnarray*}
+            -\epsilon < -(x-L) < \epsilon \\
+            \epsilon > x-L > -\epsilon \\
+            L + \epsilon > x > L - \epsilon 
+        \end{eqnarray*}
+
+        Conversely, suppose that $L-\epsilon < x < L+\epsilon$. Then we have:
+        \begin{equation*}
+            -\epsilon < x-L < \epsilon
+        \end{equation*}
+
+        We know that $|x-L| = \pm(x-L)$. 
+
+        If $|x-L| = x-L$, we already have $x-L < \epsilon$.
+
+        Now suppose $|x-L| = -(x-L)$. By assumption, we have $-\epsilon < x-L$.
+        \begin{equation*}
+            -\epsilon < x-L \implies -(x-L) < \epsilon
+        \end{equation*}
+
+        Hence, $|x-L| < \epsilon$ if and only if $L-\epsilon < x < L + \epsilon$.
+    \end{proof}
+
+    % 2b) ----------------------------------------------------------------------
+    \item A sequence $(x_n)_{n \geq 1}$ converges to a number $L$ if and only if
+    for every $\epsilon > 0$, there is an $N$ such that:
+
+    \begin{equation*} 
+        L-\epsilon < x_n < L+\epsilon
+    \end{equation*} 
+
+    for all $n \geq N$.
+
+    \begin{proof} ~\\
+        Suppose $(x_n)_{n \geq 1}$ converges to $L$.
+
+        Then for every $\epsilon > 0$, there is an $N$ such that for all 
+        $n \geq N$, we have $|x_n-L| \leq \epsilon$.
+
+        By (2a), $|x_n - L| < \epsilon$ if and only if $L-\epsilon < x_n < L + \epsilon$.
+
+        Hence, for all $\epsilon > 0$, $(x_n)_{n \geq 1}$ converges to $L$ if 
+        and only if there is an $N$ such that $L-\epsilon < x_n < L + \epsilon$ 
+        for all $n \geq N$.
+    \end{proof}
+
+    % 2c) ----------------------------------------------------------------------
+    \item If $(x_n)_{n \geq 1}$ converges to a number $L>0$, then there is an 
+    $N$ such that $x_n > 0$ for every $n \geq N$.
+
+    \begin{proof} ~\\
+        If $(x_n)_{n \geq 1}$ converges to $L>0$, then by (2b), for all 
+        $\epsilon > 0$, there is an $N$ such that for all $n \geq N$: 
+        \begin{equation*}
+            L-\epsilon < x_n < L+\epsilon
+        \end{equation*}
+
+        We have $L>0$, so take $\epsilon = L$. Then
+        \begin{align*}
+            L-\epsilon < x_n &\implies L-L < x_n \\
+                             &\implies 0 < x_n
+        \end{align*}
+
+        And so we have $0<x_n$ for every $n \geq N$.
+    \end{proof}
+
+    % 2d) ----------------------------------------------------------------------
+    \item
+    \begin{proof} ~\\
+    \end{proof}
+    % 2e) ----------------------------------------------------------------------
+    \item
+    \begin{proof} ~\\
+    \end{proof}
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 3
+% ------------------------------------------------------------------------------
+\item If $(x_n)_{n \geq 1}$ converges to $L$, then for every natural
+number $k$, the sequence $(x_n^k)_{n \geq 1}$ converges to $L^k$.
+
+\begin{proof}
+    We will induct on $n$.
+
+    By hypothesis, we have $(x_n)_{n \geq 1}$ converges to $L$.
+
+    Now suppose, for inductive hypothesis, that $(x_n^k)_{n \geq 1}$ converges 
+    to $L^k$.
+
+    Then, as proved in class, the product of two convergent sequences converges 
+    to the product of their limits. And so 
+    \begin{equation*}
+        (x_n^k \cdot x)_{n \geq 1} \text{ converges to } L^k \cdot L \implies (x_n^{k+1})_{n \geq 1} \text{ converges to } L^{k+1}.
+    \end{equation*}
+
+    Hence, by induction, $(x_n^k)_{n \geq 1}$ converges to $L^k$.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 4
+% ------------------------------------------------------------------------------
+\item If $Y \subset \R$ is non-empty and bounded below, then the set of all 
+lower bounds for $Y$ has a greatest element. 
+
+\begin{proof} ~\\
+    Let $X$ be the set of all lower bounds for $Y$. 
+
+    We have $Y \neq \emptyset$, and so $X \neq \emptyset$. Since $X$ is the set of 
+    lower bounds for $Y$, we have that $x \leq y$ for all $x \in X$ and for all 
+    $y \in Y$ 
+
+    Now we can apply Dedekind's Axiom: there is a $c \in \R$. such that 
+    $c \geq x$ and $c \leq y$, for all $x \in X$ and for all $y \in Y$. 
+
+    Since $c \leq y$ for all $y \in Y$, $c$ is a lower bounds for $y$, and so
+    we have $c \in X$.
+
+    Additionally, we have $c \geq x$ for all $x \in X$, and so $c$ is the 
+    greatest element in $X$. 
+
+    Hence, the set of all lower bounds for $Y$ has a greatest element. 
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% 5
+% ------------------------------------------------------------------------------
+\item
+\begin{enumerate}[label=\bfseries(\alph*)]
+    
+    % 5a) ----------------------------------------------------------------------
+    \item For every natural number $n$, $2^n \geq n+1$.
+    \begin{proof} ~\\
+        We will induct on $n$.
+
+        For the base case, we have $2^1 = 1+1$.
+
+        Now suppose that $2^n \geq n+1$. Then:
+        \begin{align*}
+            2^n \geq n+1 &\implies 2 \cdot 2^n \geq 2(n+1) \\
+                         &\implies 2^{n+1} \geq 2n + 2
+        \end{align*}
+
+        Because $n \geq 1$ ($n$ is a natural number), we have
+        \begin{equation*}
+            n < 2n \implies n+2 < 2n+2
+        \end{equation*}
+
+        By transitivity, we have $n+2 < 2^n+1$.
+
+        Hence, by induction, $2^n \geq n+1$ for all natural numbers $n$.
+    \end{proof}
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% Don't edit below this!
+% ------------------------------------------------------------------------------
+\end{enumerate}
+\end{document}

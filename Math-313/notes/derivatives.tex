@@ -1,0 +1,150 @@
+% ------------------------------------------------------------------------------
+% Derivatives
+% ------------------------------------------------------------------------------
+
+\begin{defn}[Endpoint]
+    We call $a$ and $b$ endpoints of $I$ if $I = [a,b]$ , or $I = (a,b)$,
+    or $I = [a,b)$, or $I = (a,b]$
+
+    An endpoint need not be in the interval.
+\end{defn}
+
+
+\begin{defn}[Derivative]
+    Let $f$ be a function defined on an interval $I$. Let $c\in I$, $c$ is not 
+    an endpoint.
+
+    We say that $f$ is differentiable at $c$ if 
+    \[\lim_{x \to c} \frac{f(x) - f(c)}{x-c}\]
+    exists.
+
+    We call this the derivative of $f$ at $c$, denoted $f^\prime$.
+\end{defn}
+
+
+\begin{prop}
+    Let $f$ be defined on $I$. Let $c \in I$ and suppose that $c$ is not an endpoint.
+
+    If $f$ is differentiable at $c$ then $f$ is continuous.
+\end{prop}
+
+
+\begin{prop}
+    A constant function is differentiable everywhere.
+\end{prop}
+
+
+\begin{prop}
+    The function $f(x)=x$ is differentiable everywhere.
+\end{prop}
+
+
+\begin{prop}
+    Suppose $f,g$ are defined on $I$. Let $c\in I$ and suppose $c$ is not an endpoint.
+    Also suppose that $f,g$ are differentiable at $c$.
+
+    Then $(f+g)$ is differentiable and
+    \[(f+g)^\prime(c) = f^\prime(c) + g^\prime(c)\].  
+\end{prop}
+
+
+\begin{prop}
+    Suppose $f,g$ are defined on $I$. Let $c\in I$ and suppose $c$ is not an endpoint.
+    Also suppose that $f,g$ are differentiable at $c$.
+
+    Then $(fg)$ is differentiable and
+    \[(fg)^\prime(c) = f^\prime(c)g(c) + f(c)g^\prime(c)\].  
+\end{prop}
+
+
+\begin{defn}[Local/Relative Maximum]
+    Suppose $f$ is defined on $I$ and let $x_0$ be an interior point in $I$. 
+    
+    We say $f$ has a local or relative maximum if there is a $\delta > 0$ such that
+    for every $x\in I$ with $|x-x_0| < \delta$ we have $f(x) \leq f(x_0)$.
+\end{defn}
+
+
+\begin{prop}
+    Suppose $f$ is continuous on a closed interval $I$ and suppose also that 
+    $f$ takes its greatest value at an interior point $x_0 \in I$.
+
+    Then $f$ has a local maximum at $x_0$.
+\end{prop}
+
+
+\begin{remark}
+    By a symmetric argument, this holds for local minimums as well.
+\end{remark}
+
+
+\begin{prop}
+    Suppose that $f$ is defined on $I$ and that $x_0 \in I$ is an interior point
+    where f has either a local minimum or maximim. Also assume that $f$ is 
+    differentiable at $x_0$.
+
+    Then $f^\prime(x_0) = 0$.
+\end{prop}
+
+
+\begin{theorem}[Rolle's Theorem]
+    Let $f$ be a function which is continuous on $[a,b]$ and differentiable
+    on $(a,b)$. Assume that $f(a)=f(b)=0$.
+
+    Then for some $c \in (a,b)$ we have $f^\prime(c) = 0$.
+\end{theorem}
+
+
+\begin{theorem}[Mean Value Theorem]
+    Let $f$ be a function which is continuous on $[a,b]$ and differentiable
+    on $(a,b)$.
+
+    Then for some $c \in (a,b)$ we have 
+    \[f^\prime(c) = \frac{f(b)-f(a)}{b-a}\]
+
+    The Mean Value Theorem is a generalization of Rolle's theorem, which assumes 
+    $f(a) = f(b)$, so that the right-hand side above is zero.
+\end{theorem}
+
+
+\begin{corollary}[Corollary 1 to Mean Value Theorem]
+    Suppose $f$ is defined and differentiable on an open interval $I$. 
+    Suppose $f^\prime(x) = 0$ for every $x \in I$.
+
+    Then $f$ is constant.
+\end{corollary}
+
+
+\begin{corollary}[Corollary 2 to Mean Value Theorem]
+    Suppose $f$ and $g$ are defined and differentiable on $I$. Suppose 
+    $f^\prime(x) = g^\prime(x)$ for every $x\in I$. 
+
+    Then $g(x) = f(x) + C$ for some constant $C$.
+\end{corollary}
+
+
+\begin{corollary}[Corollary 3 to Mean Value Theorem]
+    Suppose $f$ is defined and differentiable on an open interval $I$ and 
+    $f^\prime(x) \geq 0$ for every $x \in I$. 
+
+    Then $f$ is monotone increasing on $I$.
+\end{corollary}
+
+
+\begin{corollary}[Corollary 4 to Mean Value Theorem]
+    Suppose $f$ is defined and differentiable on an open interval $I$ and 
+    $f^\prime(x) > 0$ for every $x \in I$. 
+
+    Then $f$ is strictly monotone increasing on $I$.
+
+    Note that the converse is false. For example $f(x) = x^3$ is strictly monotone 
+    increasing but $f^\prime(x) \ngeq 0$ for all $x$.
+\end{corollary}
+
+
+\begin{corollary}[Corollary 5 to Mean Value Theorem]
+    Suppose $f$ is differentiable on an open interval $I$ and suppose that 
+    $|f^\prime(x)| \leq M$ for all $x\in I$.
+
+    Then for all $x,y \in I$, $|f(x) - f(y)| \leq M|x-y|$.
+\end{corollary}

@@ -1,0 +1,345 @@
+% ------------------------------------------------------------------------------
+% Fields
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% General fields
+% ------------------------------------------------------------------------------
+\subsection{Fields}
+
+\begin{definition}
+	A {\bfseries field} $F$ is a set with two binary operations, $+$ and $\cdot$, 
+	which satisfy:
+
+
+	\setitemize[0]{itemindent=40pt}
+	\begin{enumerate}[label={\bfseries F\theenumi.}]
+		\item For any $x,y \in F$, we have $x+y=y+x$.
+
+		\item For any $x,y,z \in F$, we have $(x+y)+z = x+(y+z)$. (Use F1 to prove 
+		other combinations).
+
+		\item There is an element $0 \in F$ such that $x+0=x$, for every $x \in F$.
+		(0 is unique).
+
+		\item Given $x \in F$, there is an element $-x \in F$  such that $x+(-x)=0$. 
+		($-x$ is unique).
+
+		\item $x \cdot y=y \cdot x$ for all $x,y \in F$. 
+
+		\item $(x \cdot y) \cdot z=x \cdot(y \cdot z)$ for all $x,y,z \in F$. 
+		(use  F5 to prove other combinations).
+
+		\item There is an element $1 \neq 0\in F$ such that $x \cdot 1=x$ for 
+		every $x \in F$. ($1$ is unique).
+
+		\item Given $x \in F$ with $x \neq 0$, there is an element $x^{-1} \in F$
+		such that $x \cdot x^{-1} = 1$. (This $x^{-1}$ is unique). 
+		(No such $x^{-1}$ exists if $x=0$).
+
+		\item For any $x,y,z \in F$, we have $x \cdot (y+z)=(x \cdot y) + (x \cdot z)$.
+	\end{enumerate}
+\end{definition}
+
+
+\begin{prop}
+	The element $0$ is unique. There is only one $z \in F$ such that $x+z=x$ for 
+	every $x \in F$.
+\end{prop}
+
+
+\begin{prop}
+	Given $x \in F$, there is an element $-x$ which is unique.
+\end{prop}
+
+
+\begin{prop}[Cancellation Law for Addition] 
+	If $x,y,z \in F$ and if $x + y = x + z$, then $y=z$.
+\end{prop}
+
+
+\begin{prop}
+	If $x \in F$, we have $0 \cdot x = 0$.
+\end{prop}
+
+
+\begin{corollary}
+	If $F$ is a field, $0$ has no $0^{-1}$ i.e. there is no element $y \in F$ 
+	such that $0y = 1$. This follows readily from the previous Proposition.
+\end{corollary}
+
+
+\begin{definition}
+	Given $x,y \in F$, we define $x-y = x+(-y)$.
+\end{definition}
+
+
+\begin{definition}
+	Given $x,y \in F$, we define $\frac{x}{y} = x \cdot y^{-1}$.  If $y = 0$, 
+	then $y^{-1}$ does not exist.
+\end{definition}
+
+
+\begin{example}
+	A strange example of a field: Let $F= \{ 0,1 \}$.
+
+	\begin{itemize}
+		\item $+$ is defined by:
+			\begin{align*}
+			\begin{array}{rcl}
+  				0+0=0 & & 1+0=1 \\
+  				0+1=1 & & 1+1=0 
+  			\end{array}
+  			\end{align*}
+
+  		\item $\cdot$ is defined by:
+	  		\begin{align*}
+			\begin{array}{rcl}
+  				0 \cdot 0=0 & & 1 \cdot 0=0 \\
+  				0 \cdot 1=1 & & 1 \cdot 1=1
+  			\end{array}
+  			\end{align*}
+  			
+	\end{itemize}
+\end{example}
+
+
+% ------------------------------------------------------------------------------
+% Ordered Fields
+% ------------------------------------------------------------------------------
+\subsection{Ordered Fields}
+
+\begin{definition}
+	An {\bfseries ordered field} $F$ is a field together with a set $P \subset F$.
+	having the following properties:
+
+	\begin{enumerate}[label={\bfseries O\theenumi.}]
+		\item The sum of two elements in $P$ lies in $P$.
+
+		\item The product of two elements in $P$ lies in $P$.
+
+		\item For every $x \in P$, exactly one of the following hold:
+		\begin{enumerate}
+			\item $x = 0$.
+			\item $x \in P$. When (b) holds, we say $x$ is positive.
+			\item $(-x) \in P$. When (c) holds, we say $x$ is negative.
+		\end{enumerate}
+
+
+	\end{enumerate}
+\end{definition}
+
+\begin{prop}
+	If $x \in F$ with $x \neq 0$, then $x \cdot x$ is positive.
+\end{prop}
+
+\begin{corollary}
+	$1 \in P$. 
+
+	$1 = 1 \cdot 1$. 
+	$1 \neq 0$ by (F7)
+\end{corollary}
+
+\begin{definition}
+	Let $F$ be an ordered field. Given $x,y \in F$, we write $x < y$ (or $y > x$)
+	to mean $(y-x) \in P$.
+\end{definition}
+
+\begin{prop}
+	If $x,y \in F$, exactly one of the following holds:
+	\begin{enumerate}
+		\item $x=y$
+		\item $x<y$
+		\item $x>y$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	If $x,y,z \in F$ with $x<y$ and $y<z$, then $x<z$.
+\end{prop}
+
+\begin{prop}
+	If $x,y,z \in F$ and $x < y$. Then $x+y < y+z$. If, in addition, $z$ is 
+	positive, then $xz < yz$
+\end{prop}
+
+\begin{prop}
+	Let $x,y,z,w$ be elements of an ordered field. Suppose $x<y$ and $z<w$. Then
+	$x+z < y+w$.
+
+	If, in addition, all elements are positive, then $xz < yw$.
+\end{prop}
+
+\begin{prop}
+	Let $x,y$ be positive elements of an ordered field and suppose $x<y$. Then
+	$x^{-1} > y^{-1}$.
+\end{prop}
+
+
+% --------------------------------------------------------------
+% Natural Numbers
+% --------------------------------------------------------------
+\subsection{Natural Numbers}
+
+\begin{prop}
+	Given $n,m \in \N$, $m+n \in \N$.
+
+	\begin{proof}
+		$m+1 \in \N$ by the construction of natural numbers.
+
+		Assume $m+n \in \N$. \\
+		Then $m+(n+1) = (m+n) + 1$, which is also true by definition.
+
+		Hence, by induction, $m+n \in \N$.
+	\end{proof} 
+\end{prop}
+
+\begin{prop}["Axiom" of Archimedes]
+	The set of natural numbers is not bounded above.
+\end{prop}
+
+\begin{prop}
+	$2 \cdot 2 = 4$
+
+	\begin{proof}
+	\begin{align*}
+		2 \cdot 2 &= 2 \cdot (1+1) \\
+				  &= 2 + 2 \\
+				  &= 2 + (1+1) \\
+				  &= (2+1) + 1	\\
+				  &= 3+1 \\
+				  &=4 \\
+	\end{align*}
+	\end{proof}
+\end{prop}
+
+\begin{prop}
+	If $n \in N$, then $n>0$.
+\end{prop}
+
+\begin{prop}
+	Let $n \in \N$. $1$ cannot be expressed as $n+1$.
+
+	\begin{proof}
+		Suppose $1 = n+1$. 
+
+		\begin{align*}
+			n+1 = 0 + 1 &\iff n=0 \\
+						&\iff 0 \in \N \\
+						&\iff 0 \in P
+		\end{align*}
+
+		By (O3) we have a contradiction.
+	\end{proof}
+\end{prop}
+
+\begin{definition}
+	$x^n$
+
+	Let $x \in F$ and let $n \in \N$. We define:
+
+	\begin{itemize}
+		\item $x^1 = x$
+		\item $x^{n+1} = x^n \cdot x$
+	\end{itemize}
+
+	This works because any natural number can be expressed in at most one way 
+	as $n+1$ (by Cancellation Law) and $1$ cannot be expressed as $n+1$.
+\end{definition}
+
+\begin{prop}
+	If $x,y \in F$, then $(xy)^n = x^n y^n$
+\end{prop}
+
+
+% --------------------------------------------------------------
+% Complete Ordered Fields
+% --------------------------------------------------------------
+\subsection{Complete Ordered Fields}
+
+\begin{prop}[Least Element Principle]
+	If $S$ is nonempty, then there is an $n_0 \in S$ such that $n_0 \leq n$
+	for every $n \in S$
+\end{prop}
+
+\begin{prop}[Dedekind's Axiom]
+	Let $F$ be an ordered field and suppose $X, Y$ are nonempty subsets of $F$
+	such that $x \leq y$ for all $x \in X$ and for all $y \in Y$. 
+
+	Then there is an element $c \in F$ such that $c \geq x$ for every $x \in X$ 
+	and $c \leq y$ for every $y \in Y$.
+\end{prop}
+
+\begin{definition}
+	A {\bfseries complete ordered field} is a field which satisfies Dedekind's 
+	Axiom.
+\end{definition}
+
+\begin{definition}
+	A {\bfseries greatest element} $m \in X \subset F$ has the property that
+	$m \geq x$ for all $x \in X$. This element is unique.
+\end{definition}
+
+\begin{definition}
+	A {\bfseries least element} $m \in Y \subset F$ has the property that
+	$m \leq y$ for all $y \in Y$. This element is unique.
+\end{definition}
+
+\begin{remark}
+	This varient of Dedekind's Axiom never holds. (Why? Is this true?)
+
+	Suppose $X,Y$ are non empty subsets of a field $F$ with $x < y$ for all $x \in X$
+	and for all $y \in Y$. Then there is a least element $c \in F$ such that 
+	$c > x$ for all $x \in X$ and $c < y$ for all $y \in Y$.
+\end{remark}
+
+
+% --------------------------------------------------------------
+% Real Numbers
+% --------------------------------------------------------------
+\subsection{Real Numbers}
+
+\begin{remark}
+	For the rest of the course, we will assume that we have a complete ordered
+	field $\R$. Elements of $\R$ are called real numbers.
+\end{remark}
+
+\begin{prop}
+	Not every subset of real numbers has a greatest element (or a least element).
+\end{prop}
+
+\begin{definition}
+ 	A set $X \subset \R$ is said to be {\bfseries bound above} if there exists
+ 	a $B \in \R$ such that $x \leq B$ for all $x \in X$. If this holds, we say
+ 	that $B$ is an upper bound for $X$.
+
+ 	If $X$ has a greatest element, then $X$ is bound above by its greatest
+ 	element.
+\end{definition}
+
+\begin{definition}
+	A set $X \subset \R$ is said to be {\bfseries bound below} if there exists
+ 	a $B \in \R$ such that $x \geq B$ for all $x \in X$. If this holds, we say
+ 	that $B$ is an lower bound for $X$.
+
+ 	If $X$ has a least element, then $X$ is bound below by its least
+ 	element.
+\end{definition}
+
+\begin{prop}[Least Upper Bounds Principle]
+	Suppose $X \subset \R$ is nonempty and bounded above. Then the set of all 
+	upper bounds has a least element.
+
+	\begin{proof}
+		Use Dedekind's Axiom.
+	\end{proof}
+\end{prop}
+
+\begin{corollary}
+	For every $x \in \R$, there is an $n \in \N$ such that $x < n$.
+\end{corollary}
+
+\begin{corollary}
+	For every positive number $\epsilon$, there is an $n \in \N$ such that 
+	$\frac{1}{n} < \epsilon$.
+\end{corollary}
