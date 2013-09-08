@@ -49,9 +49,6 @@
 % Problem 1
 % ------------------------------------------------------------------------------
 \section{}
-Q1. Consider the following 8 bit floating point representation based on the IEEE floating point
-format.
-
 Format A:
 \begin{compactitem}
     \item There is one sign bit.
@@ -68,16 +65,12 @@ Format B:
     \item bias $= 2^{4-1}-1 = 7 $.
 
 \end{compactitem}
-Below, you are given some bit patterns of pattern A. Your task is to find out the values of numbers given
-
-Check these well, especially denormalized/normalized.
-
 
 \begin{tabular}{M|M|M}
     Format A    & Decimal Value     & Format B    \\ \hline
     1 010 1000  &  -3/4             & 1 0110 100  \\ 
     1 110 0000  &  -8               & 1 1010 000  \\ 
-    0 101 1010  &  6.5              & 1 1001 101  \\
+    0 101 1010  &  6.5              & 0 1001 101  \\
     0 000 1001  &  9/64             & 0 0100 001  \\
 \end{tabular}
 
