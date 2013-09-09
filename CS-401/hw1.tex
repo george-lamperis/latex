@@ -111,23 +111,31 @@ Is $2^{2n} = O(2^n)$?
 % ------------------------------------------------------------------------------
 \section{Exercise 4-5-1, page 96}
 Use the master method to give tight asymptotic bounds for the following recurrences.
-\begin{compactitem}
-    \item a. $T(n) = 2T(n/4) + 1$
-    \item b. $T(n) = 2T(n/4) + \sqrt{n}$
-    \item c. $T(n) = 2T(n/4) + n$
-    \item d. $T(n) = 2T(n/4) + n^2$
-\end{compactitem}
+
+In all cases, we have $a=2$ and $b=4$. Also, we have $n^{log_4 (2)} = O(\sqrt{n})$
 
 \begin{sln}[a]
+    \[T(n) = 2T(n/4) + 1\]
+
+    Since $f(n) = 1 = O(n^{1/2 - \epsilon})$, where $\epsilon = 1/2$, we apply case 1.
+
+    Hence $T(n) = \Theta (\sqrt{n})$.
 \end{sln}
 
 \begin{sln}[b]
+    \[T(n) = 2T(n/4) + \sqrt{n}\]
+
+    Since $f(n) = \sqrt{n} = \Theta (\sqrt{n})$, we apply case 2.
+
+    Hence, $T(n) = \Theta (\sqrt{n} \log n)$
 \end{sln}
 
 \begin{sln}[c]
+    \[T(n) = 2T(n/4) + n\]
 \end{sln}
 
 \begin{sln}[d]
+    \[T(n) = 2T(n/4) + n^2 \]
 \end{sln}
 
 \end{document}
