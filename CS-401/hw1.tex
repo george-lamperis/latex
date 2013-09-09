@@ -1,0 +1,85 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[parfill]{parskip}   % paragraph formatting
+\usepackage{paralist}           % compactitem
+\usepackage{array}              % required for tabular environment
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {4ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+% \theoremstyle{plain}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{prop}{Proposition}
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{CS 401 - Homework 1}
+\author{George Lamperis}
+\date{UIN:664714097}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------------------------
+% Exercise 3-1-1, page 52
+
+% ------------------------------------------------------------------------------
+\section{Exercise 3-1-1, page 52}
+
+\begin{prop}
+    Let $f(n)$ and $g(n)$ be asymptotically nonnegative functions. Then:
+    \[max(f(n) + g(n)) = \Theta (f(n) + g(n))\].
+\end{prop}
+
+\begin{proof}
+    Since $f(n)$ and $g(n)$ are asymptotically nonnegative, there exists positive
+    constants $n_f, n_g$ such that:
+    \[ 0 \leq f(n), \text{for all } n \geq n_f \]
+    \[ 0 \leq g(n), \text{for all } n \geq n_g \]
+
+    Set $n = max(n_f, n_g)$. Then $max(f(n), g(n))$ and $f(n) + g(n)$ are asymptotically
+    nonnegative.
+\end{proof}
+
+% ------------------------------------------------------------------------------
+% Exercise 3-1-4, page 53
+% ------------------------------------------------------------------------------
+\section{Exercise 3-1-4, page 53}
+
+% ------------------------------------------------------------------------------
+% Problem 3-3-a, page 61
+% ------------------------------------------------------------------------------
+\section{Problem 3-3-a, page 61}
+
+
+% ------------------------------------------------------------------------------
+% Exercise 4-4-5, page 93
+% ------------------------------------------------------------------------------
+\section{Exercise 4-4-5, page 93}
+
+% ------------------------------------------------------------------------------
+% Exercise 4-5-1, page 96
+% ------------------------------------------------------------------------------
+\section{Exercise 4-5-1, page 96}
+
+
+\end{document}
