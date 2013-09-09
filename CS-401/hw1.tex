@@ -148,7 +148,16 @@ In all cases, we have $a=2$ and $b=4$. Also, we have $n^{log_4 (2)} = O(\sqrt{n}
 \begin{sln}[d]
     \[T(n) = 2T(n/4) + n^2 \]
 
-    We have $f(n) = n = \Omega (n^{1/2+\epsilon})$, where $0 <\epsilon < 3/2$. 
+    We have $f(n) = n = \Omega (n^{1/2+\epsilon})$, where $0 <\epsilon < 3/2$.
+
+    For all $n \geq 1$, pick $c = 1/2$. Then we have:
+    \begin{align*}
+        af(n^2/b)   & = 2(n^2/4) \\
+                    & = n^2/2 \\
+                    & \leq n^2/2 \\
+    \end{align*}
+
+    Hence, by case 3, $T(n) = \Theta(n)$. 
 \end{sln}
 
 \end{document}
