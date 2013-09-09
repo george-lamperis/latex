@@ -57,7 +57,7 @@
     and
     \begin{equation} 0 \leq g(n), \text{for all } n \geq n_g \end{equation}
 
-    Set $n_0 = max(n_f, n_g)$. Then $max(f(n), g(n))$ and $f(n) + g(n)$ are asymptotically
+    Set $n_0 = max(n_f, n_g)$. Then by (1) and (2), $max(f(n), g(n))$ and $f(n) + g(n)$ are asymptotically
     nonnegative, i.e. for all $n \geq n_0$ we have:
     \begin{equation} 0 \leq max(f(n), g(n)) \end{equation}
     and
@@ -68,7 +68,10 @@
 
     Also note that $ \dfrac{f(n)+g(n)}{2} \leq max(f(n), g(n))$
 
-    Now let $c_1 = \dfrac{1}{f(n) + g(n)}$ and let $c_2 = 1$.
+    Now let $c_1 = 1/2$ and let $c_2 = 1$.
+
+    Then for all $n \geq n_0$ we have:
+    \[ 0 \leq 1/2(f(n)+g(n) \leq max(f(n), g(n)) \leq f(n)+g(n)\]
 
     Hence: \[max(f(n) + g(n)) = \Theta (f(n) + g(n))\].
 \end{proof}
@@ -87,6 +90,10 @@ Is $2^{n+1} = O(2^n)$?
 \end{sln}
 
 Is $2^{2n} = O(2^n)$?
+
+\begin{sln}
+
+\end{sln}
 
 
 % ------------------------------------------------------------------------------
