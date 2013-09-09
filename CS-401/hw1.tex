@@ -23,8 +23,8 @@
 
 \theoremstyle{mystyle}
 % \theoremstyle{plain}
-\newtheorem*{exercise}{Exercise}
 \newtheorem*{prop}{Proposition}
+\newtheorem*{sln}{Solution}
 
 
 
@@ -47,29 +47,52 @@
 
 \begin{prop}
     Let $f(n)$ and $g(n)$ be asymptotically nonnegative functions. Then:
-    \[max(f(n) + g(n)) = \Theta (f(n) + g(n))\].
+    \[max(f(n) + g(n)) = \Theta (f(n) + g(n))\]
 \end{prop}
 
 \begin{proof}
     Since $f(n)$ and $g(n)$ are asymptotically nonnegative, there exists positive
     constants $n_f, n_g$ such that:
-    \[ 0 \leq f(n), \text{for all } n \geq n_f \]
-    \[ 0 \leq g(n), \text{for all } n \geq n_g \]
+    \begin{equation} 0 \leq f(n), \text{for all } n \geq n_f \end{equation}
+    and
+    \begin{equation} 0 \leq g(n), \text{for all } n \geq n_g \end{equation}
 
-    Set $n = max(n_f, n_g)$. Then $max(f(n), g(n))$ and $f(n) + g(n)$ are asymptotically
-    nonnegative.
+    Set $n_0 = max(n_f, n_g)$. Then $max(f(n), g(n))$ and $f(n) + g(n)$ are asymptotically
+    nonnegative, i.e. for all $n \geq n_0$ we have:
+    \begin{equation} 0 \leq max(f(n), g(n)) \end{equation}
+    and
+    \begin{equation} 0 \leq f(n)+g(n) \end{equation}
+
+    We also have (for all $n \geq n_0$)
+    \begin{equation} max(f(n), g(n)) \leq f(n)+g(n) \end{equation}
+
+    Also note that $ \dfrac{f(n)+g(n)}{2} \leq max(f(n), g(n))$
+
+    Now let $c_1 = \dfrac{1}{f(n) + g(n)}$ and let $c_2 = 1$.
+
+    Hence: \[max(f(n) + g(n)) = \Theta (f(n) + g(n))\].
 \end{proof}
+
 
 % ------------------------------------------------------------------------------
 % Exercise 3-1-4, page 53
 % ------------------------------------------------------------------------------
 \section{Exercise 3-1-4, page 53}
+Is $2^{n+1} = O(2^n)$? 
+
+\begin{sln}
+    Pick $c=2$. Then $2 * 2^n = 2^{n+1}$. 
+
+    Hence $2^{n+1} = O(2^n)$
+\end{sln}
+
+Is $2^{2n} = O(2^n)$?
+
 
 % ------------------------------------------------------------------------------
 % Problem 3-3-a, page 61
 % ------------------------------------------------------------------------------
 \section{Problem 3-3-a, page 61}
-
 
 % ------------------------------------------------------------------------------
 % Exercise 4-4-5, page 93
