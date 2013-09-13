@@ -24,6 +24,7 @@
 \theoremstyle{mystyle}
 % \theoremstyle{plain}
 \newtheorem*{prop}{Proposition}
+\newtheorem*{lemma}{Lemma}
 \newtheorem*{sln}{Solution}
 
 
@@ -101,12 +102,36 @@ Is $2^{2n} = O(2^n)$?
 % Problem 3-3-a, page 61
 % ------------------------------------------------------------------------------
 \section{Problem 3-3-a, page 61}
-
-\begin{compactitem} 
-    \item $n! = \Omega(2^{2^n})$ : $2^{2^n} < n!$ for all positive $n$. 
-
-\end{compactitem}
-
+    Sorted in descending order by growth rate: 
+\begin{enumerate}
+    \item $2^{2^{n+1}}$
+    \item $2^{2^n}$
+    \item $(n+1)!$
+    \item $n!$
+    \item $(\lg n)!$
+    \item $n*2^n$
+    \item $2^{2n} = 4^n$
+    \item $e^n$
+    \item $2^n$
+    \item $2^{\lg* n}$
+    \item $(\frac{3}{2})^n$
+    \item $(\sqrt 2)^{\lg n}$
+    \item $n^3$
+    \item $n^2$
+    \item $4^{\lg n} = n^2$ 
+    \item $n * \lg n$
+    \item $n$
+    \item $2^{\lg n} = n$    
+    \item $\lg (n!)$
+    \item $\lg n$
+    \item $\ln n$
+    \item $\lg^2 n$
+    \item $\ln \ln n$
+    \item $\lg^* n$
+    \item $\lg^*(\lg n)$
+    \item $\lg(\lg^* n)$
+    \item $1$
+\end{enumerate} 
 
 % ------------------------------------------------------------------------------
 % Exercise 4-4-5, page 93
