@@ -1,3 +1,8 @@
+# eclipse
+.metadata/
+
+
+# latex output and temporary files
 *.aux
 *.bbl
 *.blg
@@ -25,3 +30,4 @@
 *.maf
 *.mtc
 *.mtc0
+*.pdf
