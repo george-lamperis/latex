@@ -1,0 +1,100 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper, 12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{array}              % required for tabular environment
+\usepackage[parfill]{parskip}   % paragraph formatting
+\usepackage{paralist}           % compactitem
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {4ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{lemma}{Lemma}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 435 - Homework 1}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------------------------
+% 2.1(a), page 18
+% ------------------------------------------------------------------------------
+\section*{2.1.(a)}
+
+\begin{lemma}
+    If $a$ is an integer, then either $a^2 \equiv 0 \pmod 3$ or 
+    $a^2 \equiv 1 \pmod 3$.
+\end{lemma}
+\begin{proof}
+    We have two cases: the case where 3 divides $a$, and the case where 3 does
+    not divide $a$.
+
+    If 3 divides $a$, then $a \equiv 0 \pmod 3$. It follows that 
+    $a^2 \equiv 0 \pmod 3$ and so we are done.
+    
+    If 3 does not divide $a$, then either $a \equiv 1 \pmod 3$ or 
+    $a \equiv 2 \pmod 3$. Since $2^2 \equiv 1 \pmod 3$, in either case we have
+    that $a^2 \equiv 1 \pmod 3$.
+\end{proof}
+
+
+\begin{prop}
+    If $(a,b,c)$ is a primitive Pythagorean triple, then either $a$ or $b$ must
+    be a multiple of 3.
+\end{prop}
+
+\begin{proof}
+    If 3 divides $a$ and $b$, then 3 divides $c$. But $a,b,c$ are coprime and
+    so we have a contradiction. Hence, it cannot be the case that 3 divides $a$
+    and $b$.
+    
+    Now suppose that $3$ does not divide $a$ or $b$. Then
+    $a^2 \equiv 1 \pmod 3$ and $b^2 \equiv 1 \pmod 3$. This implies that
+    $c^2 \equiv 2 \pmod 3$. But the previous lemma says that it's impossible
+    that $c^2 \equiv 2 \pmod 3$. Either 3 divides $c^2$ or $a^2 \equiv 1 \pmod
+    3$.
+    
+    It follows that exactly one of $a,b$ is divisible by 3.
+\end{proof}
+
+
+% ------------------------------------------------------------------------------
+% 2.2, page 19
+% ------------------------------------------------------------------------------
+\section*{2.2}
+
+\begin{prop}
+    Let $m,n, d$ be integers. If an $d$ divides both $m$ and $n$, then $d$ also
+    divides $m-n$ and $m+n$.
+\end{prop}
+
+\begin{proof}
+    Since $d \mid m$, there is an integer $k$ such that $m = dk$. Similarly,
+    since $d \mid n$, there is an integer $l$ such that $n = dl$.
+    
+    Then $m+n = dk+dl = d(k+l)$. Hence $d \mid (m+n)$.
+    
+    Similarly, $m-n = dk-dl = d(k-l)$. Hence $d \mid (m-n)$.
+\end{proof}
+
+
+\end{document}
