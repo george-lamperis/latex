@@ -97,6 +97,36 @@
 
 
 % ------------------------------------------------------------------------------
+% 2.6, page 19
+% ------------------------------------------------------------------------------
+\section*{2.6}
+
+\subsection*{2.6.(a)}
+\begin{itemize}
+  \item $a=99$, $b=20$, $c=101$
+  \item $a=143$, $b=24$, $c=145$
+\end{itemize}
+
+\subsection*{2.6.(b)}
+    $a=1023$, $b=64$, $c=1025$
+    
+\subsection*{2.6.(c)}
+\begin{align*}
+    a^2 + b^2 = (a+2)^2 &\implies b^2 = 4a + 4  \\
+                    &\implies b = 2 \sqrt{a+1}
+\end{align*}
+
+Now let $x = \sqrt{a+1}$. We have
+\begin{align*}
+    a &= x^2 - 1 \\
+    b &= 2x \\
+    c &= x^2 + 1   
+\end{align*}
+
+Since a is odd, $x$ must be even. Then $(a,b,c)$ will be a primitive Pythagorean
+triple for all positive values of $x$.
+
+% ------------------------------------------------------------------------------
 % 3.1, page 23
 % ------------------------------------------------------------------------------
 \section*{3.1}
@@ -184,7 +214,7 @@ of ${1 \leq v < u \leq 10}$.
 \end{tabular}
 
 
-\subsection*{3.1.(d)}
+\subsection*{3.1.(d,e)}
 \begin{prop}
     If $u$ and $v$ are coprime and $u-v$ is odd and positive, then $(u^2-v^2,
     2uv, u^2+v^2)$ is a primitive Pythagorean triple.
