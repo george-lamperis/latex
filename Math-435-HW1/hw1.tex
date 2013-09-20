@@ -124,8 +124,7 @@ Below is a table with all values of $u$ and $v$ when we substitute all values
 of ${1 \leq v < u \leq 10}$.
 
 
-\begin{centering}
-\begin{tabular}{|l l l|l l l l |}
+\begin{tabular}{|l l l|l l l l|}
     \hline
     $u$ & $v$ & $\gcd (u, v)$  & $a$   & $b$   & $c$ & $\gcd(a,b,c)$  \\
     \hline
@@ -155,7 +154,7 @@ of ${1 \leq v < u \leq 10}$.
     \hline
 \end{tabular}
 \quad    
-\begin{tabular}{|l l l|l l l l |}
+\begin{tabular}{|l l l|l l l l|}
     \hline
     $u$ & $v$ & $\gcd (u, v)$  & $a$   & $b$   & $c$ & $\gcd(a,b,c)$  \\
     \hline
@@ -183,19 +182,41 @@ of ${1 \leq v < u \leq 10}$.
     10 & 9 & 1 & 19 & 180 & 181 & 1 \\
     \hline
 \end{tabular}
-\end{centering}
-
-
 
 
 \subsection*{3.1.(d)}
 \begin{prop}
-    If $u$ and $v$ are coprime and $u-v$ is odd, then $(u^2-v^2, 2uv, u^2+v^2)$
-    is a primitive Pythagorean triple.
+    If $u$ and $v$ are coprime and $u-v$ is odd and positive, then $(u^2-v^2,
+    2uv, u^2+v^2)$ is a primitive Pythagorean triple.
 \end{prop}
 
 \begin{proof}
-    Suppose.
+    Since $u-v$ is odd, exactly one of $u,v$ is odd and the other is even. Then 
+    it follows that $u^2-v^2$ and $u^2+v^2$ are odd.
+
+    Suppose $u^2-v^2$ and $2uv$ have a common divisor $d \neq 1$. Since
+    $u^2-v^2$ is odd, $d$ must be odd too. Also, since $d \mid 2uv$, either
+    $d \mid u$ or $d \mid v$. Let's assume that $d \mid u$.
+
+    Then:
+    \begin{align*}
+    d \mid 2uv \text{ and } d \mid u^2+v^2  &\implies d \mid u^2+v^2 + 2uv & \\
+                                            &\implies d \mid (u+v)^2 \\
+                                            &\implies d \mid u+v \\
+    \end{align*}
+
+    If $d$ divides $u$ and $u+v$, then there exists $m,n$ such that $dm = u$ and
+    $dn = u+v$. Then:
+    \begin{align*}
+    dn = u+v    &\implies dn = dm+v \\
+                &\implies dn-dm = v \\
+                &\implies d(n-m) = v \\
+    \end{align*}
+
+    So $d \mid v$. But we assumed that $u$ and $v$ were coprime. Then it must
+    be the case that $d=1$.
+
+    Hence, $u^2-v^2$, $2uv$, and  $u^2+v^2$ are coprime.
 \end{proof}
 
 \end{document}
