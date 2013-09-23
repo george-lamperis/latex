@@ -1,16 +1,21 @@
 \RequirePackage[l2tabu, orthodox]{nag}
-
-\documentclass[letterpaper]{article}
+\documentclass[letterpaper, 12pt, oneside]{memoir}
 \usepackage[margin=1in]{geometry} 
 \usepackage{paralist}
-\usepackage[parfill]{parskip}
-\usepackage[compact]{titlesec}
+%\usepackage[parfill]{parskip}
+%\usepackage[compact]{titlesec}
 \usepackage{url}
 
-\titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{\uppercase}
-\titlespacing\section{0pt}{4pt}{-4pt}
+%\titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{\uppercase}
+%\titlespacing\section{0pt}{4pt}{-4pt}
 
 \pagestyle{empty}   % no page numbers
+
+% block paragraphs
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex}
+
+
 
 % TODO clickable links
 % TODO specify font
@@ -18,6 +23,7 @@
 
 % ------------------------------------------------------------------------------
 % Heading
+% ------------------------------------------------------------------------------
 \begin{center}
     \textbf{\LARGE{George Lamperis}} \\
     4525 N. Mozart      \hfill  (773) 332-7963  \\
@@ -26,26 +32,40 @@
 \end{center}
 
 % ------------------------------------------------------------------------------
-% Objective --------------------------------------------------------------------
+% Objective
+% ------------------------------------------------------------------------------
 \section*{Objective}
-Seeking a internship or position that will allow me to apply my programming 
-and/or math background.
+Seeking a internship, co-op, or position that will allow me to apply my
+programming and/or math background.
 
-% Education --------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Education
+% ------------------------------------------------------------------------------
 \section*{Education}
 \textbf{Northside College Prep High School} \hfill \emph{Class of 2010} \\
 GPA: 3.61/5.0
 
 \textbf{University of Illinois at Chicago (UIC)} \hfill \emph{expected December 2014} \\
 Bachelor of Arts in Mathematics \\
-GPA: 3.11/4.0 \\
-Relevant Coursework:
-\vspace{-1ex}
+GPA: 3.11/4.0
+
+\textbf{Relevant Coursework}
+
+Computer Science:
 \begin{compactitem}
     \item Discrete Structures I and II
     \item Programming Practicum (C programming)
     \item Algorithms I
     \item Machine Organization
+\end{compactitem}
+
+Math:
+\begin{compactitem}
+    \item Calculus I-III 
+    \item Linear Algebra I
+    \item Abstract Algebra I
+    \item Analysis I
+    \item Foundations of Number Theory
 \end{compactitem}
 
 
@@ -74,22 +94,7 @@ Relevant Coursework:
     \item Linux - installation, configuration and usage.
     \item Familiar with common data structures, sorting algorithms, Object Oriented Programming
     \item Git, and unit testing.
-    \item Strong Math background: Calculus I-III, Linear Algebra I, Abstract Algebra I, Analysis I, Foundations of Number Theory
-\end{compactitem}
-
-
-
-
-% Work Experience --------------------------------------------------------------
-\section*{Work Experience}
-\textbf{Whitetail Carpentry (Family Owned Business)} \hfill \emph{06/2009 - Present} \\
-Laboror \\
-Responsibilities:
-\vspace{-1ex}
-\begin{compactitem}
-    \item Use of various tools to accomplish a task
-    \item Communicating with tenants and building staff
-    \item Purchasing and transporting building materials
+    \item familiarity with Android SDK, Qt and Ruby on Rails
 \end{compactitem}
 
 References available on request. 
