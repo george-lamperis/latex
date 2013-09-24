@@ -59,14 +59,21 @@ what is the probability that you hire exactly one time? What is the probability
 that you hire exactly n times?
 
 
-Since all candidates are equally likely to be hired, the probability that the
-first candidate is the best is $1/n$.
+A note about notation: when I say candidate 2, I mean the second candidate
+interviewed. When I say the 2nd ranked candidate, I mean the candidate which is
+second-most qualified. In this case, the 1st ranked candidate is the least 
+qualified and the $n$-th ranked candidate is the most qualified. 
 
-Given $n$ candidates, in order to make $n$ hires, it must be the case that
-each subsequent candidate is ranked better than the previous. For example, 
-candidate 2 is better than candidate 1, candidate 3 is better than candidate 2,
-and so on. There is only one permutation of candidates such that this holds. 
-Hence, the probability of making $n$ hires is $1/n!$.
+
+In order to make exactly one hire, it must be the case that the $n$-th ranked
+candidate is interviewed first. Since the candidates are presented in a random
+order, the probability of the best candidate being interviewed first is $1/n$.
+
+In order to make $n$ hires, it must be the case that candidate 1 is ranked 1st,
+candidate 2 is ranked 2nd, \ldots, candidate $n$ is ranked $n$-th. That is,
+each subsequent candidate is ranked better than the previous. There is only one 
+permutation of candidates such that this holds. Hence, the probability of making
+$n$ hires is $1/(n!)$.
 
 % ------------------------------------------------------------------------------
 % Exercise 5-2-2, page 122
@@ -75,9 +82,10 @@ Hence, the probability of making $n$ hires is $1/n!$.
 In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
 what is the probability that you hire exactly twice?
 
-Some temporary filler.
-
-Some temporary filler.
+In order to make exactly two hires, it must be the case that the second best
+candidate is interviewed first. Since we always hire the first candidate
+interviewed, there is only one remaining candidate that is better than the
+first.
 
 
 % ------------------------------------------------------------------------------
