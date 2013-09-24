@@ -2,9 +2,42 @@
 \documentclass[letterpaper, 12pt, oneside]{memoir}
 \usepackage{amsmath,amsthm,amssymb,mathtools}
 
+% for fancy figures
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+% block paragraphs
 \pagestyle{plain}
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{1ex}
+
+
+\newcommand{\treediagram}[9] {
+  \begin{tikzpicture}[level distance=1cm,
+  level 1/.style={sibling distance=2cm},
+  level 2/.style={sibling distance=1cm}]
+  \node {#1}
+    child {
+      node {#2}
+      child {
+        node {#4}
+        child {node{#8}}
+        child {node{#9}}
+      }
+        child {node {#5}
+      }
+    }
+    child {
+      node {#3}
+      child {
+        node {#6}
+      }
+      child {
+        node {#7}
+      }
+    };
+  \end{tikzpicture}
+}
 
 % ------------------------------------------------------------------------------
 % Begin Document
@@ -16,24 +49,44 @@
 \begin{document}
 \maketitle
 
-
 % ------------------------------------------------------------------------------
 % Exercise 5-2-1, page 122
 % ------------------------------------------------------------------------------
 \section*{Exercise 5-2-1, page 122}
+In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
+what is the probability that you hire exactly one time? What is the probability
+that you hire exactly n times?
 
+
+Since all candidates are equally likely to be hired, the probability that the
+first candidate is the best is $1/n$.
+
+Given $n$ candidates, in order to make $n$ hires, it must be the case that
+each subsequent candidate is ranked better than the previous. For example, 
+candidate 2 is better than candidate 1, candidate 3 is better than candidate 2,
+and so on. There is only one permutation of candidates such that this holds. 
+Hence, the probability of making $n$ hires is $1/n!$.
 
 % ------------------------------------------------------------------------------
 % Exercise 5-2-2, page 122
 % ------------------------------------------------------------------------------
 \section*{Exercise 5-2-2, page 122}
+In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
+what is the probability that you hire exactly twice?
 
 
 % ------------------------------------------------------------------------------
 % Exercise 6-3-1, page 159
 % ------------------------------------------------------------------------------
 \section*{Exercise 6-3-1, page 159}
+Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
+array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 
+\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
+
+\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
+
+\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
 
 % ------------------------------------------------------------------------------
 % Exercise 6-4-1, page 160
