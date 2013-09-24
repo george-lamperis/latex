@@ -39,6 +39,7 @@
   \end{tikzpicture}
 }
 
+
 % ------------------------------------------------------------------------------
 % Begin Document
 % ------------------------------------------------------------------------------
@@ -74,6 +75,10 @@ Hence, the probability of making $n$ hires is $1/n!$.
 In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
 what is the probability that you hire exactly twice?
 
+Some temporary filler.
+
+Some temporary filler.
+
 
 % ------------------------------------------------------------------------------
 % Exercise 6-3-1, page 159
@@ -82,28 +87,42 @@ what is the probability that you hire exactly twice?
 Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
 array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 
+$i = 4$
+
 \treediagram{5}{3}{17}{*10}{84}{19}{6}{22}{9}
 $\rightarrow$
 \treediagram{5}{3}{17}{22}{84}{19}{6}{10}{9}
+
+$i = 3$
 
 \treediagram{5}{3}{*17}{22}{84}{19}{6}{10}{9}
 $\rightarrow$
 \treediagram{5}{3}{19}{22}{84}{17}{6}{10}{9}
 
+$i = 2$
+
 \treediagram{5}{*3}{19}{22}{84}{17}{6}{10}{9}
 $\rightarrow$
 \treediagram{5}{84}{19}{22}{3}{17}{6}{10}{9}
+
+$i = 1$
 
 \treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
 $\rightarrow$
 \treediagram{84}{5}{19}{22}{3}{17}{6}{10}{9}
 
-
 % ------------------------------------------------------------------------------
 % Exercise 6-4-1, page 160
 % ------------------------------------------------------------------------------
 \section*{Exercise 6-4-1, page 160}
+Using Figure 6.4 as a model, illustrate the operation of HEAPSORT on the array
+$A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
 
+BUILD-MAX-HEAP
+
+\treediagram{5}{13}{2}{25}{7}{17}{20}{8}{4}
+$\rightarrow$
+\treediagram{25}{13}{20}{8}{7}{17}{2}{5}{4}
 
 % ------------------------------------------------------------------------------
 % Exercise 6-4-3, page 160, for decreasing order only.
