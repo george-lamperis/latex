@@ -82,11 +82,22 @@ what is the probability that you hire exactly twice?
 Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
 array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 
-\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
+\treediagram{5}{3}{17}{*10}{84}{19}{6}{22}{9}
+$\rightarrow$
+\treediagram{5}{3}{17}{22}{84}{19}{6}{10}{9}
 
-\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
+\treediagram{5}{3}{*17}{22}{84}{19}{6}{10}{9}
+$\rightarrow$
+\treediagram{5}{3}{19}{22}{84}{17}{6}{10}{9}
 
-\treediagram{5}{3}{17}{10}{84}{19}{6}{22}{9}
+\treediagram{5}{*3}{19}{22}{84}{17}{6}{10}{9}
+$\rightarrow$
+\treediagram{5}{84}{19}{22}{3}{17}{6}{10}{9}
+
+\treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
+$\rightarrow$
+\treediagram{84}{5}{19}{22}{3}{17}{6}{10}{9}
+
 
 % ------------------------------------------------------------------------------
 % Exercise 6-4-1, page 160
