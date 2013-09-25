@@ -10,8 +10,7 @@
 
 % block paragraphs
 \pagestyle{plain}
-%\setlength{\parindent}{0cm}
-%\setlength{\parskip}{1ex}
+\setlength{\parskip}{1ex}
 
 
 \newcommand{\treediagram}[9] {
@@ -56,11 +55,6 @@
 % Exercise 5-2-1, page 122
 % ------------------------------------------------------------------------------
 \section*{Exercise 5-2-1, page 122}
-In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
-what is the probability that you hire exactly one time? What is the probability
-that you hire exactly n times?
-
-
 A note about notation: when I say candidate 2, I mean the second candidate
 interviewed. When I say the 2nd ranked candidate, I mean the candidate which is
 second-most qualified. In this case, the 1st ranked candidate is the least 
@@ -82,20 +76,29 @@ $n$ hires is $1/(n!)$.
 % Exercise 5-2-2, page 122
 % ------------------------------------------------------------------------------
 \section*{Exercise 5-2-2, page 122}
-In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
-what is the probability that you hire exactly twice?
+We always hire the first candidate interviewed. So to make two hires, it cannot
+be the case that the $n$-th ranked candidate is interviewed first.
 
-In order to make exactly two hires, it must be the case that the second best
-candidate is interviewed first. This is the only condition required.
+Let $k$ be an integer, $1 \leq k \leq n-1$. If we want to make exactly two
+hires, then first we interview and hire the $k$-th ranked candidate. Then, we
+interview but do not hire up to $k-1$ candidates which rank lower than
+the $k$-th candidate. Next, we interview and hire the $n$-th ranked candidate. Finally,
+we interview but do not hire any remaining candidates which rank lower than the
+$n$-th candidate.
 
-We always hire the first candidate interviewed. If we interview the $(n-1)$-th
-ranked candidate first, there is only one remaining candidate that is better.
-In fact, it doesn't matter when we interview the $n$-th ranked candidate,
-since we will make no more hires until then (or after then). 
+Fix $k \in [1, \ n-1]$ and then choose $m \in [0, \ k-1]$.
 
-Hence, the probability of making exactly two hires is $1/n$.
+We want a permutation of candidates:
+\[ k, \ a_1, \ a_2, \ \ldots, \ a_m, \ n, \ b_1, \ b_2, \ \ldots, \
+b_{n-m-2} \]
+such that each $a_i$ ranks lower than $k$, and each $b_i$ ranks lower than $n$.
+Notice that there are $m$ many $a_i$ terms and $n-m-2$ many $b_i$ terms.
 
+There are $n-1$ choices for $k$, and for each $k$ there are $k$ choices for $m$.
+For each $k$ and for each $m$, there are $m! * (n-m-2)!$ possible arrangments
+of candidates.
 
+Unfortunately, the probablility of this is really difficult to find :(
 % ------------------------------------------------------------------------------
 % Exercise 6-3-1, page 159
 % ------------------------------------------------------------------------------
@@ -246,7 +249,6 @@ $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
 % Exercise 6-4-3, page 160, for decreasing order only.
 % ------------------------------------------------------------------------------
 \section*{Exercise 6-4-3, page 160}
-
-So what happens if I write some shit here.
+So it's already a max heap.
 
 \end{document}
