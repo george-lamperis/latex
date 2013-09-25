@@ -149,7 +149,7 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 Using Figure 6.4 as a model, illustrate the operation of HEAPSORT on the array
 $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{5}{13}{2}{25}{7}{17}{20}{8}{4}
     $\rightarrow$
@@ -157,7 +157,7 @@ $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
     \caption{BUILD-MAX-HEAP}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{*25}{13}{20}{8}{7}{17}{2}{5}{*4}
     $\rightarrow$
@@ -168,59 +168,80 @@ $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
     \caption{$i=9$}
 \end{figure}
 
-$i=8$
+\begin{figure}[h!]
+    \centering
+    \treediagram{*20}{13}{17}{8}{7}{4}{2}{*5}{25}
+    $\rightarrow$
+    \treediagram{*5}{13}{17}{8}{7}{4}{2}{*20}{25}
+    $\rightarrow$
+    \treediagram{17}{13}{5}{8}{7}{4}{2}{20}{25}
+    
+    \caption{$i=8$}
+\end{figure}
 
-\treediagram{*20}{13}{17}{8}{7}{4}{2}{*5}{25}
-$\rightarrow$
-\treediagram{*5}{13}{17}{8}{7}{4}{2}{*20}{25}
-$\rightarrow$
-\treediagram{17}{13}{5}{8}{7}{4}{2}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*17}{13}{5}{8}{7}{4}{*2}{20}{25}
+    $\rightarrow$
+    \treediagram{*2}{13}{5}{8}{7}{4}{*17}{20}{25}
+    $\rightarrow$
+    \treediagram{13}{8}{5}{2}{7}{4}{17}{20}{25}
 
-$i=7$
+    \caption{$i=7$}
+\end{figure}
 
-\treediagram{*17}{13}{5}{8}{7}{4}{*2}{20}{25}
-$\rightarrow$
-\treediagram{*2}{13}{5}{8}{7}{4}{*17}{20}{25}
-$\rightarrow$
-\treediagram{13}{8}{5}{2}{7}{4}{17}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*13}{8}{5}{2}{7}{*4}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{*4}{8}{5}{2}{7}{*13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{8}{7}{5}{2}{4}{13}{17}{20}{25}
 
-$i=6$
+    \caption{$i=6$}
+\end{figure}
 
-\treediagram{*13}{8}{5}{2}{7}{*4}{17}{20}{25}
-$\rightarrow$
-\treediagram{*4}{8}{5}{2}{7}{*13}{17}{20}{25}
-$\rightarrow$
-\treediagram{8}{7}{5}{2}{4}{13}{17}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*8}{7}{5}{2}{*4}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{*4}{7}{5}{2}{*8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{7}{4}{5}{2}{8}{13}{17}{20}{25}
 
-$i=5$
+    \caption{$i=5$}
+\end{figure}
 
-\treediagram{*8}{7}{5}{2}{*4}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{*4}{7}{5}{2}{*8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{7}{4}{5}{2}{8}{13}{17}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*7}{4}{5}{*2}{8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{*2}{4}{5}{*7}{8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{5}{4}{2}{7}{8}{13}{17}{20}{25}
 
-$i=4$
+    \caption{$i=4$}
+\end{figure}
 
-\treediagram{*7}{4}{5}{*2}{8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{*2}{4}{5}{*7}{8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{5}{4}{2}{7}{8}{13}{17}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*5}{4}{*2}{7}{8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{*2}{4}{*5}{7}{8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{4}{2}{5}{7}{8}{13}{17}{20}{25}
 
-$i=3$
+    \caption{$i=3$}
+\end{figure}
 
-\treediagram{*5}{4}{*2}{7}{8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{*2}{4}{*5}{7}{8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{4}{2}{5}{7}{8}{13}{17}{20}{25}
-
-$i=2$
-
-\treediagram{*4}{*2}{5}{7}{8}{13}{17}{20}{25}
-$\rightarrow$
-\treediagram{*2}{*4}{5}{7}{8}{13}{17}{20}{25}
+\begin{figure}[h!]
+    \centering
+    \treediagram{*4}{*2}{5}{7}{8}{13}{17}{20}{25}
+    $\rightarrow$
+    \treediagram{*2}{*4}{5}{7}{8}{13}{17}{20}{25}
+    
+    \caption{$i=2$}
+\end{figure}
 
 
 % ------------------------------------------------------------------------------
