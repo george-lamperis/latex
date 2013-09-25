@@ -7,6 +7,9 @@
 \usetikzlibrary{trees}
 \usepackage[labelformat=empty]{caption}
 
+
+\usepackage[margin=1in]{geometry} 
+
 % block paragraphs
 \pagestyle{plain}
 \setlength{\parindent}{0cm}
@@ -103,7 +106,7 @@ Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
 array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{5}{3}{17}{*10}{84}{19}{6}{22}{9}
     $\rightarrow$
@@ -112,7 +115,7 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
     \caption{$i = 4$}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{5}{3}{*17}{22}{84}{19}{6}{10}{9}
     $\rightarrow$
@@ -121,7 +124,7 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
     \caption{$i = 3$}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{5}{*3}{19}{22}{84}{17}{6}{10}{9}
     $\rightarrow$
@@ -130,7 +133,7 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
     \caption{$i = 2$}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
     $\rightarrow$
@@ -139,7 +142,6 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
     \caption{$i = 1$}
 \end{figure}
 
-
 % ------------------------------------------------------------------------------
 % Exercise 6-4-1, page 160
 % ------------------------------------------------------------------------------
@@ -147,20 +149,24 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 Using Figure 6.4 as a model, illustrate the operation of HEAPSORT on the array
 $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
 
-BUILD-MAX-HEAP
+\begin{figure}[h]
+    \centering
+    \treediagram{5}{13}{2}{25}{7}{17}{20}{8}{4}
+    $\rightarrow$
+    \treediagram{25}{13}{20}{8}{7}{17}{2}{5}{4}
+    \caption{BUILD-MAX-HEAP}
+\end{figure}
 
-\treediagram{5}{13}{2}{25}{7}{17}{20}{8}{4}
-$\rightarrow$
-\treediagram{25}{13}{20}{8}{7}{17}{2}{5}{4}
+\begin{figure}[h]
+    \centering
+    \treediagram{*25}{13}{20}{8}{7}{17}{2}{5}{*4}
+    $\rightarrow$
+    \treediagram{*4}{13}{20}{8}{7}{17}{2}{5}{*25}
+    $\rightarrow$
+    \treediagram{20}{13}{17}{8}{7}{4}{2}{5}{25}
 
-$i=9$
-
-\treediagram{*25}{13}{20}{8}{7}{17}{2}{5}{*4}
-$\rightarrow$
-\treediagram{*4}{13}{20}{8}{7}{17}{2}{5}{*25}
-$\rightarrow$
-\treediagram{20}{13}{17}{8}{7}{4}{2}{5}{25}
-
+    \caption{$i=9$}
+\end{figure}
 
 $i=8$
 
