@@ -79,14 +79,13 @@ $n$ hires is $1/(n!)$.
 We always hire the first candidate interviewed. So to make two hires, it cannot
 be the case that the $n$-th ranked candidate is interviewed first.
 
-Let $k$ be an integer, $1 \leq k \leq n-1$. If we want to make exactly two
-hires, then first we interview and hire the $k$-th ranked candidate. Then, we
-interview but do not hire up to $k-1$ candidates which rank lower than
-the $k$-th candidate. Next, we interview and hire the $n$-th ranked candidate. Finally,
-we interview but do not hire any remaining candidates which rank lower than the
-$n$-th candidate.
+If we want to make exactly two hires, then first we interview and hire the
+$k$-th ranked candidate. Then, we interview but do not hire up to $k-1$ 
+candidates which rank lower than the $k$-th candidate. Next, we interview and
+hire the $n$-th ranked candidate. Finally, we interview but do not hire any 
+remaining candidates which rank lower than the $n$-th candidate.
 
-Fix $k \in [1, \ n-1]$ and then choose $m \in [0, \ k-1]$.
+More formally, fix $k \in [1, \ n-1]$ and then choose $m \in [0, \ k-1]$.
 
 We want a permutation of candidates:
 \[ k, \ a_1, \ a_2, \ \ldots, \ a_m, \ n, \ b_1, \ b_2, \ \ldots, \
@@ -103,9 +102,7 @@ Unfortunately, the probablility of this is really difficult to find :(
 % Exercise 6-3-1, page 159
 % ------------------------------------------------------------------------------
 \section*{Exercise 6-3-1, page 159}
-Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
-array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
-
+Apply BUILD-MAX-HEAP to $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$:
 
 \begin{figure}[h!]
     \centering
@@ -138,7 +135,7 @@ array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
     \centering
     \treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
     $\rightarrow$
-    \treediagram{84}{5}{19}{22}{3}{17}{6}{10}{9}
+    \treediagram{84}{22}{19}{10}{3}{17}{6}{5}{9}
 
     \caption{$i = 1$}
 \end{figure}
