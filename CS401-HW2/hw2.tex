@@ -6,20 +6,18 @@
 \usepackage{tikz}
 \usetikzlibrary{trees}
 \usepackage[labelformat=empty]{caption}
-
-
-\usepackage[margin=1in]{geometry} 
+\usepackage[section]{placeins}  % for Floatbarriers
 
 % block paragraphs
 \pagestyle{plain}
-\setlength{\parindent}{0cm}
-\setlength{\parskip}{1ex}
+%\setlength{\parindent}{0cm}
+%\setlength{\parskip}{1ex}
 
 
 \newcommand{\treediagram}[9] {
   \begin{tikzpicture}[level distance=1cm,
-  level 1/.style={sibling distance=2cm},
-  level 2/.style={sibling distance=1cm}]
+  level 1/.style={sibling distance=1.5cm},
+  level 2/.style={sibling distance=0.75cm}]
   \node {#1}
     child {
       node {#2}
@@ -249,5 +247,6 @@ $A = \{ 5, 13, 2, 25, 7, 17, 20, 8, 4 \} $.
 % ------------------------------------------------------------------------------
 \section*{Exercise 6-4-3, page 160}
 
+So what happens if I write some shit here.
 
 \end{document}
