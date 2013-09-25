@@ -5,6 +5,7 @@
 % for fancy figures
 \usepackage{tikz}
 \usetikzlibrary{trees}
+\usepackage[labelformat=empty]{caption}
 
 % block paragraphs
 \pagestyle{plain}
@@ -75,6 +76,7 @@ each subsequent candidate is ranked better than the previous. There is only one
 permutation of candidates such that this holds. Hence, the probability of making
 $n$ hires is $1/(n!)$.
 
+
 % ------------------------------------------------------------------------------
 % Exercise 5-2-2, page 122
 % ------------------------------------------------------------------------------
@@ -83,9 +85,14 @@ In HIRE-ASSISTANT, assuming that the candidates are presented in a random order,
 what is the probability that you hire exactly twice?
 
 In order to make exactly two hires, it must be the case that the second best
-candidate is interviewed first. Since we always hire the first candidate
-interviewed, there is only one remaining candidate that is better than the
-first.
+candidate is interviewed first. This is the only condition required.
+
+We always hire the first candidate interviewed. If we interview the $(n-1)$-th
+ranked candidate first, there is only one remaining candidate that is better.
+In fact, it doesn't matter when we interview the $n$-th ranked candidate,
+since we will make no more hires until then (or after then). 
+
+Hence, the probability of making exactly two hires is $1/n$.
 
 
 % ------------------------------------------------------------------------------
@@ -95,29 +102,43 @@ first.
 Using Figure 6.3 as a model, illustrate the operation of BUILD-MAX-HEAP on the
 array $A = \{5, 3, 17, 10, 84, 19, 6, 22, 9 \}$.
 
-$i = 4$
 
-\treediagram{5}{3}{17}{*10}{84}{19}{6}{22}{9}
-$\rightarrow$
-\treediagram{5}{3}{17}{22}{84}{19}{6}{10}{9}
+\begin{figure}[h]
+    \centering
+    \treediagram{5}{3}{17}{*10}{84}{19}{6}{22}{9}
+    $\rightarrow$
+    \treediagram{5}{3}{17}{22}{84}{19}{6}{10}{9}
 
-$i = 3$
+    \caption{$i = 4$}
+\end{figure}
 
-\treediagram{5}{3}{*17}{22}{84}{19}{6}{10}{9}
-$\rightarrow$
-\treediagram{5}{3}{19}{22}{84}{17}{6}{10}{9}
+\begin{figure}[h]
+    \centering
+    \treediagram{5}{3}{*17}{22}{84}{19}{6}{10}{9}
+    $\rightarrow$
+    \treediagram{5}{3}{19}{22}{84}{17}{6}{10}{9}
+    
+    \caption{$i = 3$}
+\end{figure}
 
-$i = 2$
+\begin{figure}[h]
+    \centering
+    \treediagram{5}{*3}{19}{22}{84}{17}{6}{10}{9}
+    $\rightarrow$
+    \treediagram{5}{84}{19}{22}{3}{17}{6}{10}{9}
 
-\treediagram{5}{*3}{19}{22}{84}{17}{6}{10}{9}
-$\rightarrow$
-\treediagram{5}{84}{19}{22}{3}{17}{6}{10}{9}
+    \caption{$i = 2$}
+\end{figure}
 
-$i = 1$
+\begin{figure}[h]
+    \centering
+    \treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
+    $\rightarrow$
+    \treediagram{84}{5}{19}{22}{3}{17}{6}{10}{9}
 
-\treediagram{*5}{84}{19}{22}{3}{17}{6}{10}{9}
-$\rightarrow$
-\treediagram{84}{5}{19}{22}{3}{17}{6}{10}{9}
+    \caption{$i = 1$}
+\end{figure}
+
 
 % ------------------------------------------------------------------------------
 % Exercise 6-4-1, page 160
