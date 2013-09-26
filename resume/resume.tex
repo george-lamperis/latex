@@ -1,24 +1,17 @@
 \RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[letterpaper, 12pt, oneside]{memoir}
+\documentclass[letterpaper, 11pt, oneside]{memoir}
 \usepackage[margin=1in]{geometry} 
 \usepackage{paralist}
-%\usepackage[parfill]{parskip}
-%\usepackage[compact]{titlesec}
+\usepackage[compact]{titlesec}
 \usepackage{url}
 
-%\titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{\uppercase}
-%\titlespacing\section{0pt}{4pt}{-4pt}
-
-\pagestyle{empty}   % no page numbers
+% no page numbers
+\pagestyle{empty}   
 
 % block paragraphs
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{1ex}
 
-
-
-% TODO clickable links
-% TODO specify font
 \begin{document}
 
 % ------------------------------------------------------------------------------
@@ -34,9 +27,10 @@
 % ------------------------------------------------------------------------------
 % Objective
 % ------------------------------------------------------------------------------
+\vspace{-3ex}
 \section*{Objective}
-Seeking a internship, co-op, or position that will allow me to apply my
-programming and/or math background.
+Seeking a internship or co-op that will allow me to apply my programming and/or
+math background.
 
 % ------------------------------------------------------------------------------
 % Education
@@ -72,29 +66,26 @@ Math:
 % Projects ---------------------------------------------------------------------
 \section*{Projects}
 \begin{compactitem}
+    \item \url{https://github.com/Rusty-Shackleford/Rubiks-Python} \\
+    This is my attempt at a Rubik's Cube solver. Unfortunately it is far from
+    complete. However, I'm rather proud of the Permutation class I wrote.
+    
     \item \url{https://github.com/Rusty-Shackleford/Rubiks-Cube} \\
     This project renders a Rubik's Cube using OpenGL. The user can rotate the 
     camera and turn the faces of the Rubik's Cube using the keyboard and mouse. 
-    A solver is currently in progress. I find this project to be an excellent 
-    combination of my interests and skills. My math background is particularly 
-    useful for this project.
-    \vspace{1ex}
 
     \item \url{https://github.com/Rusty-Shackleford/CTA-Tracker} \\
     An Android app which displays arrival predictions for CTA trains and buses 
-    using the CTA Train Tracker API and CTA Bustime API, respectively. Besides 
-    Java, I also used Python to generate a database of bus and train data.
+    using the CTA Train Tracker API and CTA Bustime API, respectively. 
 \end{compactitem}
 
 
 % Skills -----------------------------------------------------------------------
 \section*{Skills}
 \begin{compactitem}
-    \item Languages - Java, C/C++, Python
+    \item Languages - Java, C, C++, Python
     \item Linux - installation, configuration and usage.
-    \item Familiar with common data structures, sorting algorithms, Object Oriented Programming
-    \item Git, and unit testing.
-    \item familiarity with Android SDK, Qt and Ruby on Rails
+    \item Familiar with common data structures and sorting algorithms
 \end{compactitem}
 
 References available on request. 
