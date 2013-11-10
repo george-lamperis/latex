@@ -1,0 +1,75 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper, 12pt, oneside]{memoir}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+
+% Memoir configuration
+\pagestyle{plain}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex}
+
+% Omit chapter numbering
+\counterwithout{section}{chapter}
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {4ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 435 - Midterm 2}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+\section{Problem 6.4.}
+
+\begin{lemma}
+    Something profound here.
+\end{lemma}
+
+\begin{lemma}
+    Something profound here.
+\end{lemma}
+
+\begin{lemma}
+    Something profound here.
+\end{lemma}
+
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+\section{} 
+2. Show that for any integer n, n5/5 + n3/3 + 7n/15 is always an integer. Can you generalize?
+
+\section{} 
+3. Problem 11.12
+\section{} 
+4. Find all n such that  3|n-2, 5|n-3, 7|n-1. This should certainly remind you of the Chinese Remainder Theorem. 
+\section{} 
+5. Read Chapter 12 and do Problem 12.2(a). 
+\section{} 
+6. A function f: N to C is called multiplicative if f(mn) = f(m)f(n) whenever gcd(m,n)=1. The most famous example of a multiplicative function is Euler's phi-function. It should be clear to you that if f is multiplicative, the values of f on numbers of the form pk for various primes p identifies f. 
+(a) Show that if f is multiplicative, then the function g(n) = sumd|n f(d) is multiplicative. 
+(b) Use (a) to show that sumd|n phi(d) = n, where phi is the Euler phi-function. 
+
+\end{document}
