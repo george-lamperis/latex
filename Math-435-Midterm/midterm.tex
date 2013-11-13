@@ -2,6 +2,7 @@
 
 \documentclass[letterpaper, 12pt, oneside]{memoir}
 \usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{float} % H option to place tables exactly
 
 % Memoir configuration
 \pagestyle{plain}
@@ -30,6 +31,7 @@
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{claim}[thm]{Claim}
+\newtheorem{example}[thm]{Example}
 
 % ------------------------------------------------------------------------------
 % Begin Document
@@ -64,7 +66,6 @@
     But the only divisor of 1 is 1. Hence, $g=1$.
 \end{proof}
     
-
 \begin{lemma}
     If $\gcd(a,b,c) = g$, then there are integers $x,y,z$ such that 
     $ax + by + cz = g$
@@ -96,6 +97,42 @@
     But the only divisor of 1 is 1. Hence $g=1$.
 \end{proof}
 
+\begin{example}
+    Find integers $x, y$ and $z$ that satisfy the equation
+    \[ 6x + 15y + 20z = 1\]
+    
+    First calculate $gcd(6,15) = 3$ using the Euclidian Algorithm.
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+            & 2  & 2  &    \\ \hline
+        15  & 6  & 3  & 0  \\ \hline
+        12  & 6  &    &
+    \end{tabular}
+    \end{table}
+
+    Using the above table, we back substitute to write $3 = 15(1) + 2(-6)$.
+    
+    Now calculate $gcd(3,20) = 1$
+    \begin{table}[H]
+    \centering 
+    \begin{tabular}{c|c|c|c|c}
+            & 6  & 1  & 2  &    \\ \hline
+        20  & 3  & 2  & 1  & 0  \\ \hline
+        18  & 2  & 2  &    &
+    \end{tabular}
+    \end{table}
+    
+    We back substitute to write 
+    \begin{align*}
+        1 &= 3 \cdot 7 + 20 \cdot 1 \\
+          &= (6 \cdot (-2) + 15 \cdot 1)7 + 20(1) \\
+          &= 6 \cdot (-14) + 15 \cdot 7 + 20 \cdot (-1)
+    \end{align*}
+    
+    And so we have $x = -14$, $y = 7$, and $z=-1$.
+    
+\end{example}
 
 % ------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------
