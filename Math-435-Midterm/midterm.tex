@@ -29,6 +29,7 @@
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lemma}[thm]{Lemma}
+\newtheorem{claim}[thm]{Claim}
 
 % ------------------------------------------------------------------------------
 % Begin Document
@@ -41,20 +42,60 @@
 \maketitle
 
 % ------------------------------------------------------------------------------
+% Problem 6.4
 % ------------------------------------------------------------------------------
 \section{Problem 6.4.}
 
 \begin{lemma}
-    Something profound here.
+    Given integers $a$ and $b$, $\gcd(a,b) = 1$ if and only if there are
+    integers $x, y$ such that $ax + by = 1$.
 \end{lemma}
+\begin{proof}
+    Suppose $\gcd(a,b) = 1$. Then by Theorem 6.1, there are integers $x,y$ such
+    that $ax+by=1$ and so we are done.
+    
+    Conversely, suppose that there are integers $x,y$ such that $ax+by=1$. 
+    
+    Let the $\gcd(a,b)=g$. Since $g \mid a$ and $g \mid b$, it follows that
+    \begin{align*}
+        g & \mid ax+by \\
+        g & \mid 1
+    \end{align*}
+    But the only divisor of 1 is 1. Hence, $g=1$.
+\end{proof}
+    
 
 \begin{lemma}
-    Something profound here.
+    If $\gcd(a,b,c) = g$, then there are integers $x,y,z$ such that 
+    $ax + by + cz = g$
 \end{lemma}
+\begin{proof}
+    Let $d=\gcd(a,b)$. Then there are integers $x,y$ such that $ax+by=d$.
+    
+    Now let $g=gcd(d,c)$. There are integers $w,z$ such that $dw+cz=g$. Then:
+    \begin{align*}
+        g &= dw + cz \\
+          &= (ax+by)w + cz \\
+          &= axw + byw + cz
+    \end{align*}
+\end{proof}
 
-\begin{lemma}
-    Something profound here.
-\end{lemma}
+\begin{prop}
+    Let $a,b,c$ be integers. Then $gcd(a,b,c) = 1$ if and only if there are
+    integers $x,y,z$ such that $ax+by+cz=1$.
+\end{prop}
+\begin{proof}
+    Suppose $gcd(a,b,c) = 1$. Then the previous lemma says we are done.
+    
+    Conversely, suppose there are $x,y,z$ such that $ax+by+cz=1$. Since 
+    $g \mid a$, $g \mid b$, and $g \mid c$ it follows that
+    \begin{align*}
+        g & \mid ax+by+cz \\
+        g & \mid 1
+    \end{align*}
+    But the only divisor of 1 is 1. Hence $g=1$.
+\end{proof}
+
 
 % ------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------
