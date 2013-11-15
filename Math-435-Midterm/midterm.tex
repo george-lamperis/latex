@@ -233,13 +233,8 @@ Now we have $x = rw$, $y = sw$ and $z$ such that $ax + by + cz = 1$.
     Conversely, suppose $\phi(n)=n/2$. Let $p_1, p_2, \dots p_n$ be the distinct
     prime factors of $n$, listed in order i.e. $p_1 < p_2 < \cdots < p_r$.
     
-    Then
-    \begin{align*}
-        \phi(n) &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
-        \dfrac{n}{2} &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
-        \dfrac{1}{2} &= \dfrac{(p_1 - 1) \dots (p_r - 1)}{p_1 \dots p_r} \\
-        p_1 \dots p_r &= 2 \cdot (p_1 - 1) \dots (p_r - 1) \\
-    \end{align*}
+    Then Lemma 3.1 says
+    \[ p_1 p_2 \ldots p_r = 2 (p_1 - 1)(\ldots)(p_r - 1) \]
     Since 2 occurs on the right hand side, it must also be on the left hand
     side. Therefore, $p_1 = 2$. Now we have
     \begin{align*}
@@ -258,12 +253,7 @@ Now we have $x = rw$, $y = sw$ and $z$ such that $ax + by + cz = 1$.
     $\phi(n) = n/3$.
 \end{prop}
 \begin{proof}
-    \begin{align*}
-        \phi(n) &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
-        \dfrac{n}{3} &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
-        \dfrac{1}{3} &= \dfrac{(p_1 - 1) \dots (p_r - 1)}{p_1 \dots p_r} \\
-        p_1 \dots p_r &= 3 \cdot (p_1 - 1) \dots (p_r - 1) \\
-    \end{align*}
+
 \end{proof}
 
 % ------------------------------------------------------------------------------
