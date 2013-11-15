@@ -202,6 +202,26 @@ Now we have $x = rw$, $y = sw$ and $z$ such that $ax + by + cz = 1$.
 % ------------------------------------------------------------------------------
 \section{Problem 11.12} 
 
+\begin{lemma}
+    Let $n$ be an integers. Also let $p_1, p_2, \ldots, p_r$ be the prime
+    factors of $n$ listed in ascending order, i.e. $p_1 < p_2 < \ldots < p_r$.
+    
+    If $\phi(n) = n/k$, for some positive integer $k$, then
+    \[p_1 p_2 \ldots p_n = k(p_1 - 1)(p_2 - 1)(\ldots)(p_r - 1) \]
+\end{lemma}
+\begin{proof}
+    Suppose $\phi(n) = n/k$. Then
+
+    \begin{align*}
+        \phi(n) &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
+        \dfrac{n}{k} &= n \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
+        \dfrac{1}{k} &= \left( 1 - \dfrac{1}{p_1} \right) \left( 1 - \dfrac{1}{p_2} \right) \dots \left( 1 - \dfrac{1}{p_r} \right) \\
+        \dfrac{1}{k} &= \dfrac{(p_1 - 1) \dots (p_r - 1)}{p_1 \dots p_r} \\
+        p_1 \dots p_r &= k \cdot (p_1 - 1) \dots (p_r - 1) \\
+    \end{align*}
+    
+\end{proof}
+
 \begin{prop}[11.12a]
     An integer $n$ has the form $n=2^k$, $k \geq 1$ if and only if 
     $\phi(n) = n/2$.
@@ -220,12 +240,16 @@ Now we have $x = rw$, $y = sw$ and $z$ such that $ax + by + cz = 1$.
         \dfrac{1}{2} &= \dfrac{(p_1 - 1) \dots (p_r - 1)}{p_1 \dots p_r} \\
         p_1 \dots p_r &= 2 \cdot (p_1 - 1) \dots (p_r - 1) \\
     \end{align*}
-    Since 2 occurs on the right hand side, it must be the case that $p_1 = 2$.
+    Since 2 occurs on the right hand side, it must also be on the left hand
+    side. Therefore, $p_1 = 2$. Now we have
+    \begin{align*}
+    2 \cdot p_2 \dots p_r &= 2 \cdot (2 - 1) \cdot (p_2 - 1) \dots (p_r - 1) \\
+    2 \cdot p_2 \dots p_r &= 2 \cdot (p_2 - 1) \dots (p_r - 1) \\
+    \end{align*}
     
-    If $r \geq 2$, then $p_i$ is odd and $(p_i - 1)$ is even for $2 \leq i \leq
-    r$.
-    For the above equality to hold, it must be the case that $r=1$ and $p_1 =
-    2$, i.e. $n=2^k$ with $k \geq 1.$
+    Notice the remaining unknowns on the right-hand side are all even, while
+    the unknowns on the left-hand side are all odd. For this equality to hold,
+    it must be the case that $r=1$ and $p_1 = 2$, i.e. $n=2^k$ with $k \geq 1$.
 \end{proof}
 
 
