@@ -31,7 +31,7 @@ Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
     \begin{align*}
     p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n
     &\equiv p_2 n^{p_1} - p_2 n \pmod{p_1}\\
-    &\equiv p_2 n - p_2 n \pmod{p_1}\\
+    &\equiv (p_2 n) - p_2 n \pmod{p_1}\\
     &\equiv 0 \pmod{p_1}
     \end{align*}
 \end{proof}
@@ -39,4 +39,14 @@ Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
 \begin{claim}
     \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_2} \]
 \end{claim}
+\begin{proof}
+    Clearly, $p_2 n^{p_1} \equiv p_1 p_2 n \equiv p_2 n \equiv0 \pmod{p_2}$.
+    Then
+    \begin{align*}
+    p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n
+    &\equiv p_1 n^{p_2} - p_1 n \pmod{p_2}\\
+    &\equiv (p_1 n) - p_1 n \pmod{p_2}\\
+    &\equiv 0 \pmod{p_2}
+    \end{align*}
+\end{proof}
 \
