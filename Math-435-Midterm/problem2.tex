@@ -5,28 +5,22 @@
 Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
 \[ \frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 - p_2)n}{p_1 p_2} \]
 
-    First notice
-    \[ \frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 -
-    p_2)n}{p_1 p_2} 
-    = 
-    \frac
-    {p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n}
-    {p_1 p_2}
-    \]
-    
-    This expression is an integer if and only if 
-    \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_1 p_2} \]
-    
-    Using Fermat's Little Theorem, we see that
-    \[ n^{p_2} \equiv n \pmod{p_2} \implies  p_1 n^{p_2} \equiv p_1 n  \pmod{p_2} \]
-    and 
-    \[ n^{p_1} \equiv n \pmod{p_1} \implies  p_2 n^{p_1} \equiv p_2 n \pmod{p_1} \]
+First notice
+\[ 
+\frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 -p_2)n}{p_1 p_2} 
+= 
+\frac {p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n}{p_1 p_2}
+\]
 
-\begin{claim}
+\begin{lemma}
     \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_1} \]
-\end{claim}
+\end{lemma}
 \begin{proof}
     Clearly, $p_1 n^{p_2} \equiv p_1 p_2 n \equiv p_1 n \equiv0 \pmod{p_1}$.
+    
+    Also, using Fermat's Little Theorem, we have
+    \[ n^{p_1} \equiv n \pmod{p_1} \implies  p_2 n^{p_1} \equiv p_2 n \pmod{p_1} \]
+    
     Then
     \begin{align*}
     p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n
@@ -36,11 +30,16 @@ Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
     \end{align*}
 \end{proof}
 
-\begin{claim}
+
+\begin{lemma}
     \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_2} \]
-\end{claim}
+\end{lemma}
 \begin{proof}
     Clearly, $p_2 n^{p_1} \equiv p_1 p_2 n \equiv p_2 n \equiv0 \pmod{p_2}$.
+
+    Also, using Fermat's Little Theorem, we have
+    \[ n^{p_2} \equiv n \pmod{p_2} \implies  p_1 n^{p_2} \equiv p_1 n  \pmod{p_2} \]
+    
     Then
     \begin{align*}
     p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n
@@ -49,4 +48,33 @@ Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
     &\equiv 0 \pmod{p_2}
     \end{align*}
 \end{proof}
+
+
+\begin{prop}
+    \[ \frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 -
+    p_2)n}{p_1 p_2} \]
+    is always an integer.
+\end{prop}
+\begin{proof}
+    Since
+    \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_1} \]
+    and
+    \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_2} \]
+    it follows that
+    \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_1 p_2} \]
+    
+    Therefore 
+    \[ 
+    \frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 -p_2)n}{p_1 p_2} 
+    = 
+    \frac {p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n}{p_1 p_2}
+    \]
+    is always an integer.
+\end{proof}
+
+
+\begin{example}
+    \[ \frac{n^5}{5} + \frac{n^3}{3} + \frac{7n}{15} \]
+    is always an integer.
+\end{example}
 \
