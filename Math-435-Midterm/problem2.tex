@@ -1,3 +1,7 @@
+% ------------------------------------------------------------------------------
+% Problem 2
+% ------------------------------------------------------------------------------
+
 Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
 \[ \frac{n^{p_2}}{p_2} + \frac{n^{p_1}}{p_1} + \frac{(p_1 p_2 - p_1 - p_2)n}{p_1 p_2} \]
 
@@ -22,7 +26,13 @@ Let $p_1$ and $p_2$ be primes, $p_1 < p_2$. Consider
     \[p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n \equiv 0 \pmod{p_1} \]
 \end{claim}
 \begin{proof}
-
+    \begin{align*}
+    p_1 n^{p_2} + p_2 n^{p_1} + p_1 p_2 n - p_1 n - p_2 n
+    &\equiv (0) + (p_2 n) + p_1 p_2 n - p_1 n - p_2 n  \pmod{p_1}\\
+    &\equiv p_1 p_2 n - p_1 n \pmod{p_1}\\
+    &\equiv p_1 (p_2 -1) n \pmod{p_1}\\
+    &\equiv 0 \pmod{p_1}
+    \end{align*}
 \end{proof}
 
 \begin{claim}
