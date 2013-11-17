@@ -1,3 +1,7 @@
+% ------------------------------------------------------------------------------
+% Problem 11.12
+% ------------------------------------------------------------------------------
+
 \begin{lemma}
     Let $n$ be an integers. Also let $p_1, p_2, \ldots, p_r$ be the prime
     factors of $n$ listed in ascending order, i.e. $p_1 < p_2 < \ldots < p_r$.
@@ -81,5 +85,24 @@
 
 
 \begin{prop}[11.12c]
-    $\phi(n) = n/6$.
+    There does not exist an $n$ such that $\phi(n) = n/6$.
 \end{prop}
+\begin{proof}
+    Suppose $\phi(n) = n/6$. Then Lemma 3.1 says
+    \begin{align*}
+    p_1 p_2 \ldots p_r &= 6 (p_1 - 1)(\ldots)(p_r - 1) \\
+                       &= 2 \cdot 3 (p_1 - 1)(\ldots)(p_r - 1) \\
+    \end{align*}
+    
+    This implies that $p_1 = 2$ and $p_2 = 3$. Substituting these values, we
+    have
+    \begin{align*}
+    2 \cdot 3 \ldots p_r &= 2 \cdot 3 (2 - 1)(3-1)(\ldots)(p_r - 1)\\
+                         &= 2 \cdot 3 \cdot 2 \cdot (p_3 - 1)(\ldots)(p_r - 1)\\
+    \end{align*} 
+    
+    As you can see, there are two 2's on the right hand side of the equation, 
+    while there can only be one on the left (since every other prime is odd).
+    And so we have a contradiction.
+\end{proof}
+
