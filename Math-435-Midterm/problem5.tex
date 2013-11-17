@@ -1,0 +1,25 @@
+%-------------------------------------------------------------------------------
+% Problem 5 (12.2.a)
+%-------------------------------------------------------------------------------
+\begin{prop}
+    There are infinitely many primes $p$ such that $p \equiv 5 \pmod{6}$.
+\end{prop}
+\begin{proof}
+
+
+Suppose we have a list of primes $5, p_1, p_2, \ldots, p_r$, all congruent to 5 modulo 6.
+
+Let $A = 6 p_1 p_2 \ldots p_r + 5$. Clearly $A \equiv 5 \pmod{6}$ and in particular, A is odd.
+
+Now write the prime factorization of $A$: $A = q_1 q_2 \ldots q_s$
+
+I claim there is a $q_k$ such that $q_i \equiv 5 \pmod{6}$. 
+
+Suppose not. Then for each $q_i$ either $q_i \equiv 1 \pmod{6}$ or $q_i \equiv 3 \pmod{6}$. 
+
+But then $q_1 q_2 \ldots q_r \equiv 1 \pmod{6}$ or $q_1 q_2 \ldots q_r \equiv 3 \pmod{6}$ or $q_1 q_2 \ldots q_r \equiv 0 \pmod{6}$, and so we have a contradiction. Hence, there is a $q_k$ such that $q_k \equiv 5 \pmod{6}$.
+
+Now I claim that this $q_k$ is not in our original list of primes. For each $p_i$, we have $p_i \nmid A$. Since $q_k \mid A$, $q_k$ is not our original list of primes.
+
+This process may be repeated, and therefore, there are infinitely many primes $p$ such that $p \equiv 5 \pmod{6}$.
+\end{proof}
