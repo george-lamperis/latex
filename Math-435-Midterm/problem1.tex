@@ -1,0 +1,147 @@
+% ------------------------------------------------------------------------------
+% Problem 6.4
+% ------------------------------------------------------------------------------
+
+\begin{lemma}
+    Given integers $a$ and $b$, $\gcd(a,b) = 1$ if and only if there are
+    integers $x, y$ such that $ax + by = 1$.
+\end{lemma}
+\begin{proof}
+    Suppose $\gcd(a,b) = 1$. Then by Theorem 6.1, there are integers $x,y$ such
+    that $ax+by=1$ and so we are done.
+    
+    Conversely, suppose that there are integers $x,y$ such that $ax+by=1$. 
+    
+    Let the $\gcd(a,b)=g$. Since $g \mid a$ and $g \mid b$, it follows that
+    \begin{align*}
+        g & \mid ax+by \\
+        g & \mid 1
+    \end{align*}
+    But the only divisor of 1 is 1. Hence, $g=1$.
+\end{proof}
+    
+\begin{lemma}
+    If $\gcd(a,b,c) = g$, then there are integers $x,y,z$ such that 
+    $ax + by + cz = g$
+\end{lemma}
+\begin{proof}
+    Let $d=\gcd(a,b)$. Then there are integers $x,y$ such that $ax+by=d$.
+    
+    Now let $g=gcd(d,c)$. There are integers $w,z$ such that $dw+cz=g$. Then:
+    \begin{align*}
+        g &= dw + cz \\
+          &= (ax+by)w + cz \\
+          &= axw + byw + cz
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    Let $a,b,c$ be integers. Then $gcd(a,b,c) = 1$ if and only if there are
+    integers $x,y,z$ such that $ax+by+cz=1$.
+\end{prop}
+\begin{proof}
+    Suppose $gcd(a,b,c) = 1$. Then the previous lemma says we are done.
+    
+    Conversely, suppose there are $x,y,z$ such that $ax+by+cz=1$. Since 
+    $g \mid a$, $g \mid b$, and $g \mid c$ it follows that
+    \begin{align*}
+        g & \mid ax+by+cz \\
+        g & \mid 1
+    \end{align*}
+    But the only divisor of 1 is 1. Hence $g=1$.
+\end{proof}
+
+Let $a, b$ and $c$ be integers with $\gcd(a,b,c) = 1$. In general, to find $x,
+y$ and $z$ such that $ax + by + cz = 1$:
+
+First calculate $d = \gcd(a,b)$ using the Euclidian Algorithm. Then, using your
+computations, find $r$ and $s$ such that 
+\[ ar + bs = d \]
+
+Next calcuate $1 = \gcd(d, c)$ using the Euclidian Algorithm. Find $w$ and
+$z$ such that
+\[dw + cz = 1\]
+
+Now subsitute $d = ar + bs$:
+\begin{align*}
+    (ar + bs)w + cz &= 1  \\
+    arw + bsw + cz  &= 1
+\end{align*}
+
+Now we have $x = rw$, $y = sw$ and $z$ such that $ax + by + cz = 1$.
+
+\begin{example}
+    Find integers $x, y$ and $z$ that satisfy the equation
+    \[ 6x + 15y + 20z = 1\]
+    
+    First calculate $gcd(6,15) = 3$ using the Euclidian Algorithm.
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+            & 2  & 2  &    \\ \hline
+        15  & 6  & 3  & 0  \\ \hline
+        12  & 6  &    &
+    \end{tabular}
+    \end{table}
+
+    Using the above table, we back substitute to write $3 = 15(1) + 2(-6)$.
+    
+    Now calculate $gcd(3,20) = 1$
+    \begin{table}[H]
+    \centering 
+    \begin{tabular}{c|c|c|c|c}
+            & 6  & 1  & 2  &    \\ \hline
+        20  & 3  & 2  & 1  & 0  \\ \hline
+        18  & 2  & 2  &    &
+    \end{tabular}
+    \end{table}
+    
+    Back substitute to write 
+    \begin{align*}
+        1 &= 3 \cdot 7 + 20 \cdot (-1) \\
+          &= (6 \cdot (-2) + 15 \cdot 1)7 + 20 \cdot (-1) \\
+          &= 6 \cdot (-14) + 15 \cdot 7 + 20 \cdot (-1)
+    \end{align*}
+    
+    And so we have $x = -14$, $y = 7$, and $z=-1$.
+\end{example}
+
+
+\begin{example}
+    Find integers $x, y$ and $z$ that satisfy the equation
+    \[155x + 341y + 385z = 1 \]
+    
+    First calculate $gcd(155, 341) = 31$
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+            & 2   & 5  &   \\ \hline
+        341 & 155 & 31 & 0 \\ \hline
+        310 & 155 &    & 
+    \end{tabular}
+    \end{table}
+    
+    Back substitute to write $155(-2) + 341(1)= 31$.
+    
+    Now calculate $gcd(31, 385) = 1$.
+     \begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+            & 12  & 2   & 2  & 1  & 1  &   \\ \hline
+        385 & 31  & 13  & 5  & 3  & 2  & 1 \\ \hline
+        372 & 25  & 10  & 3  & 2  &    & 
+    \end{tabular}
+    \end{table}
+    
+    Then write $1 =  31 \cdot (-149) + 385 \cdot 12 $.
+    
+    Now substitute $31 = 155 \cdot (-2) + 341 \cdot 1$:
+    \begin{align*}
+        1 &= 31 \cdot (-149) + 385 \cdot 12 \\
+          &= (155 \cdot (-2) + 341 \cdot 1) (-149) + 385 \cdot 12 \\
+          &= 155 \cdot 298 + 341 \cdot (-149) + 385 \cdot 12
+    \end{align*} 
+    
+    And so we have $x = 298$, $y = -149$ and $z = 12$.
+    
+\end{example}
