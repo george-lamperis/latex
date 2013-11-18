@@ -23,10 +23,8 @@ A function f: N to C is called multiplicative if f(mn) = f(m)f(n) whenever gcd(m
     is multiplicative.
 \end{prop}
 \begin{proof}
-\end{proof}
-    Let $p, q$ be primes. 
+    Let $p, q$ be primes.  Notice:
     \[ g(p^\alpha) = f(1) + f(p) + \ldots + f(p^\alpha) \]
-    and
     \[ g(q^\beta) = f(1) + f(q) + \ldots + f(q^\beta) \]
     
     Then
@@ -55,9 +53,12 @@ A function f: N to C is called multiplicative if f(mn) = f(m)f(n) whenever gcd(m
         &= f(p^\alpha)f(q^\beta)
     \end{align*}
     
-    Since each number has a prime factorization, this applies for all integers.
+    Since each number has a prime factorization, this holds for all integers
+    $n$.
+\end{proof}
+
+
 \begin{prop}[part b]
-    The function
     \[ F(n) = \sum_{d \mid n} \phi(d) = n \]
 \end{prop}
 \begin{proof}
