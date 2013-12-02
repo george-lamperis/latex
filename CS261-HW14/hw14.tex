@@ -15,12 +15,68 @@
 % ------------------------------------------------------------------------------
 % Begin Document
 % ------------------------------------------------------------------------------
-\title{Math 435 - Midterm 2}
+\title{CS 261 - Homework w14}
 \author{George Lamperis}
 \date{}
 
 \begin{document}
 \maketitle
 
-Here's my damn lab report.
+record the miss rates for direct mapped caches of size 4, 8, 16 and 32 KBytes,
+with block sizes of 1, 2, 4 and 8 words (32 measurements in total). 
+
+% ------------------------------------------------------------------------------
+% blocking.cc
+% ------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c}
+    Cache Size  & Block Size    & Accesses & Miss Rate & Total time \\ \hline
+    4   & 1 & a & mr & tt \\ 
+    4   & 2 & a & mr & tt \\ 
+    4   & 4 & a & mr & tt \\ 
+    4   & 8 & a & mr & tt \\ 
+    8   & 1 & a & mr & tt \\ 
+    8   & 2 & a & mr & tt \\ 
+    8   & 4 & a & mr & tt \\ 
+    8   & 8 & a & mr & tt \\ 
+    16  & 1 & a & mr & tt \\ 
+    16  & 2 & a & mr & tt \\ 
+    16  & 4 & a & mr & tt \\ 
+    16  & 8 & a & mr & tt \\ 
+    32  & 1 & a & mr & tt \\ 
+    32  & 2 & a & mr & tt \\ 
+    32  & 4 & a & mr & tt \\ 
+    32  & 8 & a & mr & tt \\ 
+\end{tabular}
+\caption{blocking.cc}
+\end{table}
+
+% ------------------------------------------------------------------------------
+% obvious.cc
+% ------------------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c}
+    Cache Size  & Block Size    & Accesses & Miss Rate & Total time \\ \hline
+    4   & 1 & a & mr & tt \\ 
+    4   & 2 & a & mr & tt \\ 
+    4   & 4 & a & mr & tt \\ 
+    4   & 8 & a & mr & tt \\ 
+    8   & 1 & a & mr & tt \\ 
+    8   & 2 & a & mr & tt \\ 
+    8   & 4 & a & mr & tt \\ 
+    8   & 8 & a & mr & tt \\ 
+    16  & 1 & a & mr & tt \\ 
+    16  & 2 & a & mr & tt \\ 
+    16  & 4 & a & mr & tt \\ 
+    16  & 8 & a & mr & tt \\ 
+    32  & 1 & a & mr & tt \\ 
+    32  & 2 & a & mr & tt \\ 
+    32  & 4 & a & mr & tt \\ 
+    32  & 8 & a & mr & tt \\ 
+\end{tabular}
+\caption{obvious.cc}
+\end{table}
+
 \end{document}
