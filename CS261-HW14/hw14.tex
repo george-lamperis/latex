@@ -22,6 +22,7 @@
 \begin{document}
 \maketitle
 
+\section{Cachesim Results}
 record the miss rates for direct mapped caches of size 4, 8, 16 and 32 KBytes,
 with block sizes of 1, 2, 4 and 8 words (32 measurements in total). 
 
@@ -80,6 +81,21 @@ For every test with obvious.cc, we have 4,040,000 accesses.
     32 & 8 & 1.9    & 54344780 \\
 \end{tabular}
 \caption{obvious.cc}
+\end{table}
+
+
+\section{Hardware Cache}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c}
+    Program & Execution Time (seconds) \\ \hline
+    blocking.cc        & 8.26 \\
+    obvious.cc         & 15.04 \\
+    blocking.cc (-O2)  & 1.20 \\
+    obvious.cc  (-O2)  & 16.39
+\end{tabular}
+\caption{hardware data}
 \end{table}
 
 
