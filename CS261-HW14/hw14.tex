@@ -25,29 +25,30 @@
 record the miss rates for direct mapped caches of size 4, 8, 16 and 32 KBytes,
 with block sizes of 1, 2, 4 and 8 words (32 measurements in total). 
 
+For every test, we have 4200000 accesses.
 % ------------------------------------------------------------------------------
 % blocking.cc
 % ------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c|c}
-    Cache Size (KB)  & Block Size & Accesses & Miss Rate & Total time \\ \hline 
-    4  & 1 & a & mr & tt \\ 
-    4  & 2 & a & mr & tt \\ 
-    4  & 4 & a & mr & tt \\ 
-    4  & 8 & a & mr & tt \\ \hline
-    8  & 1 & a & mr & tt \\ 
-    8  & 2 & a & mr & tt \\ 
-    8  & 4 & a & mr & tt \\ 
-    8  & 8 & a & mr & tt \\ \hline
-    16 & 1 & a & mr & tt \\ 
-    16 & 2 & a & mr & tt \\ 
-    16 & 4 & a & mr & tt \\ 
-    16 & 8 & a & mr & tt \\ \hline
-    32 & 1 & a & mr & tt \\ 
-    32 & 2 & a & mr & tt \\ 
-    32 & 4 & a & mr & tt \\ 
-    32 & 8 & a & mr & tt \\ 
+\begin{tabular}{c|c|c|c}
+    Cache Size (KB)  & Block Size & Miss Rate & Total time \\ \hline 
+    4  & 1 & 4.5 & 62865020 \\
+    4  & 2 & mr & tt \\
+    4  & 4 & mr & tt \\
+    4  & 8 & mr & tt \\ \hline
+    8  & 1 & mr & tt \\
+    8  & 2 & mr & tt \\
+    8  & 4 & mr & tt \\
+    8  & 8 & mr & tt \\ hline
+    16 & 1 & mr & tt \\
+    16 & 2 & mr & tt \\
+    16 & 4 & mr & tt \\
+    16 & 8 & mr & tt \\ \hline
+    32 & 1 & mr & tt \\
+    32 & 2 & mr & tt \\
+    32 & 4 & mr & tt \\
+    32 & 8 & mr & tt \\
 \end{tabular}
 \caption{blocking.cc}
 \end{table}
@@ -57,24 +58,24 @@ with block sizes of 1, 2, 4 and 8 words (32 measurements in total).
 % ------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c|c}
-    Cache Size (KB)  & Block Size & Accesses & Miss Rate & Total time \\ \hline 
-    4  & 1 & a & mr & tt \\ 
-    4  & 2 & a & mr & tt \\ 
-    4  & 4 & a & mr & tt \\ 
-    4  & 8 & a & mr & tt \\ \hline
-    8  & 1 & a & mr & tt \\ 
-    8  & 2 & a & mr & tt \\ 
-    8  & 4 & a & mr & tt \\ 
-    8  & 8 & a & mr & tt \\ \hline
-    16 & 1 & a & mr & tt \\ 
-    16 & 2 & a & mr & tt \\ 
-    16 & 4 & a & mr & tt \\ 
-    16 & 8 & a & mr & tt \\ \hline
-    32 & 1 & a & mr & tt \\ 
-    32 & 2 & a & mr & tt \\ 
-    32 & 4 & a & mr & tt \\ 
-    32 & 8 & a & mr & tt \\ 
+\begin{tabular}{c|c|c|c}
+    Cache Size (KB)  & Block Size & Miss Rate & Total time \\ \hline 
+    4  & 1 & mr & tt \\
+    4  & 2 & mr & tt \\
+    4  & 4 & mr & tt \\
+    4  & 8 & mr & tt \\ \hline
+    8  & 1 & mr & tt \\
+    8  & 2 & mr & tt \\
+    8  & 4 & mr & tt \\
+    8  & 8 & mr & tt \\ \hline
+    16 & 1 & mr & tt \\
+    16 & 2 & mr & tt \\
+    16 & 4 & mr & tt \\
+    16 & 8 & mr & tt \\ \hline
+    32 & 1 & mr & tt \\
+    32 & 2 & mr & tt \\
+    32 & 4 & mr & tt \\
+    32 & 8 & mr & tt \\
 \end{tabular}
 \caption{obvious.cc}
 \end{table}
