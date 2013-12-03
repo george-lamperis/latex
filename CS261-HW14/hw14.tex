@@ -25,7 +25,7 @@
 record the miss rates for direct mapped caches of size 4, 8, 16 and 32 KBytes,
 with block sizes of 1, 2, 4 and 8 words (32 measurements in total). 
 
-For every test, we have 4200000 accesses.
+For every test, we have 4,200,000 accesses.
 % ------------------------------------------------------------------------------
 % blocking.cc
 % ------------------------------------------------------------------------------
@@ -33,14 +33,14 @@ For every test, we have 4200000 accesses.
 \centering
 \begin{tabular}{c|c|c|c}
     Cache Size (KB)  & Block Size & Miss Rate & Total time \\ \hline 
-    4  & 1 & 4.5 & 62865020 \\
-    4  & 2 & mr & tt \\
-    4  & 4 & mr & tt \\
-    4  & 8 & mr & tt \\ \hline
+    4  & 1 & 4.5    & 62865020 \\
+    4  & 2 & 3.0    & 56889120 \\
+    4  & 4 & 2.3    & 55645940 \\
+    4  & 8 &  2.8   & 63088080 \\ \hline
     8  & 1 & mr & tt \\
     8  & 2 & mr & tt \\
     8  & 4 & mr & tt \\
-    8  & 8 & mr & tt \\ hline
+    8  & 8 & mr & tt \\ \hline
     16 & 1 & mr & tt \\
     16 & 2 & mr & tt \\
     16 & 4 & mr & tt \\
