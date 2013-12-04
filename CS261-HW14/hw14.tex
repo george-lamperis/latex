@@ -117,12 +117,12 @@ We'll use a blcok size of 1
     8           & 2.6   & 112900110 \\
     16          & 2.6   & 180100110 \\
     1024 (fully) & 2.6   & 8647300110 \\ \hline
-    1           & & \\
-    2           & & \\
-    4           & & \\
-    8           & & \\
-    16          & & \\
-    1024 (fully) & & \\
+    1           & 2.0   & 51315570 \\
+    2           & 2.0   & 59717880 \\
+    4           & 1.8   & 75466170 \\
+    8           & 1.7   & 108500110 \\
+    16          & 1.7   & 175700110 \\
+    8192 (fully) & 1.7  & 68854100110 \\
 \end{tabular}
 \caption{blocking.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
@@ -131,18 +131,18 @@ We'll use a blcok size of 1
 \centering
 \begin{tabular}{c|c|r}
     Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
-    1           & & \\
-    2           & & \\
-    4           & & \\
-    8           & & \\
-    16          & & \\
-    1024 (fully) & & \\ \hline
-    1           & & \\
-    2           & & \\
-    4           & & \\
-    8           & & \\
-    16          & & \\
-    1024 (fully) & & \\
+    1           & 27.7  & 163548630 \\
+    2           & 25.3  & 160724110 \\
+    4           & 25.2  & 176840660 \\
+    8           & 25.2  & 209160110 \\
+    16          & 25.2  & 273800110 \\
+    1024 (fully) & 25.2  & 8418440110 \\ \hline
+    1           & 10.5  & 87068490 \\
+    2           & 14.9  & 114713090 \\
+    4           & 23.2  & 167921640 \\
+    8           & 25.2  & 209160110 \\
+    16          & 25.2  & 273800110 \\
+    8192 (fully) & 25.2 & 66335880110 \\
 \end{tabular}
 \caption{obvious.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
@@ -183,6 +183,9 @@ No, increased associativity seems to keep miss rate constant. However, execution
 time increases because high associativity becomes slower to implement at 
 the hardware level.
 
+Clearly, fully associative is only feasible with really small memory. Even then, 
+associativity has diminishing returns. As you increase associativity, the miss
+rate remains constant, but the total running time increases.
 
 \subsection{5}
 How are caches implemented in hardware? Why does the simulator insist that the
