@@ -215,7 +215,8 @@ is already in the cache.
 However, a larger block size means that a cache miss is more expensive. When
 there is a cache miss, there is a larger about of data to be evicted and a
 larger amount of new data to store in the cache. It takes more time to transfer
-a larger amount of data.
+a larger amount of data. From our experimental data, it seems that a block size
+of 4 seems to be optimal for smaller sized caches.
 
 
 
