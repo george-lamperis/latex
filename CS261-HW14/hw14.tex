@@ -25,7 +25,11 @@
 \section{Data}
 
 \subsection{blocking.cc}
-For every test with blocking.cc, we have 4,200,000 accesses.
+For every test with blocking.cc, we have 4,200,000 accesses. This data 
+was taken using a direct mapped cache.
+
+Blocking Factor: 20
+Matrix size: 100
 % ------------------------------------------------------------------------------
 % blocking.cc
 % ------------------------------------------------------------------------------
@@ -55,6 +59,8 @@ For every test with blocking.cc, we have 4,200,000 accesses.
 
 \subsection{obvious.cc}
 For every test with obvious.cc, we have 4,040,000 accesses.
+
+Matrix size: 100
 % ------------------------------------------------------------------------------
 % obvious.cc
 % ------------------------------------------------------------------------------
@@ -84,6 +90,8 @@ For every test with obvious.cc, we have 4,040,000 accesses.
 
 \subsection{Hardware}
 
+Matrix size: 1000
+Blocking factor: 50
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c}
@@ -96,6 +104,26 @@ For every test with obvious.cc, we have 4,040,000 accesses.
 \caption{hardware data}
 \end{table}
 
+\subsection{Associativity}
+For this experiment, I am fixing cache size to 4kb and block size to 4 words.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+    Associativity & Miss Rate (blocking.cc) & Miss Rate (obvious.cc) \\ \hline
+    1   & & \\
+    2   & & \\
+    4   & & \\
+    8   & & \\
+    16  & & \\
+    32  & & \\
+    64  & & \\
+    128 & & \\
+    256 & & \\
+
+\end{tabular}
+
+\end{table}
 
 % ------------------------------------------------------------------------------
 % Questions
@@ -105,6 +133,10 @@ For every test with obvious.cc, we have 4,040,000 accesses.
 A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
 complexity and cache-friendliness. Why did increasing the block size sometimes 
 increase the miss rate?
+
+The obvious algorithm appears less complex, with only three nested loops, as
+opposed to five nested using the blocking algorithm. One might think that
+fewer nested loops would imply a faster execution time. 
 
 
 \subsection{2}
