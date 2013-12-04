@@ -147,6 +147,29 @@ We'll use a blcok size of 1
 \caption{obvious.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
 
+\subsection{Blocking factor}
+block size 1
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+    Blocking factor & Miss Rate (4 kb) & Miss Rate (32 kb) \\ \hline
+    1   & 14.2  & 5.3 \\
+    10  & 5.5   & 2.3 \\
+    20  & 4.5   & 2.0 \\
+    30  & 10.4  & 2.0 \\
+    40  & 21.0  & 2.0 \\
+    50  & 26.7  & 1.8 \\
+    60  & 26.9  & 1.9 \\
+    70  & \\
+    80  & \\
+    90  & \\
+    100 & \\
+    
+\end{tabular}
+\caption{different blocking factors with matrix size 100}
+\end{table}
+
 % ------------------------------------------------------------------------------
 % Questions
 % ------------------------------------------------------------------------------
