@@ -99,4 +99,42 @@ For every test with obvious.cc, we have 4,040,000 accesses.
 \end{table}
 
 
+\section{Discussion Questions}
+\subsection{1}
+A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
+complexity and cache-friendliness. Why did increasing the block size sometimes 
+increase the miss rate?
+
+
+\subsection{2}
+What would be the optimal blockingFactor to use for matrix multiplication?
+
+
+\subsection{3}
+A discussion of the significance of the results, given that all of the simulated
+caches were considerably smaller than current hardware caches.
+
+
+\subsection{4}
+Does increased associativity always reduce the miss rate?
+
+
+\subsection{5}
+How are caches implemented in hardware? Why does the simulator insist that the
+block size, and the number of sets, must be a whole power of two? Is it always
+necessary to store the entire block address in the cache for identification purposes?
+
+
+\subsection{6}
+Why does a main memory access involve a significant, fixed overhead? How can 
+main memory systems be designed to support caches?
+
+
+\subsection{7}
+What are the attractions of a multilevel caching strategy?
+
+
+
+
+
 \end{document}
