@@ -173,13 +173,6 @@ block size 1
 % ------------------------------------------------------------------------------
 \section{Discussion Questions}
 
-Large blocks are a mixed blessing. On the one hand, larger blocks can help
-increase the hit rate by exploiting any spatial locality that might exist in a program.
-However, for a given cache size, larger blocks imply a smaller number of cache
-lines, which can hurt the hit rate in programs with more temporal locality than
-spatial locality. Larger blocks also have a negative impact on the miss penalty, since
-larger blocks cause larger transfer times. Modern systems usually compromise
-with cache blocks that contain 32 to 64 bytes.
 
 Impact of Associativity
 
@@ -209,9 +202,34 @@ one byte of memory, the entire block in which that byte is stored gets loaded
 into the cache. Since we're dealing with large arrays, those extra values which
 get loaded into the cache end up being used also.
 
+However, a larger block size means that a cache miss is more expensive. When
+there is a cache miss, there is a larger about of data to be evicted and a
+larger amount of new data to store in the cache. It takes more time to transfer
+a larger amount of data.
+
+The matrix $b$ is especially cache freindly, allowing us to exploit spacial
+locality. On the first iteration of the inner-most loop, we must fetch
+$b[i][k]$. As a result $b[i][k+1]$, $b[i][k+2]$, and so on will be stored in 
+the cache as well. Therefore, we have quick access to this memory on successive
+iterations of the loop.
+
+The line \[ a[i][j] = a[i][j] + r; \] exploits temporal and spacial locality. As
+with the matrix $b$ above, other values in the same row as $a[i][j]$ will also 
+be cached. 
+
 
 \subsection{2}
 What would be the optimal blockingFactor to use for matrix multiplication?
+
+As blocking factor increases, we can fit more of our matrices in the cache, 
+and exploit spacial locality. The innermost loop can run quickly because
+all the data it needs is stored in the cache. 
+
+However, as blocking factor increases too much, we lose the ability to exploit
+spacial locality because our entire block doesn't fit in the cache. Thus, 
+in the innner most loop, we must change the data stored in the cache.
+
+The optimal blocking factor is 20 for a matrix of size 100.
 
 
 \subsection{3}
@@ -244,7 +262,8 @@ main memory systems be designed to support caches?
 \subsection{7}
 What are the attractions of a multilevel caching strategy?
 
-
+Although L2 cache is slower than L1 cache, it is orders of magnitude faster
+than main memory. Still an improvement.
 
 
 
