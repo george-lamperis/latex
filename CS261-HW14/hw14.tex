@@ -174,19 +174,6 @@ block size 1
 \section{Discussion Questions}
 
 
-Impact of Associativity
-
-The issue here is the impact of the choice of the parameter E, the number of
-cache lines per set. The advantage of higher associativity (i.e., larger values of E)
-is that it decreases the vulnerability of the cache to thrashing due to conflict misses.
-However, higher associativity comes at a significant cost. Higher associativity is
-expensive to implement and hard to make fast. It requires more tag bits per
-line, additional LRU state bits per line, and additional control logic. Higher
-associativity can increase hit time, because of the increased complexity, and it can
-also increase the miss penalty because of the increased complexity of choosing a
-victim line.
-
-
 \subsection{1}
 \textbf{A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
 complexity and cache-friendliness. Why did increasing the block size sometimes 
@@ -219,8 +206,6 @@ a larger amount of data. From our experimental data, it seems that a block size
 of 4 seems to be optimal for smaller sized caches.
 
 
-
-
 \subsection{2}
 \textbf{What would be the optimal blockingFactor to use for matrix
 multiplication?}
@@ -245,6 +230,19 @@ the cache is small, so is our problem size.
 
 \subsection{4}
 \textbf{Does increased associativity always reduce the miss rate?}
+Impact of Associativity
+
+The issue here is the impact of the choice of the parameter E, the number of
+cache lines per set. The advantage of higher associativity (i.e., larger values of E)
+is that it decreases the vulnerability of the cache to thrashing due to conflict misses.
+However, higher associativity comes at a significant cost. Higher associativity is
+expensive to implement and hard to make fast. It requires more tag bits per
+line, additional LRU state bits per line, and additional control logic. Higher
+associativity can increase hit time, because of the increased complexity, and it can
+also increase the miss penalty because of the increased complexity of choosing a
+victim line.
+
+
 
 No, increased associativity seems to keep miss rate constant. However, execution
 time increases because high associativity becomes slower to implement at 
