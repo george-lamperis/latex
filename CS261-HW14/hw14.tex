@@ -228,7 +228,7 @@ Although our cache size is small, so is the program we tested it with. Given a
 larger cache and a more complicated program, we could produce simlar results.
 
 Additonally, real hardware has multiple levels of cache. The highest level of
-cache L1 is in fact quite small. The i7 processor has 64 kb of cache memory.
+cache, L1, is in fact quite small. The i7 processor has 64 kb of cache memory.
 Therefore, our test values are actually very close to the size of L1 cache in 
 a modern processor.
 
@@ -243,10 +243,11 @@ that with 8-way associativity and higher, the miss rate stays constant, but the
 execution time skyrockets. We can conclude that increasing associativity reaches
 the point of diminishing returns quickly.
 
-This is because a higher associativity is difficult to implement. Because of
-the complexity of higher associative cache, it is expensive to implement the
-hardware, and difficult to make fast. A fully associative is only feasible with
-really small amount of memory.
+This is because a higher associativity is difficult to implement at the
+hardware level.
+Because of the complexity of higher associative cache, it is expensive to implement the
+hardware, and difficult to make fast. A fully associative cache is only feasible
+with really small amounts of memory.
 
 
 \subsection{5}
@@ -263,15 +264,14 @@ must divide the amount of memory available, so that each set is a full set.
 \textbf{Why does a main memory access involve a significant, fixed overhead? How
 can main memory systems be designed to support caches?}
 
-A major reason why main memory has significant overhead is due to the amount of 
-memory. A cache can be quite fast particularly because of the small amount of
-memory. This is because it is difficult to make a large amount of memory run
-fast.
+A major reason why main memory has significant overhead is due to the large
+amount of memory it contains. A cache can be quite fast particularly because it
+contains a small amount of memory. This is because it is difficult to make a
+large amount of memory run fast.
 
 Another reason is cost. The memory used for the cache is quite expensive. The
 cost of hardware for main memory would be significantly more expensive if it
 were made of the same components as cache memory.
-
 
 
 \subsection{7}
