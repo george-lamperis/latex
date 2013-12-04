@@ -6,7 +6,7 @@
 
 % Memoir configuration
 \pagestyle{plain}
-\setlength{\parindent}{0cm}
+%\setlength{\parindent}{0cm}
 \setlength{\parskip}{1ex}
 
 % Omit chapter numbering
@@ -188,13 +188,14 @@ victim line.
 
 
 \subsection{1}
-A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
+\textbf{A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
 complexity and cache-friendliness. Why did increasing the block size sometimes 
-increase the miss rate?
+increase the miss rate?}
 
 The obvious algorithm appears less complex, with only three nested loops, as
 opposed to five nested using the blocking algorithm. One might think that
-fewer nested loops would imply a faster execution time. 
+fewer nested loops would imply a faster execution time. However, this was
+not the case.
 
 
 Increasing the block size decreases the miss rate because when you request
@@ -219,7 +220,8 @@ be cached.
 
 
 \subsection{2}
-What would be the optimal blockingFactor to use for matrix multiplication?
+\textbf{What would be the optimal blockingFactor to use for matrix
+multiplication?}
 
 As blocking factor increases, we can fit more of our matrices in the cache, 
 and exploit spacial locality. The innermost loop can run quickly because
@@ -233,12 +235,12 @@ The optimal blocking factor is 20 for a matrix of size 100.
 
 
 \subsection{3}
-A discussion of the significance of the results, given that all of the simulated
-caches were considerably smaller than current hardware caches.
+\textbf{A discussion of the significance of the results, given that all of the
+simulated caches were considerably smaller than current hardware caches.}
 
 
 \subsection{4}
-Does increased associativity always reduce the miss rate?
+\textbf{Does increased associativity always reduce the miss rate?}
 
 No, increased associativity seems to keep miss rate constant. However, execution
 time increases because high associativity becomes slower to implement at 
@@ -249,18 +251,19 @@ associativity has diminishing returns. As you increase associativity, the miss
 rate remains constant, but the total running time increases.
 
 \subsection{5}
-How are caches implemented in hardware? Why does the simulator insist that the
-block size, and the number of sets, must be a whole power of two? Is it always
-necessary to store the entire block address in the cache for identification purposes?
+\textbf{How are caches implemented in hardware? Why does the simulator insist
+that the block size, and the number of sets, must be a whole power of two? Is it always
+necessary to store the entire block address in the cache for identification
+purposes?}
 
 
 \subsection{6}
-Why does a main memory access involve a significant, fixed overhead? How can 
-main memory systems be designed to support caches?
+\textbf{Why does a main memory access involve a significant, fixed overhead? How
+can main memory systems be designed to support caches?}
 
 
 \subsection{7}
-What are the attractions of a multilevel caching strategy?
+\textbf{What are the attractions of a multilevel caching strategy?}
 
 Although L2 cache is slower than L1 cache, it is orders of magnitude faster
 than main memory. Still an improvement.
