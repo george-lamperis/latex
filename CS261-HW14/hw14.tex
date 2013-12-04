@@ -35,7 +35,7 @@ Matrix size: 100
 % ------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c}
+\begin{tabular}{c|c|c|r}
     Cache Size (KB)  & Block Size & Miss Rate & Total time \\ \hline 
     4  & 1 & 4.5    & 62865020 \\
     4  & 2 & 3.0    & 56889120 \\
@@ -66,7 +66,7 @@ Matrix size: 100
 % ------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c}
+\begin{tabular}{c|c|c|r}
     Cache Size (KB)  & Block Size & Miss Rate & Total time \\ \hline 
     4  & 1 & 27.7   & 163548630 \\
     4  & 2 & 16.5   & 120387320 \\
@@ -109,52 +109,40 @@ We'll use a blcok size of 1
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c}
+\begin{tabular}{c|c|r}
     Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
     1           & 4.5   & 62865020 \\
     2           & 4.2   & 70003210 \\
     4           & 2.6   & 79303410 \\
     8           & 2.6   & 112900110 \\
     16          & 2.6   & 180100110 \\
-    32          & 2.6   & 314500110 \\
-    64          & 2.6   & 583300110 \\
-    128         & & \\
-    256 (fully) & & \\ \hline
+    1024 (fully) & 2.6   & 8647300110 \\ \hline
     1           & & \\
     2           & & \\
     4           & & \\
     8           & & \\
     16          & & \\
-    32          & & \\
-    64          & & \\
-    128         & & \\
-    256 (fully) & & \\
+    1024 (fully) & & \\
 \end{tabular}
 \caption{blocking.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c}
+\begin{tabular}{c|c|r}
     Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
     1           & & \\
     2           & & \\
     4           & & \\
     8           & & \\
     16          & & \\
-    32          & & \\
-    64          & & \\
-    128         & & \\
-    256 (fully) & & \\ \hline
+    1024 (fully) & & \\ \hline
     1           & & \\
     2           & & \\
     4           & & \\
     8           & & \\
     16          & & \\
-    32          & & \\
-    64          & & \\
-    128         & & \\
-    256 (fully) & & \\
+    1024 (fully) & & \\
 \end{tabular}
 \caption{obvious.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
