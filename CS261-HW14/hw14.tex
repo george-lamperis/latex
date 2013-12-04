@@ -279,12 +279,15 @@ were made of the same components as cache memory.
 
 By keeping instruction data and program data in separate caches, we can
 guarantee that there are no conflict misses between instruction data and
-program data.
+program data. 
 
 Besides keeping instructions and data separate, multi-level caching results in
 faster execution time. Although L2 cache is slower than L1 cache, it is orders
-of magnitude faster than main memory. Still an improvement.
-
+of magnitude faster than main memory. The same holds for L3 cache. Furthermore,
+the L2 and L3 cache gives you more memory to cache data in. If the processor
+requests data which is not stored in the L1 cache, but is stored in the L2 or L3
+caches, the result is that this data can be fetched more quickly than fetching
+from main memory.
 
 
 \end{document}
