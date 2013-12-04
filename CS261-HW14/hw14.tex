@@ -210,13 +210,12 @@ of 4 seems to be optimal for smaller sized caches.
 \textbf{What would be the optimal blockingFactor to use for matrix
 multiplication?}
 
-As blocking factor increases, we can fit more of our matrices in the cache, 
-and exploit spacial locality. The innermost loop can run quickly because
-all the data it needs is stored in the cache. 
-
-However, as blocking factor increases too much, we lose the ability to exploit
-spacial locality because our entire block doesn't fit in the cache. Thus, 
-in the innner most loop, we must change the data stored in the cache.
+As blocking factor increases, we can fit a larger chunk of our matrices in the
+cache, and exploit spacial locality. The innermost loop can run quickly because
+all the data it needs is stored in the cache. However, if the blocking factor
+is too large, we lose the ability to exploit spacial locality because our entire
+block doesn't fit in the cache. Thus, in the innner most loop, we must change 
+the data stored in the cache.
 
 The optimal blocking factor is 20 for a matrix of size 100.
 
@@ -230,27 +229,18 @@ the cache is small, so is our problem size.
 
 \subsection{4}
 \textbf{Does increased associativity always reduce the miss rate?}
-Impact of Associativity
 
-The issue here is the impact of the choice of the parameter E, the number of
-cache lines per set. The advantage of higher associativity (i.e., larger values of E)
-is that it decreases the vulnerability of the cache to thrashing due to conflict misses.
-However, higher associativity comes at a significant cost. Higher associativity is
-expensive to implement and hard to make fast. It requires more tag bits per
-line, additional LRU state bits per line, and additional control logic. Higher
-associativity can increase hit time, because of the increased complexity, and it can
-also increase the miss penalty because of the increased complexity of choosing a
-victim line.
+Increasing associativity tends to improve the miss rate by reducing the rate of
+conflict misses. From our experimental data, we see that increasing
+associativity improves the miss rate up until 4-way associativity. We also see
+that with 8-way associativity and higher, the miss rate stays constant, but the
+execution time skyrockets. We can conclude that increasing associativity reaches
+the point of diminishing returns quickly.
 
-
-
-No, increased associativity seems to keep miss rate constant. However, execution
-time increases because high associativity becomes slower to implement at 
-the hardware level.
-
-Clearly, fully associative is only feasible with really small memory. Even then, 
-associativity has diminishing returns. As you increase associativity, the miss
-rate remains constant, but the total running time increases.
+This is because a higher associativity is difficult to implement. Because of
+the complexity of higher associative cache, it is expensive to implement the
+hardware, and difficult to make fast. A fully associative is only feasible with
+really small amount of memory.
 
 \subsection{5}
 \textbf{How are caches implemented in hardware? Why does the simulator insist
