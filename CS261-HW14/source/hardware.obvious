@@ -1,0 +1,43 @@
+#include "inst_none.h"
+#include <iostream>
+using namespace std;
+
+
+const int matrixSize = 1000;
+int a[matrixSize][matrixSize];
+int b[matrixSize][matrixSize];
+int c[matrixSize][matrixSize];
+
+int main() {
+    int i, j, k, r;
+    // Initialise the matrices arbitrarily
+    for (i=0; i < matrixSize; i++)
+    for (j=0; j < matrixSize; j++) {
+        b[i][j] = i + j; c[i][j] = i - j; a[i][j] = 0;
+    }
+    
+    // Work out a = b * c, using the obvious algorithm
+    for (i = 0; i < matrixSize; i++)
+    for (j = 0; j < matrixSize; j++) {
+        r = 0;
+        for (k = 0; k < matrixSize; k++) {
+            INST_R(b[i][k]);
+            INST_R(c[k][j]);
+            r += b[i][k] * c[k][j];
+        }
+        
+        INST_R(a[i][j]);
+        a[i][j] = r;
+        INST_W(a[i][j]);
+    }
+
+    // Display the product
+    //for (i=0; i < matrixSize; i++) {
+    //    for (j=0; j < matrixSize; j++) 
+    //        cerr << a[i][j] << ' ';
+    //
+    //    cerr << endl;
+    //}
+
+}
+
