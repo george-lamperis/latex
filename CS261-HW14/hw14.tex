@@ -26,10 +26,9 @@
 
 \subsection{blocking.cc}
 For every test with blocking.cc, we have 4,200,000 accesses. This data 
-was taken using a direct mapped cache.
+was taken using a direct mapped cache, a blocking factor of 20, and a matrix
+size of 100.
 
-Blocking Factor: 20
-Matrix size: 100
 % ------------------------------------------------------------------------------
 % blocking.cc
 % ------------------------------------------------------------------------------
@@ -227,8 +226,13 @@ of size 100 is 20.
 \textbf{A discussion of the significance of the results, given that all of the
 simulated caches were considerably smaller than current hardware caches.}
 
-One thing to consider is that we tested a relatively simple program. Although
-the cache is small, so is our problem size. 
+Although our cache size is small, so is the program we tested it with. Given a
+larger cache and a more complicated program, we could produce simlar results.
+
+Additonally, real hardware has multiple levels of cache. The highest level of
+cache L1 is in fact quite small. The i7 processor has 64 kb of cache memory.
+Therefore, our test values are actually very close to the size of L1 cache in 
+a modern processor.
 
 \subsection{4}
 \textbf{Does increased associativity always reduce the miss rate?}
@@ -260,8 +264,12 @@ can main memory systems be designed to support caches?}
 \subsection{7}
 \textbf{What are the attractions of a multilevel caching strategy?}
 
-Although L2 cache is slower than L1 cache, it is orders of magnitude faster
-than main memory. Still an improvement.
+By keeping instruction data and program data in separate caches, we can
+guarantee that there are no conflict misses between instruction data and
+program data.
+
+Although L2 cache is slower than L1 cache, it is orders of
+magnitude faster than main memory. Still an improvement.
 
 
 
