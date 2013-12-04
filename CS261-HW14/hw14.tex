@@ -197,26 +197,27 @@ opposed to five nested using the blocking algorithm. One might think that
 fewer nested loops would imply a faster execution time. However, this was
 not the case.
 
+The matrix $b$ is especially cache freindly, allowing us to exploit spacial
+locality. On the first iteration of the inner-most loop, we must fetch
+$b[i][k]$. As a result $b[i][k+1]$, $b[i][k+2]$, and so on will be stored in 
+the cache as well. Therefore, we have quick access to this memory on successive
+iterations of the loop. The line $ a[i][j] = a[i][j] + r$  exibits spacial
+locality as well. As with the matrix $b$ above, other values in the same row 
+as $a[i][j]$ will also be cached. 
 
-Increasing the block size decreases the miss rate because when you request
-one byte of memory, the entire block in which that byte is stored gets loaded
-into the cache. Since we're dealing with large arrays, those extra values which
-get loaded into the cache end up being used also.
+Increasing the block size decreases the miss rate by increasing the ability to
+exploit spacial locality. When you request one byte of memory, the
+entire block in which that byte is stored gets loaded into the cache. Because 
+of this, when we request one entry of the matrix, other nearby matrix entries
+will be cached for later use. On successive iterations, the data we need to use
+is already in the cache.
 
 However, a larger block size means that a cache miss is more expensive. When
 there is a cache miss, there is a larger about of data to be evicted and a
 larger amount of new data to store in the cache. It takes more time to transfer
 a larger amount of data.
 
-The matrix $b$ is especially cache freindly, allowing us to exploit spacial
-locality. On the first iteration of the inner-most loop, we must fetch
-$b[i][k]$. As a result $b[i][k+1]$, $b[i][k+2]$, and so on will be stored in 
-the cache as well. Therefore, we have quick access to this memory on successive
-iterations of the loop.
 
-The line \[ a[i][j] = a[i][j] + r; \] exploits temporal and spacial locality. As
-with the matrix $b$ above, other values in the same row as $a[i][j]$ will also 
-be cached. 
 
 
 \subsection{2}
@@ -238,6 +239,8 @@ The optimal blocking factor is 20 for a matrix of size 100.
 \textbf{A discussion of the significance of the results, given that all of the
 simulated caches were considerably smaller than current hardware caches.}
 
+One thing to consider is that we tested a relatively simple program. Although
+the cache is small, so is our problem size. 
 
 \subsection{4}
 \textbf{Does increased associativity always reduce the miss rate?}
