@@ -172,6 +172,28 @@ block size 1
 % Questions
 % ------------------------------------------------------------------------------
 \section{Discussion Questions}
+
+Large blocks are a mixed blessing. On the one hand, larger blocks can help
+increase the hit rate by exploiting any spatial locality that might exist in a program.
+However, for a given cache size, larger blocks imply a smaller number of cache
+lines, which can hurt the hit rate in programs with more temporal locality than
+spatial locality. Larger blocks also have a negative impact on the miss penalty, since
+larger blocks cause larger transfer times. Modern systems usually compromise
+with cache blocks that contain 32 to 64 bytes.
+
+Impact of Associativity
+
+The issue here is the impact of the choice of the parameter E, the number of
+cache lines per set. The advantage of higher associativity (i.e., larger values of E)
+is that it decreases the vulnerability of the cache to thrashing due to conflict misses.
+However, higher associativity comes at a significant cost. Higher associativity is
+expensive to implement and hard to make fast. It requires more tag bits per
+line, additional LRU state bits per line, and additional control logic. Higher
+associativity can increase hit time, because of the increased complexity, and it can
+also increase the miss penalty because of the increased complexity of choosing a
+victim line.
+
+
 \subsection{1}
 A comparison of blocking.cc and obvious.cc in terms of their algorithmic 
 complexity and cache-friendliness. Why did increasing the block size sometimes 
