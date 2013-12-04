@@ -111,24 +111,24 @@ We'll use a blcok size of 1
 \centering
 \begin{tabular}{c|c|c}
     Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
-    1   & 4.5   & 62865020 \\
-    2   & 4.2   & 70003210 \\
-    4   & 2.6   & 79303410 \\
-    8   &  \\
-    16  & & \\
-    32  & & \\
-    64  & & \\
-    128 & & \\
-    256 & & \\ \hline
-    1   & & \\
-    2   & & \\
-    4   & & \\
-    8   & & \\
-    16  & & \\
-    32  & & \\
-    64  & & \\
-    128 & & \\
-    256 & & \\
+    1           & 4.5   & 62865020 \\
+    2           & 4.2   & 70003210 \\
+    4           & 2.6   & 79303410 \\
+    8           & 2.6   & 112900110 \\
+    16          & 2.6   & 180100110 \\
+    32          & 2.6   & 314500110 \\
+    64          & 2.6   & 583300110 \\
+    128         & & \\
+    256 (fully) & & \\ \hline
+    1           & & \\
+    2           & & \\
+    4           & & \\
+    8           & & \\
+    16          & & \\
+    32          & & \\
+    64          & & \\
+    128         & & \\
+    256 (fully) & & \\
 \end{tabular}
 \caption{blocking.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
@@ -137,24 +137,24 @@ We'll use a blcok size of 1
 \centering
 \begin{tabular}{c|c|c}
     Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
-    1   & & \\
-    2   & & \\
-    4   & & \\
-    8   & & \\
-    16  & & \\
-    32  & & \\
-    64  & & \\
-    128 & & \\
-    256 & & \\ \hline
-    1   & & \\
-    2   & & \\
-    4   & & \\
-    8   & & \\
-    16  & & \\
-    32  & & \\
-    64  & & \\
-    128 & & \\
-    256 & & \\
+    1           & & \\
+    2           & & \\
+    4           & & \\
+    8           & & \\
+    16          & & \\
+    32          & & \\
+    64          & & \\
+    128         & & \\
+    256 (fully) & & \\ \hline
+    1           & & \\
+    2           & & \\
+    4           & & \\
+    8           & & \\
+    16          & & \\
+    32          & & \\
+    64          & & \\
+    128         & & \\
+    256 (fully) & & \\
 \end{tabular}
 \caption{obvious.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
