@@ -214,10 +214,13 @@ As blocking factor increases, we can fit a larger chunk of our matrices in the
 cache, and exploit spacial locality. The innermost loop can run quickly because
 all the data it needs is stored in the cache. However, if the blocking factor
 is too large, we lose the ability to exploit spacial locality because our entire
-block doesn't fit in the cache. Thus, in the innner most loop, we must change 
-the data stored in the cache.
+block doesn't fit in the cache. For example, if the block size is too
+large, we end up caching too much of matrix $b$. Then, when we want data from
+matrix $c$, we must evict some of the data we cached from matrix $b$ to make
+room for data from matrix $c$.
 
-The optimal blocking factor is 20 for a matrix of size 100.
+Looking at our experimental data, the optimal blocking factor for a matrix
+of size 100 is 20.
 
 
 \subsection{3}
