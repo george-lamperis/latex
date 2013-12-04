@@ -17,7 +17,7 @@
 % ------------------------------------------------------------------------------
 \title{CS 261 - Homework w14}
 \author{George Lamperis}
-\date{}
+\date{UIN: 664714097}
 
 \begin{document}
 \maketitle
@@ -232,6 +232,7 @@ cache L1 is in fact quite small. The i7 processor has 64 kb of cache memory.
 Therefore, our test values are actually very close to the size of L1 cache in 
 a modern processor.
 
+
 \subsection{4}
 \textbf{Does increased associativity always reduce the miss rate?}
 
@@ -247,16 +248,30 @@ the complexity of higher associative cache, it is expensive to implement the
 hardware, and difficult to make fast. A fully associative is only feasible with
 really small amount of memory.
 
+
 \subsection{5}
 \textbf{How are caches implemented in hardware? Why does the simulator insist
 that the block size, and the number of sets, must be a whole power of two? Is it always
 necessary to store the entire block address in the cache for identification
 purposes?}
 
+The block size must be a whole power of 2 because the number of bytes in a block
+must divide the amount of memory available, so that each set is a full set. 
+
 
 \subsection{6}
 \textbf{Why does a main memory access involve a significant, fixed overhead? How
 can main memory systems be designed to support caches?}
+
+A major reason why main memory has significant overhead is due to the amount of 
+memory. A cache can be quite fast particularly because of the small amount of
+memory. This is because it is difficult to make a large amount of memory run
+fast.
+
+Another reason is cost. The memory used for the cache is quite expensive. The
+cost of hardware for main memory would be significantly more expensive if it
+were made of the same components as cache memory.
+
 
 
 \subsection{7}
@@ -266,8 +281,9 @@ By keeping instruction data and program data in separate caches, we can
 guarantee that there are no conflict misses between instruction data and
 program data.
 
-Although L2 cache is slower than L1 cache, it is orders of
-magnitude faster than main memory. Still an improvement.
+Besides keeping instructions and data separate, multi-level caching results in
+faster execution time. Although L2 cache is slower than L1 cache, it is orders
+of magnitude faster than main memory. Still an improvement.
 
 
 
