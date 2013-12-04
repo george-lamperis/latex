@@ -22,10 +22,9 @@
 \begin{document}
 \maketitle
 
-\section{Cachesim Results}
-record the miss rates for direct mapped caches of size 4, 8, 16 and 32 KBytes,
-with block sizes of 1, 2, 4 and 8 words (32 measurements in total). 
+\section{Data}
 
+\subsection{blocking.cc}
 For every test with blocking.cc, we have 4,200,000 accesses.
 % ------------------------------------------------------------------------------
 % blocking.cc
@@ -54,7 +53,7 @@ For every test with blocking.cc, we have 4,200,000 accesses.
 \caption{blocking.cc}
 \end{table}
 
-
+\subsection{obvious.cc}
 For every test with obvious.cc, we have 4,040,000 accesses.
 % ------------------------------------------------------------------------------
 % obvious.cc
@@ -83,8 +82,7 @@ For every test with obvious.cc, we have 4,040,000 accesses.
 \caption{obvious.cc}
 \end{table}
 
-
-\section{Hardware Cache}
+\subsection{Hardware}
 
 \begin{table}[H]
 \centering
