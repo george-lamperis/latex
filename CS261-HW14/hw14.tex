@@ -105,24 +105,58 @@ Blocking factor: 50
 \end{table}
 
 \subsection{Associativity}
-For this experiment, I am fixing cache size to 4kb and block size to 4 words.
+We'll use a blcok size of 1
 
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c|c}
-    Associativity & Miss Rate (blocking.cc) & Miss Rate (obvious.cc) \\ \hline
-    1   & 2.3  & \\
-    2   & 1.1  & \\
-    4   & 0.7  & \\
-    8   & 0.7  & \\
-    16  & 0.7  & \\
-    32  & 0.7  & \\
-    64  & 0.7  & \\
-    128 & 0.7  & \\
+    Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
+    1   & 4.5   & 62865020 \\
+    2   & 4.2   & 70003210 \\
+    4   & 2.6   & 79303410 \\
+    8   &  \\
+    16  & & \\
+    32  & & \\
+    64  & & \\
+    128 & & \\
+    256 & & \\ \hline
+    1   & & \\
+    2   & & \\
+    4   & & \\
+    8   & & \\
+    16  & & \\
+    32  & & \\
+    64  & & \\
+    128 & & \\
     256 & & \\
-
 \end{tabular}
-\caption{}
+\caption{blocking.cc with 4 kb cache (top) and 32 kb cache (bottom)}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+    Associativity & Miss Rate (blocking.cc) & Total Time \\ \hline
+    1   & & \\
+    2   & & \\
+    4   & & \\
+    8   & & \\
+    16  & & \\
+    32  & & \\
+    64  & & \\
+    128 & & \\
+    256 & & \\ \hline
+    1   & & \\
+    2   & & \\
+    4   & & \\
+    8   & & \\
+    16  & & \\
+    32  & & \\
+    64  & & \\
+    128 & & \\
+    256 & & \\
+\end{tabular}
+\caption{obvious.cc with 4 kb cache (top) and 32 kb cache (bottom)}
 \end{table}
 
 % ------------------------------------------------------------------------------
@@ -143,6 +177,7 @@ Increasing the block size decreases the miss rate because when you request
 one byte of memory, the entire block in which that byte is stored gets loaded
 into the cache. Since we're dealing with large arrays, those extra values which
 get loaded into the cache end up being used also.
+
 
 \subsection{2}
 What would be the optimal blockingFactor to use for matrix multiplication?
