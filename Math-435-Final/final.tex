@@ -1,0 +1,60 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper, 12pt, oneside]{memoir}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{float} % H option to place tables exactly
+\usepackage{subcaption}
+
+% Memoir configuration
+\pagestyle{plain}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex}
+
+% Omit chapter numbering
+\counterwithout{section}{chapter}
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {4ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{example}[thm]{Example}
+
+% A few math commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 435 - Final Exam}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+For this exam you can use your notes and the textbook, but nothing else. If you
+are doing something, and you're wondering if what you're doing is cheating, it
+probably is. If you need a hint, or if you want to know if something you're
+doing is correct, or if you have any questions, please drop me a line. Good luck!
+
+\input{problem1}
+
+\section{}
+
+\end{document}
