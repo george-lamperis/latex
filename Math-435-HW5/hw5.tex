@@ -1,0 +1,50 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[letterpaper, 12pt, oneside]{memoir}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{float} % H option to place tables exactly
+
+% Memoir configuration
+\pagestyle{plain}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex}
+
+% Omit chapter numbering
+\counterwithout{section}{chapter}
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {4ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{example}[thm]{Example}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 435 - Homework 5}
+\author{George Lamperis}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{Problem 20.1}
+\input{problem20-1}
+
+\end{document}
