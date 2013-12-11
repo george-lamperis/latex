@@ -61,9 +61,88 @@ First some data:
 \end{table}
 
 
-Since $p$ is odd, $p$ has the form $exactly one of the following is true:
-\[ p = 4k + 1 \]
-or
-\[ p = 4k + 3 \]
+We know every odd integer has the form $4k+1$ or $4k+3$. Hence, either
+$p \equiv 1 \pmod 4$ or $p \equiv 3 \pmod 4$ .
+
+Also note that $p = a^2 + 5b^2 \equiv a^2 \pmod 5$ i.e. $p$ is a quadratic
+residue modulo 5. However, 1 and 4 are the only quadratic residues modulo 5.
+Therefore, $p \equiv 1 \pmod 5$ or $p \equiv 4 \pmod 5$.
+
+\begin{case}
+$p \equiv 1 \pmod 4$ and $a^2 \equiv 1 \pmod 5$
+
+Then
+\begin{align*}
+		  p &\equiv a^2 \pmod 5 \\
+	 4k + 1 &\equiv 1 \pmod 5 \\
+	     4k &\equiv 0 \pmod 5 \\
+	      k &\equiv 0 \pmod 5
+\end{align*}
+So $k$ has the form $k=4m$. Substitute this back into our equation.
+\begin{align*}
+	p &= 4k + 1 \\
+	  &= 4(5m) + 1 \\
+	  &= 20m + 1
+\end{align*}
+Clearly $p \equiv 1 \pmod{20}$.
+\end{case}
+
+\begin{case}
+$p \equiv 1 \pmod 4$ and $a^2 \equiv 1 \pmod 5$
+
+Then
+\begin{align*}
+		  p &\equiv a^2 \pmod 5 \\
+	 4k + 1 &\equiv 1 \pmod 5 \\
+	     4k &\equiv 0 \pmod 5 \\
+	      k &\equiv 0 \pmod 5
+\end{align*}
+So $k$ has the form $k=4m$. Substitute this back into our equation.
+\begin{align*}
+	p &= 4k + 1 \\
+	  &= 4(5m) + 1 \\
+	  &= 20m + 1
+\end{align*}
+Clearly $p \equiv 1 \pmod{20}$.
+\end{case}
+
+\begin{case}
+$p \equiv 1 \pmod 4$ and $a^2 \equiv 1 \pmod 5$
+
+Then
+\begin{align*}
+		  p &\equiv a^2 \pmod 5 \\
+	 4k + 1 &\equiv 1 \pmod 5 \\
+	     4k &\equiv 0 \pmod 5 \\
+	      k &\equiv 0 \pmod 5
+\end{align*}
+So $k$ has the form $k=4m$. Substitute this back into our equation.
+\begin{align*}
+	p &= 4k + 1 \\
+	  &= 4(5m) + 1 \\
+	  &= 20m + 1
+\end{align*}
+Clearly $p \equiv 1 \pmod{20}$.
+\end{case}
+
+\begin{case}
+$p \equiv 1 \pmod 4$ and $a^2 \equiv 1 \pmod 5$
+
+Then
+\begin{align*}
+		  p &\equiv a^2 \pmod 5 \\
+	 4k + 1 &\equiv 1 \pmod 5 \\
+	     4k &\equiv 0 \pmod 5 \\
+	      k &\equiv 0 \pmod 5
+\end{align*}
+So $k$ has the form $k=4m$. Substitute this back into our equation.
+\begin{align*}
+	p &= 4k + 1 \\
+	  &= 4(5m) + 1 \\
+	  &= 20m + 1
+\end{align*}
+Clearly $p \equiv 1 \pmod{20}$.
+\end{case}
 
 \end{proof}
+
