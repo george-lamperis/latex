@@ -7,3 +7,63 @@ If $p > 5$ is a prime expressible as $a^2 + 5 b^2$, then $p \equiv 1 \pmod{20}$,
 or $p \equiv 9 \pmod{20}$.
 
 For example $29 = 3^2 + 5 \cdot 2^2$, and clearly $29 \equiv 9 \pmod{20}$. 
+
+\begin{proof}
+First some data:
+\begin{table}[H]
+\centering
+\begin{subtable}[b]{.3\linewidth}
+	\centering
+	\begin{tabular}{c|c}
+		$a$ & $a^2$ \\ \hline
+		0 & 0 \\
+		1 & 1 \\
+		2 & 4 \\
+		3 & 4 \\
+		4 & 1 \\
+	\end{tabular}
+	\caption*{modulo 5}
+\end{subtable}
+\begin{subtable}[b]{.3\linewidth}
+	\centering
+	\begin{tabular}{c|c}
+		$a$ & $a^2$ \\ \hline
+		0 & 0 \\
+		1 & 1 \\
+		2 & 4 \\
+		3 & 9 \\
+		4 & 16 \\
+		5 & 5 \\
+		6 & 16 \\
+		7 & 9 \\
+		8 & 4 \\
+		9 & 1 \\
+	\end{tabular}
+	\caption*{modulo 20}
+\end{subtable}
+\begin{subtable}[b]{.3\linewidth}
+	\centering
+	\begin{tabular}{c|c}
+		$a$ & $a^2$ \\ \hline
+		10 & 0 \\
+		11 & 1 \\
+		12 & 4 \\
+		13 & 9 \\
+		14 & 16 \\
+		15 & 5 \\
+		16 & 16 \\
+		17 & 9 \\
+		18 & 4 \\
+		19 & 1
+	\end{tabular}
+	\caption*{}
+\end{subtable}
+\end{table}
+
+
+Since $p$ is odd, $p$ has the form $exactly one of the following is true:
+\[ p = 4k + 1 \]
+or
+\[ p = 4k + 3 \]
+
+\end{proof}
