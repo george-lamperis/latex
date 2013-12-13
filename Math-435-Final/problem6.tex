@@ -6,3 +6,48 @@
 If $p = 4q+1$ and $q = 3r + 1$ are prime numbers, show that $3$ is a primitive
 root modulo $p$. Hint: What are the prime divisors of $p-1$? You will have to
 use quadratic reciprocity.
+
+\begin{lemma}
+If $a$ is a primitive root modulo $p$, then $a$ is not a quadratic residue. 
+\end{lemma}
+\begin{proof}
+Let $a$ be a primitive root modulo $p$. Then $a$ has order $p-1$.
+
+If $a$ were a quadratic residue, then there is a $b$ such that 
+$b^2 \equiv a \pmod p$. This implies that $(b^2)^k \equiv a^k$ for all $k > 1$.
+
+Then $b^2$ has order $2(p-1)$, which is a contradiction. Hence, $a$ is not a
+quadratic residue.
+\end{proof}
+
+
+Notice that 
+\begin{align*}
+p = 4q+1 &\equiv q + 1 \pmod 3 \\
+   	 	 &\equiv 3r + 2 \pmod 3 \\
+   	 	 &\equiv 2	   \pmod 3
+\end{align*}
+
+Now calculate
+\begin{align*}
+	\left( \frac{3}{p} \right) &= \left( \frac{p}{3} \right) \\
+				 			   &= \left( \frac{2}{3} \right) \\
+	 						   &= -1
+\end{align*}
+So 3 is a nonresidue. This is necessary but not sufficient for 3 to be a
+primitive root.
+
+Also calculate $\phi(p-1)$
+\begin{align*}
+	\phi(p-1) &= \phi(4q) \\
+			  &= \phi(4) \phi(3r+1)	\\
+			  &= 2 \cdot 3r \\
+			  &= 6r
+\end{align*}
+
+Notice that there are $\phi(p-1)=6r$ primitive roots and $(p-1)/2 = 6r+2$ 
+nonresidues. If we can find two numbers such that 1) these numbers are not
+primitive roots modulo $p$ and 2) these numbers are nonresidues, then it
+must be the case that 3 is a primitive root modulo $p$.
+
+Unfortunately I can't find these numbers.
