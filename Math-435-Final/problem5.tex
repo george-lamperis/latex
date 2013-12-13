@@ -5,7 +5,27 @@
 
 Show that there are infinitely many primes of the form $4k+1$. 
 
-Hint: By the formula used for part (a) of Problem 1 we know that if an odd prime
-$p$ divides a number of the form $x^2 + 1$, then $p$ must be of the form $4k+1$.
-Now using Euclid's idea for the infinitude of prime numbers, consider numbers of
-the form $(N!)^2 + 1$ for appropriate numbers $N$.
+\begin{proof}
+Let $p_1, p_2, \ldots p_r$ be a list of primes all congruent to 1 modulo 4.
+Now consider the number
+\[ A = (2p_1 p_2 \ldots p_r)^2 + 1 \]
+
+The Fundamental Theorem says that $A$ is a product of prime factors, so 
+\[A = q_1 q_2 \ldots q_s \]
+
+It's clear that each $q_i$ is distinct from $p_j$ for all $i,j$ because each
+$q_i$ is a divisor of $A$ while each $p_j$ is not a divisor.
+
+Each $q_i$ is a divisor of a, so 
+\begin{align*}
+	(2p_1 p_2 \ldots p_r)^2 + 1 &\equiv 0 \pmod{q_i} \\
+	(2p_1 p_2 \ldots p_r)^2     &\equiv -1 \pmod{q_i}
+\end{align*}
+
+This means that -1 is a quadratic residue modulo $q_i$. We know $\frac{-1}{p} =
+1$ if and only if $q_i \equiv 1 \pmod 4$. Hence, each $q_i$ is a prime congruent
+to 1 modulo 4.
+
+This process may be repeated, and so there are infinitely many primes of the
+form $4k+1$.
+\end{proof}
