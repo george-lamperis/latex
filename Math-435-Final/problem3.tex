@@ -12,7 +12,18 @@ For example $29 = 3^2 + 5 \cdot 2^2$, and clearly $29 \equiv 9 \pmod{20}$.
 First some data:
 \begin{table}[H]
 \centering
-\begin{subtable}[b]{.3\linewidth}
+\begin{subtable}[b]{.24\linewidth}
+	\centering
+	\begin{tabular}{c|c}
+		$a$ & $a^2$ \\ \hline
+		0 & 0 \\
+		1 & 1 \\
+		2 & 0 \\
+		3 & 1 \\
+	\end{tabular}
+	\caption*{modulo 4}
+\end{subtable}
+\begin{subtable}[b]{.24\linewidth}
 	\centering
 	\begin{tabular}{c|c}
 		$a$ & $a^2$ \\ \hline
@@ -24,7 +35,7 @@ First some data:
 	\end{tabular}
 	\caption*{modulo 5}
 \end{subtable}
-\begin{subtable}[b]{.3\linewidth}
+\begin{subtable}[b]{.24\linewidth}
 	\centering
 	\begin{tabular}{c|c}
 		$a$ & $a^2$ \\ \hline
@@ -41,7 +52,7 @@ First some data:
 	\end{tabular}
 	\caption*{modulo 20}
 \end{subtable}
-\begin{subtable}[b]{.3\linewidth}
+\begin{subtable}[b]{.24\linewidth}
 	\centering
 	\begin{tabular}{c|c}
 		$a$ & $a^2$ \\ \hline
@@ -135,17 +146,17 @@ $p \equiv 1 \pmod 3$ and $a^2 \equiv 4 \pmod 5$
 Then
 \begin{align*}
 		  p &\equiv a^2 \pmod 5 \\
-	 4k + 1 &\equiv 1 \pmod 5 \\
-	     4k &\equiv 0 \pmod 5 \\
-	      k &\equiv 0 \pmod 5
+	 4k + 3 &\equiv 4 \pmod 5 \\
+	     4k &\equiv 1 \pmod 5 \\
+	      k &\equiv 4 \pmod 5
 \end{align*}
-So $k$ has the form $k=4m$. Substitute this back into our equation.
+So $k$ has the form $k=5m+4$. Substitute this back into our equation.
 \begin{align*}
-	p &= 4k + 1 \\
-	  &= 4(5m) + 1 \\
-	  &= 20m + 1
+	p &= 4k + 3 \\
+	  &= 4(5m+4) + 3 \\
+	  &= 20m + 19
 \end{align*}
-Clearly $p \equiv 1 \pmod{20}$.
+So $p \equiv 19 \pmod{20}$. But remember, $p \equiv a^2 \equiv $
 \end{case}
 
 \end{proof}
