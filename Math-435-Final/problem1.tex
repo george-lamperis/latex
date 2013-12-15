@@ -136,5 +136,22 @@ $p \equiv \pm 5 \pmod{12}$
 	Let $p$ be prime, $p > 5$. Then
 \end{lemma}
 \begin{proof}
+We have some congruence conditions modulo 4, 8 and 12. Notice $lcm(4, 8,
+12) = 24 = 8 \cdot 3$. Because of this, our congruence conditions will be modulo
+24. We enumerate cases by considering $p$ modulo 3 and modulo 8, then use the
+Chinese Remainder Theorem to solve $p$ modulo 24.
+
+% Case 1
+\textbf{Case 1.}
+Suppose $p \equiv 1 \pmod{3}$ and $p \equiv 1 \pmod{8}$. Then 
+$p \equiv 1 \pmod{24}$
+
+Then 
+\begin{align*}
+\left( \frac{-6}{p} \right) 
+&= \left( \frac{-1}{p} \right) \left( \frac{2}{p} \right) \left( \frac{3}{p} \right) \\
+&= 1 \cdot 1 \cdot 1 \\
+&= 1
+\end{align*}
 
 \end{proof}
