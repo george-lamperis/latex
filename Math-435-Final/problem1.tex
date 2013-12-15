@@ -133,7 +133,14 @@ $p \equiv \pm 5 \pmod{12}$
 
 \subsection{1(g,h)}
 \begin{lemma}
-	Let $p$ be prime, $p > 5$. Then
+	Let $p$ be prime, $p > 3$. Then
+\[
+\left( \frac{3}{p} \right) =
+\begin{cases}
+	1  & \text{if } p \equiv 1, 5, 7 \pmod{24} \\
+	-1 & \text{if } p \equiv 13, 17, 23 \pmod{24}
+\end{cases}
+\]
 \end{lemma}
 \begin{proof}
 We have some congruence conditions modulo 4, 8 and 12. Notice $lcm(4, 8,
@@ -199,7 +206,8 @@ $p \equiv 17 \pmod{24}$
 % Case 6
 \textbf{Case 6.}
 Suppose $p \equiv 2 \pmod{3}$ and $p \equiv 3 \pmod{8}$. Then \\
-$p \equiv 9 \pmod{24}$
+$p \equiv 9 \pmod{24}$. But $(3/p)$ is not defined, and so this case is
+undefined as well.
 
 % Case 7
 \textbf{Case 7.}
@@ -223,3 +231,6 @@ $p \equiv 23 \pmod{24}$
 &= -1
 \end{align*}
 \end{proof}
+
+For $p=2$ and $p=3$, this is undefined and so we are done.
+
