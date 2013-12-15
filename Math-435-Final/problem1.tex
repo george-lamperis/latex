@@ -6,6 +6,8 @@
 For parts (a-i) express your answer as congruence conditions.
 \begin{enumerate}[(a)]
 \item Find all primes $p$ such that $(-1/p) = +1$. 
+
+lets see. what happens
 \item Find all primes $p$ such that $(-1/p) = -1$. 
 \item Find all primes $p$ such that $(2/p) = +1$.
 \item Find all primes $p$ such that $(2/p) = -1$.
@@ -35,6 +37,7 @@ $\left( \dfrac{-1}{2} \right) = 1$.
 
 Hence, $\left( \dfrac{-1}{p} \right)  = 1$ when $p = 2$ or $p \equiv 1 \pmod 4$.
 
+List: $2$, $4k+1$
 
 \subsection{1(b)}
 Theorem 22.1 states that if $p \equiv 3 \pmod 4$, then
@@ -46,3 +49,37 @@ $2 \equiv 0 \pmod{2}$, and 0 is not a quadratic residue.
 
 Hence, $\left( \dfrac{-1}{p} \right)  = 1$ if $p \equiv \pm 1 \pmod{8}$
 and $\left( \dfrac{-1}{p} \right)  = -1$ if $p \equiv \pm 3 \pmod{8}$
+
+\subsection{1(f)}
+
+\begin{lemma}
+Let $p$ be an odd prime, $p \neq 3$. Then
+\[
+\left( \frac{3}{p} \right) =
+\begin{cases}
+	1  & \text{if } p \equiv \pm 1 \pmod{12} \\
+	-1 & \text{if } p \equiv \pm 5 \pmod{12}
+\end{cases}
+\]
+\end{lemma}
+\begin{proof}
+First note that since $p$ is odd, $p \equiv 1 \pmod 4$ or $p \equiv 3 \pmod 4$.
+Also, since $p$ is prime and $p > 3$, either $p \equiv 1 \pmod 3$ or 
+$p \equiv 2 \pmod 3$.
+
+% Case 1
+\textbf{Case 1.}
+Suppose $p \equiv 1 \pmod 4$ and $p \equiv 1 \pmod 3$. This implies that
+$p \equiv 1 \pmod{12}$.
+
+Then using the Law of Quadratic Reciprocity
+\[ 
+\left( \frac{3}{p} \right) = 
+\left( \frac{p}{3} \right) = 
+\left( \frac{1}{3} \right) = 1 
+\]
+
+Since $1^2 = 1$.
+
+
+\end{proof}
