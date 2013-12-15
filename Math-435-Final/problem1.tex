@@ -27,25 +27,29 @@ congruence conditions. For (e) and (f) use Quadratic Reciprocity. For (g) and
 Theorem.
 
 
-\subsection{1(a)}
-Theorem 22.1 states that if $p \equiv 1 \pmod 4$, then
-$\left( \dfrac{-1}{p} \right)  = 1$ 
+\subsection{1(a,b)}
+Theorem 22.1 states that if $p$ is an odd prime, then
+\[
+\left( \frac{-1}{p} \right) =
+\begin{cases}
+	1  & \text{if } p \equiv \pm 1 \pmod{4} \\
+	-1 & \text{if } p \equiv \pm 3 \pmod{4}
+\end{cases}
+\]
 
 There is one remaining case, $p=2$. Notice $-1 \equiv 1 \pmod 2$. Also notice
 that $1^2 \equiv 1 \pmod 2$, and so $1$ is a quadratic residue modulo 2. Hence
 $\left( \dfrac{-1}{2} \right) = 1$.
 
-Hence, $\left( \dfrac{-1}{p} \right)  = 1$ when $p = 2$ or $p \equiv 1 \pmod 4$.
+Hence, $\left( \dfrac{-1}{p} \right)  = 1$ when $p \equiv 0 \pmod 2$ or 
+$p \equiv 1 \pmod 4$ and 
+$\left( \dfrac{-1}{p} \right)  = -1$ when $p \equiv 3 \pmod 4$.
 
-List: $2$, $4k+1$
-
-\subsection{1(b)}
-Theorem 22.1 states that if $p \equiv 3 \pmod 4$, then
-$\left( \dfrac{-1}{p} \right)  = -1$. Nothing further is required. 
 
 \subsection{1(c,d)}
 This also follows from Theorem 22.1. The only remaining case is $p=2$. But 
-$2 \equiv 0 \pmod{2}$, and 0 is not a quadratic residue.
+$2 \equiv 0 \pmod{2}$, and 0 is neither quadratic residue nor a nonresidue, and
+so this is undefined.
 
 Hence, $\left( \dfrac{-1}{p} \right)  = 1$ if $p \equiv \pm 1 \pmod{8}$
 and $\left( \dfrac{-1}{p} \right)  = -1$ if $p \equiv \pm 3 \pmod{8}$
