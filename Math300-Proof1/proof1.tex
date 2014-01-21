@@ -1,0 +1,50 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[12pt]{article}
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem*{prop}{Proposition}
+
+\pagestyle{empty}
+%\doublespace
+\raggedright
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Proof 1}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{prop}
+ $\sqrt 2$ is irrational.
+\end{prop}
+\begin{proof}
+First suppose that $\sqrt 2$ is rational. Write $\sqrt{2}$ in lowest terms,
+that is, with $m$ and $n$ coprime.
+\[ \sqrt{2} = \frac{m}{n}\]
+
+Then
+\begin{align*}
+  \sqrt{2} = \frac{m}{n} &\implies 2 = \frac{m^2}{n^2} \\
+                         &\implies 2n^2 = m^2
+\end{align*}
+
+Clearly $m^2$ is even. It follows that $m^2$ must be even as well. Let $m = 2k$.
+\begin{align*}
+  2n^2 &= (2k)^2 \\
+  2n^2 &= 4k^2 \\
+  n^2  &= 2k^2
+\end{align*}
+
+Clearly $n^2$ and thus $n$ is even. But this contradicts our assumption that
+$m$ and $n$ are coprime. Hence, $\sqrt 2$ is irrational.
+\end{proof}
+
+\end{document}
