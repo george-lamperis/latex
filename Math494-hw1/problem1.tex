@@ -3,4 +3,32 @@
 Find an equation for the circle in the plane that contains the three points
 \[ (0, 0), (1, 1), (2,-2) \]
 
-Let 
+Let $L_1$ be the line passing through $(0,0)$ and $(1,1)$ and let $L_2$ be the
+line passing through $(0,0)$ and $(2,-2)$.
+\begin{align*}
+  L_1&: y = x \\
+  L_2&: y = -x
+\end{align*}
+
+Now let $B_1$ be the perpendicular bisector of $L_1$ and let $B_2$ be the
+perpendicular bisector of $L_2$.
+\begin{align*}
+  B_1&: y = -x + 1 \\
+  B_2&: y = x - 2
+\end{align*}
+
+To find the center of this circle, we find the point where $B_1$ and $B_2$
+intersect.
+\begin{align*}
+  x - 2 &= -x + 1 \\
+  2x &= 3 \\
+  x &= 3/2
+\end{align*}
+
+The center of the circle is the point $(3/2, -1/2)$. We still need to find the 
+radius of the circle. Find this by calculating the distance between the center
+and the point $(0,0)$.
+\[ r = \sqrt{(1/2)^2 + (-1/2)^2} = \sqrt{10}/2\]
+
+Therefore the circle that contains the three points is given by:
+\[ (x- \tfrac{3}{2})^2 + (y + \tfrac{1}{2})^2 = \tfrac{5}{2} \]
