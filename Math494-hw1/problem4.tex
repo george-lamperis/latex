@@ -1,0 +1,40 @@
+\section*{Problem 1.4}
+Find all the rational solutions of the equation
+\[ x^2 - 2y^2 = 1 \]
+
+Let $L_1$ be the line passing from $(0,1)$ to a point on the curve $(x,y)$ with
+$x > 1$. Suppose this line has a rational slope $m$.
+\[ L_1: y = m(x-1) \]
+
+Now substitute this value for $y$ into the equation for the hyperbola.
+\begin{align*}
+  x^2 - 2y^2 = 1 \\
+  x^2 - 2[m(x-1)]^2 = 1 \\
+  (1-2m^2)x^2 + 4m^2x -(1+2m^2) = 0
+\end{align*} 
+
+We know that $x=1$ is a root of our equation. Divide by $x-1$ to obtain the
+other root.
+\[
+\frac{(1-2m^2)x^2 + 4m^2x -(1+2m^2)}{x-1} = (1-2m^2)x + (1+2m^2)
+\]
+
+Now solve for x:
+\begin{align*}
+  (1-2m^2)x + (1+2m^2) = 0 \\
+                     x = - \left( \frac{1+2m^2}{1-2m^2} \right)
+\end{align*}
+
+Then substitute $x$ into $L_1$ to find the $y$-coordinate:
+\begin{align*}
+  y &= m(x-1) \\
+  y &= m\left( -\frac{1+2m^2}{1-2m^2} - 1 \right) \\
+  y &= -\left( \frac{2m}{1-2m^2}\right)
+\end{align*}
+
+This procudure can be repeated for $x < -1$ to find that the solutions differ
+only by a sign. Hence, all rational solutions of this ellipse have the form:
+\[
+\left( \pm \frac{2m}{1-2m^2}, \pm \frac{2m}{1-2m^2}\right)
+\]
+where $m$ is rational.
