@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{enumerate}
+
+\raggedright
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{example}[thm]{Example}
+
+% Number sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+
+\newcommand{\Kn}{k[x_1, \ldots, x_n]}
+
+\newcommand{\A}[2]{\mathbb{A}^{#1}_{#2}}
+\newcommand{\Ank}{\A{n}{k}}
+
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 494 - Notes}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Background}
+
+
+\section{}
+
+\begin{defn}
+  A polynomial over a field $k$ has the form
+  \[ a_1 x_1 + a_2 x_2 + \ldots + a_n x_n^{i_n}\]
+  where $a_i \in k$.
+\end{defn}
+
+\begin{defn}
+  The r
+\end{defn}
+
+\begin{defn}
+  Affine $n$-space over a field $k$, denoted $\A{n}{k}$, is the space of
+  $n$-tuples
+  \[ \Ank = \{(a_1, \ldots, a_n) \mid a_i \in k \}\]
+\end{defn}
+
+\begin{defn}[Zero set]
+  Let $f \in \Kn$. The zero set of $f$ is the set
+  \[ V(f) = \{ (a_1, \ldots, a_n) \in \Ank \mid f(a_1, \ldots, a_n) = 0 \}\]
+  
+  Note $V(f) \subset \Ank$.
+\end{defn}
+
+\begin{defn}[Zarski Topology]
+Let $X \subset \Ank$. Then let
+\[ I(X) = \{ f \in k[x_1, \ldots, x_n] \mid f(x) = 0, \forall x \in X \} \]
+
+Note $I(X) \subset \Kn$.
+\end{defn}
+
+\begin{prop}
+$I(X)$ is an ideal.
+\end{prop}
+
+\end{document}
