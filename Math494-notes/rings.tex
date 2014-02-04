@@ -63,26 +63,59 @@
 
 
 \begin{defn}[Ring Homomorphism]
-  Let $R$ and $R'$ be rings. A homomorphism is a map $\phi: R \rightarrow R'$
-  that satisfies the following:
-  \begin{enumerate}[(i)]
-    \item $\phi(a+b) = \phi(a) + \phi(b)$
-    \item $\phi(ab) = \phi(a) \phi(b)$
-  \end{enumerate}
-  
-  If additionally, $\phi$ is a bijection, then we call $\phi$ an isomorphism.
+  Let $R$ and $R$ be rings. 
+  \begin{enumerate}
+    \item A ring homomorphism is a map $\phi: R \rightarrow S$ that satisfies
+    the following:
+    \begin{enumerate}[(i)]
+      \item $\phi(a+b) = \phi(a) + \phi(b)$
+      \item $\phi(ab) = \phi(a) \phi(b)$
+    \end{enumerate}
+    
+    \item The kernel of the ring homomorphism $\phi$, denoted $ker\phi$, is the
+    set of elements of $R$ that map to $0 \in S$.
+    \item A bijective ring homomorphism is called an isomorphism.
+  \end{enumerate}  
 \end{defn}
+
+
+\begin{prop}
+  Let $R$ and $S$ be rings and let $\phi: R \rightarrow S$ be a homomorphism.
+  \begin{enumerate}
+    \item The image of $\phi$ is a subring of $S$.
+    \item The kernel of $\phi$ is a subring of $R$. Furthermore, if 
+    $a \in ker\phi$, then $ra \in ker\phi$ and $ar \in ker\phi$. In other words,
+    $ker\phi$ is closed under multiplication by elements from $R$.
+  \end{enumerate}
+\end{prop}
 
 
 \begin{defn}[Ideal]
+  Let $R$ be a ring, let $I$ be a subset of $R$, and let $r \in R$.
+  \begin{enumerate}
+    \item $rI = \{ra \mid a \in I \}$ and $Ir = \{ar \mid a \in I \}$.
+    \item A subset $I$ or $R$ is a left ideal of $R$ if
+      \begin{enumerate}[(i)]
+        \item $I$ is a subring of $R$.
+        \item $I$ is closed under left multiplication by elements from $R$,
+        i.e., $rI \subseteq I$ for all $r \in R$.
+      \end{enumerate}
+    We call $I$ a right ideal if (ii) holds for right multiplication.  
+    \item A subset $I$ that is both a left ideal and a right ideal is called an
+    ideal, or for added emphasis, a two sided ideal.
+  \end{enumerate}
 \end{defn}
+
+
+\begin{remark}
+  The kernel of any ring homomorphism is an ideal.
+\end{remark}
 
 
 \begin{remark}
   In this course, we adopt the convention that ``ring'' means ``commutative
   ring''.
 \end{remark}
-
 
 
 \begin{defn}[Ideal in a commutative ring]
