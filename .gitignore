@@ -1,6 +1,7 @@
 # eclipse
 .metadata/
 
+*/.gitignore
 
 # latex output and temporary files
 *.aux
