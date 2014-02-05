@@ -5,7 +5,21 @@
 \usepackage{enumerate}
 \usepackage[margin=1in]{geometry}
 
-\newtheorem*{prop}{Proposition}
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
 
 \pagestyle{empty}
 \doublespace
@@ -21,5 +35,23 @@
 \begin{document}
 \maketitle
 
+\begin{defn}[Continuity]
+  Let $f$ be defined on some interval $I$. We say that $f$ is continuous at a
+  point $c \in I$ if $$\lim_{x \to c} f(x) = f(c)$$ 
+\end{defn}
+
+
+\begin{defn}[Differentiability]
+  Let $f$ be a function defined on some interval $I$. Let $c \in I$ and
+  suppose that $c$ is not an endpoint. We say that $f$ is differentiable at $c$
+  if 
+  $$ \lim_{x \to c} \frac{f(x)-f(c)}{x-c}$$
+  exists. We call this limit the derivative of $f$, denoted by $f'$.
+\end{defn}
+
+
+\begin{thm}
+  Differentiability implies continuity.
+\end{thm}
 
 \end{document}
