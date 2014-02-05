@@ -37,7 +37,7 @@
 
 \begin{defn}[Continuity]
   Let $f$ be defined on some interval $I$. We say that $f$ is continuous at a
-  point $c \in I$ if $$\lim_{x \to c} f(x) = f(c)$$ 
+  point $c \in I$ if $\lim_{x \to c} f(x) = f(c)$.
 \end{defn}
 
 
@@ -51,7 +51,21 @@
 
 
 \begin{thm}
-  Differentiability implies continuity.
+  Let $f$ be a function defined on an interval $I$. Let $c \in I$ and suppose
+  that $f$ is differentiable at $c$. Then $f$ is continuous at $c$. 
 \end{thm}
+\begin{proof}
+  Begin by cleverly multiplying by 1. Then use the product rule for limits.
+  \begin{align*}
+    \lim_{x \to c} f(x)-f(c) &= \lim_{x \to c} \frac{f(x)-f(c)}{x-c} \cdot (x-c) \\
+                             &= \lim_{x \to c} f'(x) \cdot (x-c) \\   
+                             &= \lim_{x \to c} f'(x) \cdot \lim_{x \to c} x-c \\   
+                             &= \lim_{x \to c} f'(x) \cdot 0 \\   
+                             &= 0
+  \end{align*}
+  
+  Clearly, $\lim_{x \to c} f(x) = f(c)$. Therefore, $f$ is continuous at $c$.
+\end{proof}
+
 
 \end{document}
