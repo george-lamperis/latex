@@ -6,7 +6,7 @@
 \usepackage[margin=1in]{geometry}
 
 \pagestyle{empty}
-%\doublespace
+\doublespace
 
 % -----------------------------------------------------------------------------
 % Begin Document
@@ -18,13 +18,24 @@
 \begin{document}
 \maketitle
 
-Suppose you want to find the slope of the function $f(x) = x^2$ at a given
-point. This is precisely what the derivative is for. The derivative tells you
-the slope of a line passing through a given point.
+Suppose you want to find the slope of the function $f$ at a certain
+point $(a, f(a))$. We could approximate the slope at this point by onsidering
+the slope of the line passing through $(a, f(a))$ and $(a+1, f(a+1))$. If we 
+want to be more accurate, we could consider the slope of the line passing 
+through $(a, f(a))$ and $(a+h, f(a+h))$, with $0 < h < 1$. The slope of this
+line is given by 
+$$
+\frac{f(a+h)-f(a)}{(a+h) - a} = \frac{f(a+h)-f(a)}{h}
+$$
+In general, the smaller $c$ is, the more accurate the approximation becomes.
 
-A naive approach would be to calculate the average slope between two points on a
-curve. As we reduce the distance of these points, we get a better approximation.
-In fact, the derivative is the average slope between two points that are
-infintesimally close.
+The derivative $f'(x)$ tells you the instaneous rate of change at the point 
+$(a, f(a))$. We calculate the derivative $f'(x)$ by considering the points 
+$(a+h, f(a+h))$ by choosing an infinitesimally small positive value for $h$. In 
+other words, we are finding the line which passes through two points which are 
+incredibly close to each other. Thus to find $f'(x)$ at any point:
+$$
+f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}
+$$
 
 \end{document}
