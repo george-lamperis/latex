@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+
+\pagestyle{empty}
+\doublespace
+
+
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Proof 3}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{prop}
+  Let $S$ be a partially ordered set, with the additional property that every
+  chain $s_0 \leq s_1 \leq s_2 \leq \ldots$ has an upper bound in $S$. Suppose
+  $C$ is a countably infinite subset of $S$ such that for every $u,v \in C$
+  there is a $w \in C$ such that $u \leq w$ and $v \leq w$. Prove that $C$ has 
+  an upper bound in $S$.
+\end{prop}
+\begin{proof}
+  We will construct an ascending chain of elements in $C$. Let
+  \begin{align*}
+    c_0 &= min(u,v) \\
+    c_1 &= max(u,v)
+  \end{align*}
+  It follows that there is a $c_2 \in C$ such that $c_0 \leq c_2$ and 
+  $c_1 \leq c_2$. This process may be repeated, so that for each $c_{i-1}$
+  and $c_{i-2}$, we have a $c_i \in C$ such that $c_{i-1} \leq c_i$ and
+  $c_{i-2} \leq c_i$. Thus, we have the ascending chain
+  $$ c_0 \leq c_1 \leq c_2 \leq \ldots$$
+  
+  We know that every ascending chain in $S$ has an upper bound in $S$, and so we
+  are done.
+\end{proof}
+
+\end{document}
