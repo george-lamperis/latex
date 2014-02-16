@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{enumerate}
+
+\raggedright
+
+% ------------------------------------------------------------------------------
+% Theorem Commands
+% ------------------------------------------------------------------------------
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{example}[thm]{Example}
+\newtheorem{remark}[thm]{Remark}
+
+% Number sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% Matrix sets
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Mat}[2]{\text{Mat}_{#1 x #2}}
+
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 425 - Notes}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Basic Theory}
+
+\begin{remark}
+  Multiplication of two matrices is defined only if the number of columns of the
+  left matrix is the same as the number of rows of the right matrix. If 
+  $A \in \Mat{m}{n}$ and $B \in \Mat{n}{p}$ then their matrix product AB is the
+  m-by-p matrix whose entries are given by dot product of the corresponding row
+  of A and the corresponding column of B:
+  \begin{align*}
+  (AB)_{i,j} &= A_{i,1}B_{1,j} + A_{i,2}B_{2,j} + \ldots +  A_{1,n}B_{n,j} \\
+             &= \sum_{r=1}^n A_{i,r}B_{r,j} \\
+  \end{align*}
+  
+\end{remark}
+
+
+\begin{defn}[Vector Space]
+\end{defn}
+
+\begin{defn}[Linear Map]
+\end{defn}
+
+\begin{defn}[Linear Operator]
+\end{defn}
+
+\begin{defn}[L-Invarient]
+\end{defn}
+
+
+\end{document}
