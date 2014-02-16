@@ -21,8 +21,6 @@
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{prop}[thm]{Proposition}
-
-\pagestyle{empty}
 \doublespace
 
 % ------------------------------------------------------------------------------
@@ -35,15 +33,97 @@
 \begin{document}
 \maketitle
 
+
 Alan Turing is perhaps the founder of computer science. He invented the current
 model which we use to understand a computer, called a Turing machine. 
 
-Halting problem
+\section{Computing}
 
-Alan Turing did some amazing stuff during World War II. He contributed to the
-breaking of the Nazi's Enigma machine, a device which allowed them to pass
-encrypted messages. This played a huge role in the war because the Allies were
-able to intercept Nazi's plans. This also had a large role during D-Day.
+Although computers were still in their infancy, Alan Turing had an enourmous
+impact on computing and computer science. An extremely important problem which
+he worked on was The Halting Problem. The Halting Problem is stated as follows:
+Given a program and an input, decide whether the program eventually finishes or
+if the program will run forever. This is important because a program which runs
+forever may not be very useful.
+
+A key part of solving this problem would be to develop precise definitions of a
+computer and of a computer program. This would lead Turing to develop a
+theoretical model of a computer which we now call a Turing machine. 
+
+``an unlimited memory capacity obtained in the form of an infinite tape marked out
+into squares, on each of which a symbol could be printed. At any moment there is
+one symbol in the machine; it is called the scanned symbol. The machine can
+alter the scanned symbol and its behavior is in part determined by that symbol,
+but the symbols on the tape elsewhere do not affect the behavior of the machine.
+However, the tape can be moved back and forth through the machine, this being 
+one of the elementary operations of the machine.'' Computer scientists today
+continue to use this model to study computers.
+
+Primitive computing machinery was designed to perform just one task or
+calculation. The idea of the Universal Turing Machine is that \emph{any}
+possible Turing machine could be represented as a stored program. With stored
+programs, one machine could run any possible program. Turing also thought of
+Abbreviated Code Instructions, a system where a computer could expand a program
+from an abbreviated form. This is essentially the plans for the first
+programming language. ACI would allow a computer to be programmed faster and
+more easily.
+
+After the end of World War II, Turing set out to develop the Universal Turing
+Machine that he had envisioned. However a radar engineer named F. C. Williams
+would beat him, developing the first implementation of a Turing machine in June
+1948.
 
 
+\section{World War II}
+
+Prior to World War II, German engineers had developed the Enigma machine, a
+mechanical and electrical device used for enciphering written messages.
+The Enigma machine had 3 to 5 rotors which allowed the user to select one of
+an extremely large number of settings. Each setting would result in a different
+code, and so two users who wish to send messages to each other must be
+using the same settings. During World War II, the German military made heavy use
+of the Enigma machine to securely pass messages between their troops.
+
+Clearly, the Allies would have a
+great advantage if these messages would be deciphered, and Alan Turing and
+several other mathematicians worked to break the Enigma code. Polish
+mathematicians had made some progress; however their work was incomplete, as it
+could not break the German Navy's Enigma code. Alan Turing made several key
+observations that led to the breaking of the enigma code. One of these
+observations was that the Enigma code would never encipher a letter to itself.
+So for example, an ``a'' in the original message would never appear as ``a'' in 
+the enciphered message. Turing also discovered an algorithm which would greatly
+reduced the number of possiblities to be checked. After he had developed the
+algorithm, Turing built the Bombe machine, a machine which carried out his
+algorithm much faster than could be performed by hand. The Bombe machine could
+work out the correct settings for the Enigma in about 20 minutes.
+
+With the Enigma code broken, the Allies now had a huge advantage. They could
+read the Nazi's messages which often included their military tactics and plans. 
+This would prove to be crucial in several operations, such as D-Day. Prior to
+D-Day, the Allies set a trap; they distributed messages containing plans for an
+attack several miles away from Normandy Beach. Because the Enigma had been
+cracked, the Allies were able to confirm that the Nazi's had fallen for their
+trap. The Nazi's positioned troops at the site of the dummy invasion, while the
+Allied troops stormed the beaches of Normandy instead.
+
+Another significant problem which Turing worked on during World War II was The
+German Tank Problem. The Allies wished to know how many tanks were posessed by
+the German military. This was a difficult problem because we could only know how
+many tanks were seen on the battlefield. Using only the number of tanks spotted
+by Allied forces, Turing was able to estimate the total number of tanks which
+the German military owned.
+
+\section{Development of the Computer}
+
+
+http://www.turing.org.uk/
+
+\begin{thebibliography}{9}
+
+\bibitem{numberphile1}
+http://youtu.be/BdrrJ7qd4HA,
+Numberphile
+
+\end{thebibliography}
 \end{document}
