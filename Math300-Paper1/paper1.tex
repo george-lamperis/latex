@@ -60,16 +60,28 @@ original enough to have a wider impact than Church's work.
 
 A key part of solving this problem was develop precise definitions of a
 computer and of a computer program. This would lead Turing to develop a
-theoretical model of a computer which we now call a Turing machine. 
+theoretical model of a computer which we now call a Turing machine. A Turing
+machine consists of:
+\begin{itemize}
+  \item A finite set of symbols.
+  \item An infinitely long roll of tape which is divided into squares. Each
+    square may be empty, or it may have a symbol printed on it. The tape may be
+    moved forward and backwards.
+  \item An active square on the, known as the ``head'' or the ``scanned
+    symbol''. The head symbol maybe be read or a new symbol written to the tape.
+  \item A state register which keeps track of the state of the Turing machine.
+  \item A table of instructions which, given the state and the symbol written on
+    the scanned symbol, specifies how to manipulate the state and/or active
+    symbol.
+\end{itemize}
+This model differed from Church's because it resembles a mechanical device. This
+idea proves to be extremely useful precisely because it could be implemented as
+a physical machine. Although this model may seem to be a primitive computer, a
+Turing machine can in fact compute anything that is computable.
+Computer Scientists continue to use the Turing Machine to understand the
+capabilities and limitiations of computers.
 
-``an unlimited memory capacity obtained in the form of an infinite tape marked out
-into squares, on each of which a symbol could be printed. At any moment there is
-one symbol in the machine; it is called the scanned symbol. The machine can
-alter the scanned symbol and its behavior is in part determined by that symbol,
-but the symbols on the tape elsewhere do not affect the behavior of the machine.
-However, the tape can be moved back and forth through the machine, this being 
-one of the elementary operations of the machine.'' Computer scientists today
-continue to use this model to study computers.
+
 
 Primitive computing machinery was designed to perform just one task or
 calculation. The idea of the Universal Turing Machine is that \emph{any}
@@ -129,9 +141,11 @@ the German military owned.
 \section{Development of the Computer}
 
 
-http://en.wikipedia.org/wiki/G\%C3\%B6del's_incompleteness_theorems#First_incompleteness_theorem
+http://en.wikipedia.org/wiki/G\%C3\%B6del's\_incompleteness\_theorems
 
-http://www.turing.org.uk/
+http://en.wikipedia.org/wiki/Turing\_machine
+
+http://www.turing.org.uk/bio/index.html
 
 \begin{thebibliography}{9}
 
