@@ -46,13 +46,28 @@ amount of time? There is one other problem with this infinite sequence: there is
 no first term in this sequence. By that logic, the man cannot even begin to
 travel from point A to point B, since there is no first task to complete.
 
-Calculus offers a possible solution to this paradox. Although there are an
-infinite number of tasks to complete, we can show that the sum of the infinitely
-many distances is in fact equal to a finite distance. We know that the infinite
-geometric series 
-$$ 
-\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots = \sum_{i = 2}^{\infty} \frac{1}{2^i} = 1 
+Mathematicians and philosophers continue to struggle with Zeno's
+Dichotomy Paradox. However, if we rephrase the scenario slightly, Calculus
+offers a possible solution to this paradox. Consider the following: to travel
+from point A to point B, you must first travel half that distance. After that,
+you must travel half of the remaining distance, and then half the remaining
+distance again, and so on. You might express the total distance traveled
+after $n$ of these steps with the partial sum
 $$
-converges to a finite value. 
+\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{2^n} = \sum_{i=1}^n \frac{1}{2^i} 
+$$
+This is a geometric series, and so using the ratio test we see that as $n$ tends
+to infinity, this sum converges
+$$
+\sum_{i=1}^\infty \frac{1}{2^i} = 1
+$$
+Zeno's paradox insists that is impossible to complete an infinite number of
+tasks in a finite amount of time. However, we can use Calculus to show
+that is is not the case, as the sum of infinitely many terms can be
+equal to a finite number.
+
+\noindent \textbf{References:} \\
+http://en.wikipedia.org/wiki/Zeno's\_paradoxes \\
+http://youtu.be/u7Z9UnWOJNY
 
 \end{document}
