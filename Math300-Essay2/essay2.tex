@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\doublespace
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Essay 2}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+Zeno's Dichotomoy Paradox is stated as follows: Suppose a man wants to move from
+point A to point B. Before he can reach point B, he must reach half the
+distance. But before this can happen, the man must reach a quarter of the
+distance, and before this, and eighth of the distance, and so on. We might
+represent this as an infinite sequence:
+$$ 
+\{ \ldots, \frac{1}{16}, \frac{1}{8}, \frac{1}{4}, \frac{1}{2}, 1 \} 
+$$
+The paradox is this: how can we complete an infinite number of steps in a finite
+amount of time? There is one other problem with this infinite sequence: there is
+no first term in this sequence. By that logic, the man cannot even begin to
+travel from point A to point B, since there is no first task to complete.
+
+Calculus offers a possible solution to this paradox. Although there are an
+infinite number of tasks to complete, we can show that the sum of the infinitely
+many distances is in fact equal to a finite distance. We know that the infinite
+geometric series 
+$$ 
+\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots = \sum_{i = 2}^{\infty} \frac{1}{2^i} = 1 
+$$
+converges to a finite value. 
+
+\end{document}
