@@ -33,17 +33,16 @@
 \begin{document}
 \maketitle
 
-
+Alan Turing is a British mathematician, best known for his enormous influence on
+Computer Science. Turing was born born on June 23, 1912.
 
 \section{The Halting Problem}
 
-Although computers were still in their infancy, Alan Turing had an enourmous
-impact on computing and computer science. An extremely important problem which
-he worked on was The Halting Problem. 
+An extremely important problem which he worked on was The Halting Problem. 
 The Halting Problem was inspired by recent (at the time) developments in
 mathematics. In 1931, Godel's Incompleteness Theorem showed a shocking result:
-that there are true statementments about numbers which can not be proven.
-A further question was posed by David Hilbert, known as the
+that there are true statementments about numbers which can not be proven from
+basic axioms. A further question was posed by David Hilbert, known as the
 Entscheidungsproblem: does there exist some method of determining whether a 
 given mathematical statement was provable?
 The Halting Problem is stated as follows: Given a program and an input, decide
@@ -56,10 +55,10 @@ does not exist. It's worth noting that Alonzo Church had independently proved
 the same results as Turing in 1936. However, Turing's ideas were different and
 original enough to have a wider impact than Church's work.
 
-A key part of solving this problem was develop precise definitions of a
+A key part of solving this problem was to develop precise definitions of a
 computer and of a computer program. This would lead Turing to develop a
-theoretical model of a computer which we now call a Turing machine. A Turing
-machine consists of:
+theoretical model of a computer program which we now call a Turing machine. A
+Turing machine consists of:
 \begin{itemize}
   \item A finite set of symbols.
   \item An infinitely long roll of tape which is divided into squares. Each
@@ -91,45 +90,73 @@ Turing machine in June 1948. Nevertheless, Alan Turing's ideas made an enormous
 impact on the field of computing.
 
 
+Many people believe that it's impossible to make a computer which cannot
+simulate a Turing machine.
+
+Most programming languages are Turing complete.
+
 \section{World War II}
+
+% This is all numberphile
 
 Prior to World War II, German engineers had developed the Enigma machine, a
 mechanical and electrical device used for enciphering written messages.
-The Enigma machine had 3 to 5 rotors which allowed the user to select one of
-an extremely large number of settings. Each setting would result in a different
-code, and so two users who wish to send messages to each other must be
-using the same settings. During World War II, the German military made heavy use
-of the Enigma machine to securely pass messages between their troops.
+The Enigma machine had 3 to 5 rotors, each with 26 settings, allowing for an
+extremely large number of settings. Additionally, the Enigma machine has a
+plugboard on the back which allows even more possible configurations. The
+plugboard swaps two letters, and up to 10 pairs could be used. Each setting
+creates a unique code. The security of the Enigma code relies on the fact that
+there are an astronomically large amount of possible settings.
 
-Clearly, the Allies would have a
-great advantage if these messages would be deciphered, and Alan Turing and
-several other mathematicians worked to break the Enigma code. Polish
-mathematicians had made some progress; however their work was incomplete, as it
-could not break the German Navy's Enigma code. Alan Turing made several key
-observations that led to the breaking of the enigma code. One of these
-observations was that the Enigma code would never encipher a letter to itself.
-So for example, an ``a'' in the original message would never appear as ``a'' in 
-the enciphered message. Turing also discovered an algorithm which would greatly
-reduced the number of possiblities to be checked. After he had developed the
-algorithm, Turing built the Bombe machine, a machine which carried out his
-algorithm much faster than could be performed by hand. The Bombe machine could
-work out the correct settings for the Enigma in about 20 minutes.
+To transmit a secret message with the Enigma machine, first pick a
+configuration for the rotors and plugboard. Next, type your message into the
+Enigma machine, and copy the encrypted message. Since the Enigma machine does
+not trasmit messages itself, you will have to deliver the message yourself. This
+was often done using Morse Code. Then, the recipient must configure his Enigma
+machine using the same settings as the sender used. Finally, the recipient types
+the encrypted message on the Enigma machine, which will output the original
+message.
 
-With the Enigma code broken, the Allies now had a huge advantage. They could
-read the Nazi's messages which often included their military tactics and plans. 
+During World War II, the German military made heavy use of the Enigma machine to
+securely pass messages between their troops. If the Allies were able to decipher
+the German military's communication, then clearly the Allies would have a great
+advantage. Because of this, the British and Polish militaries made it a priority
+to crack the Enigma code. Polish mathematicians had worked out the electrical
+wiring of the Enigma, leading to a good understanding of how it worked. 
+However, the challenge lies in the settings on the plugboard.
+
+Alan Turing made several key observations that led to the breaking of the Enigma
+code. One of these observations was that the Enigma code would never encipher a 
+letter to itself. So for example, an ``a'' in the original message would never
+appear as ``a'' in the enciphered message. Turing realized that this was a flaw
+in the code.
+    For example, it was extremely common for German messages to end with ``Heil
+Hitler''.
+
+Turing eventually developed an algorithm which could crack the Enigma code. The 
+algorithm starts by choosing one Enigma setting. Assume this is the correct
+setting, and begin deciphering until a contradiction is found: either a letter
+goes to itelf, or two letters go to the same letter. When a contradiction is
+devived, we can deduce that this setting is wrong. Furthermore, anything
+following from this contradiction is also false, which allowed Turing to
+drastically reduce the number of settings which must be checked.
+
+Although the number of settings to check has been reduced, there still remains a
+large number of settings. Because of this, Turing and other British
+mathematicians built the Bombe machine, a machine which carried out his
+algorithm much faster than could be performed by hand. The Bombe machine could 
+work out the correct settings for the Enigma in about 20 minutes. Speed was
+quite important because the German military would change the setting of their
+Enigma machines every day.
+
+ With the Enigma code broken, the Allies now had a huge advantage.
+They could read the Nazi's messages which often included their military tactics and plans. 
 This would prove to be crucial in several operations, such as D-Day. Prior to
 D-Day, the Allies set a trap; they distributed messages containing plans for an
 attack several miles away from Normandy Beach. Because the Enigma had been
 cracked, the Allies were able to confirm that the Nazi's had fallen for their
 trap. The Nazi's positioned troops at the site of the dummy invasion, while the
 Allied troops stormed the beaches of Normandy instead.
-
-Another significant problem which Turing worked on during World War II was The
-German Tank Problem. The Allies wished to know how many tanks were posessed by
-the German military. This was a difficult problem because we could only know how
-many tanks were seen on the battlefield. Using only the number of tanks spotted
-by Allied forces, Turing was able to estimate the total number of tanks which
-the German military owned.
 
 
 \begin{thebibliography}{9}
