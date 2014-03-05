@@ -33,27 +33,30 @@
 \begin{document}
 \maketitle
 
-Alan Turing is a British mathematician, best known for his enormous influence on
-Computer Science. Turing was born born on June 23, 1912.
+Alan Turing is a British mathematician, well known for his enormous influence on
+the field of Computer Science. Turing was born born on June 23, 1912 in London,
+England. At a young age, Alan Turing showed an interest in the sciences. He
+studied the works of Albert Einstein in his free time, at the age of only 16.
+Turing attended King's College in Cambridge from 1931 to 1934, where he studied
+mathematics. 
 
-\section{The Halting Problem}
-
-An extremely important problem which he worked on was The Halting Problem. 
-The Halting Problem was inspired by recent (at the time) developments in
+\section*{The Halting Problem}
+At this time, Kurt Godel had made a shocking development in
 mathematics. In 1931, Godel's Incompleteness Theorem showed a shocking result:
 that there are true statementments about numbers which can not be proven from
 basic axioms. A further question was posed by David Hilbert, known as the
 Entscheidungsproblem: does there exist some method of determining whether a 
-given mathematical statement was provable?
-The Halting Problem is stated as follows: Given a program and an input, decide
-whether the program eventually finishes or if the program will run forever. This
-is important because a program which runs forever may not be very useful. In
-1936, Alan Turing proved that, in general, there is not an algorithm to
-determine whether or not a program-input pair will halt. At the same time,
-Turing had also shown that a general solution to Hilbert's Entscheidungsproblem
-does not exist. It's worth noting that Alonzo Church had independently proved
-the same results as Turing in 1936. However, Turing's ideas were different and
-original enough to have a wider impact than Church's work.
+given mathematical statement was provable? The Entscheidungsproblem would serve
+as a motivation for the Halting Problem. The Halting Problem is stated as
+follows: Given a program and an input, decide whether the program eventually 
+finishes or if the program will run forever. This is important because a program
+which runs forever may not be very useful. In 1936, Alan Turing proved that, in 
+general, there is not an algorithm to determine whether or not a program-input 
+pair will halt. At the same time, Turing had also shown that a general solution
+to Hilbert's Entscheidungsproblem does not exist. It's worth noting that Alonzo
+Church had independently proved the same results as Turing in 1936. However,
+Turing's ideas were different and original enough to have a wider impact than
+Church's work.
 
 A key part of solving this problem was to develop precise definitions of a
 computer and of a computer program. This would lead Turing to develop a
@@ -73,15 +76,22 @@ Turing machine consists of:
 \end{itemize}
 This model differed from Church's because it resembles a mechanical device. This
 idea proves to be extremely useful precisely because it could be implemented as
-a physical machine. Although this model may seem to be a primitive computer, a
-Turing machine can in fact compute anything that is computable. Computer
-Scientists continue to use the Turing Machine to understand the capabilities and
-limitiations of computers. We can think of the Universal Turing Machine as the
-computer, while a Turing machine is a computer program. Turing also thought of
-Abbreviated Code Instructions, a system where a computer could expand a program
-from an abbreviated form. This is essentially the plans for the first
-programming language. ACI would allow a computer to be programmed faster and
-more easily.
+a physical machine. Additionally, Alan Turing created the concept of the
+Universal Turing Machine. The Universal Turing Machine is a Turing machine which
+can simulate any arbitrary Turing machine. We can think of the Universal Turing
+Machine as a computer, while a Turing machine is a computer program. 
+
+These models may seem quite primitive; however, they prove to be extremely
+useful. The Universal Turing Machine inspired the concept of the stored program.
+Early computers were built to perform just one task. This required building a
+new computer for each task you would like to automate. To contrast this, a
+computer with stored programs allows you to build one computer, and perform a
+myriad of different tasks. Additionally, computer scientists today continue to
+use Turing machines to understand the capabilities and limitations of computers.
+A great deal of tasks and problems may be solved using Turing machines, and so
+computer scientists find that studying Turing machines is quite useful. Most
+programming languages are Turing complete, meaning that the language can
+simulate the Universal Turing Machine.
 
 After the end of World War II, Turing set out to actually implement the
 Universal Turing Machine that he had envisioned. However a radar engineer named 
@@ -90,32 +100,21 @@ Turing machine in June 1948. Nevertheless, Alan Turing's ideas made an enormous
 impact on the field of computing.
 
 
-Many people believe that it's impossible to make a computer which cannot
-simulate a Turing machine.
-
-Most programming languages are Turing complete.
 
 \section{World War II}
 
 % This is all numberphile
-
-Prior to World War II, German engineers had developed the Enigma machine, a
-mechanical and electrical device used for enciphering written messages.
-The Enigma machine had 3 to 5 rotors, each with 26 settings, allowing for an
-extremely large number of settings. Additionally, the Enigma machine has a
-plugboard on the back which allows even more possible configurations. The
-plugboard swaps two letters, and up to 10 pairs could be used. Each setting
-creates a unique code. The security of the Enigma code relies on the fact that
-there are an astronomically large amount of possible settings.
-
-To transmit a secret message with the Enigma machine, first pick a
-configuration for the rotors and plugboard. Next, type your message into the
-Enigma machine, and copy the encrypted message. Since the Enigma machine does
-not trasmit messages itself, you will have to deliver the message yourself. This
-was often done using Morse Code. Then, the recipient must configure his Enigma
-machine using the same settings as the sender used. Finally, the recipient types
-the encrypted message on the Enigma machine, which will output the original
-message.
+Besides his breakthroughs in Computer Science, Alan Turing also made a
+remarkable impact on the Allied World War II effort. Prior to World War II,
+German engineers had developed the Enigma machine, a mechanical and electrical 
+device used for enciphering written messages. The Enigma machine had 3 to 5
+rotors, each with 26 settings, allowing for an extremely large number of
+settings. Additionally, the Enigma machine has a plugboard on the back which 
+allows even more possible configurations. The plugboard swaps two letters, and 
+up to 10 pairs could be used. Each setting creates a unique code. The security 
+of the Enigma code relies on the fact that there are an astronomically large 
+amount of possible settings, since the sender and recipient must use the same
+settings.
 
 During World War II, the German military made heavy use of the Enigma machine to
 securely pass messages between their troops. If the Allies were able to decipher
@@ -129,34 +128,47 @@ Alan Turing made several key observations that led to the breaking of the Enigma
 code. One of these observations was that the Enigma code would never encipher a 
 letter to itself. So for example, an ``a'' in the original message would never
 appear as ``a'' in the enciphered message. Turing realized that this was a flaw
-in the code.
-    For example, it was extremely common for German messages to end with ``Heil
-Hitler''.
+in the code. This fact would be a key part of breaking the code.
 
 Turing eventually developed an algorithm which could crack the Enigma code. The 
 algorithm starts by choosing one Enigma setting. Assume this is the correct
 setting, and begin deciphering until a contradiction is found: either a letter
 goes to itelf, or two letters go to the same letter. When a contradiction is
-devived, we can deduce that this setting is wrong. Furthermore, anything
-following from this contradiction is also false, which allowed Turing to
-drastically reduce the number of settings which must be checked.
+devived, we can deduce that this setting is wrong. Alan Turing also realized
+that anything following from this contradiction is also false, which allowed
+him to drastically reduce the number of settings which must be checked. However,
+even with the discovery of this algorithm, an enormous number of settings still
+had to be checked, which was extremely time consuming. Breaking the code quickly
+was extremely important, since the Germans changed the settings of their Enigma
+machines every day. Because of this, Turing and other British mathematicians
+built the Bombe machine, a machine which performed all of these checks using 
+switches and electrical circuits. The Bombe machine could calcuate the correct
+settings for the enigma machine in just 20 minutes, much faster than it could be
+calculated by hand.
 
-Although the number of settings to check has been reduced, there still remains a
-large number of settings. Because of this, Turing and other British
-mathematicians built the Bombe machine, a machine which carried out his
-algorithm much faster than could be performed by hand. The Bombe machine could 
-work out the correct settings for the Enigma in about 20 minutes. Speed was
-quite important because the German military would change the setting of their
-Enigma machines every day.
+With the Enigma code broken, the Allies now had a huge advantage. They could
+read the Nazi's messages which often included their military tactics and plans.
+This would prove to be crucial in several important Allied operations, such as
+D-Day. Prior to D-Day, the Allies had set a trap; they distributed messages
+containing false plans for an attack several miles away from Normandy Beach. Because the
+Enigma had been cracked, the Allies were able to confirm that the German
+military  had fallen for their trap. The Germans positioned troops at the site
+of the dummy invasion, while the Allied troops stormed the beaches of Normandy instead.
 
- With the Enigma code broken, the Allies now had a huge advantage.
-They could read the Nazi's messages which often included their military tactics and plans. 
-This would prove to be crucial in several operations, such as D-Day. Prior to
-D-Day, the Allies set a trap; they distributed messages containing plans for an
-attack several miles away from Normandy Beach. Because the Enigma had been
-cracked, the Allies were able to confirm that the Nazi's had fallen for their
-trap. The Nazi's positioned troops at the site of the dummy invasion, while the
-Allied troops stormed the beaches of Normandy instead.
+
+Despite all of Alan Turing's accomplishments and all that he did for his
+country, Turing's life has a tragic ending. At this time, homosexual acts were
+considered a crime in the United Kingdom. In 1952, Alan Turing was arrested and
+charged with gross indecency when police learned of his sexual relationship
+with another man. The courts gave him the choice between prison and chemical
+castration. Turing opted for chemical castration, and recieved injections of
+hormones intended to limit his sexual thoughts. Additionally, Turing's security
+clearance was revoked, bringing an end to his work in Crytography for the
+British government. Because of this, Turing became resentful and depressed. In
+1954, at age 41, Alan Turing was found dead in his home. The cause of death was
+determined to be suicide by means of cyanide poisening. In 2009, Prime Minister
+Gordon Brown issued a formal apology to Alan Turing, and in 2013, Turing was 
+pardoned for his charges by Queen Elizabeth II.
 
 
 \begin{thebibliography}{9}
