@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\doublespace
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Essay 3}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+Although mathematics seems to have an answer for everything, there are in fact
+several unsolved problems in mathematics. An important example of a currently
+unsolved problem is $P$ versus $NP$.
+
+
+Before we can discuss $P$ versus $NP$, we need to first talk about problem
+complexity.
+When we talk about the complexity of a problem, we do not necessarily care
+about the exact number of steps to solve the problem. Instead, we study the
+running time for a problem, the upper bounds for the number of steps than an
+efficent algorithm requires to solve the problem. As the problem size $n$ grows,
+we describe the running time with a function of $n$.
+
+A decision problem is a question which can be answered with ``yes'' or ``no''.
+Two important classifications of decision problems are $P$ and $NP$.  A decision
+problem is in $P$ if we can find a solution in polynomial time, while a problem
+is in $NP$ if we can check a solution in polynomial time. Thus, to find a
+solution, we must try every possibility, and so problems in $NP$ run in exponential time. 
+Because exponential functions grow faster than polynomial functions, we can
+consider problems in $P$ to be easier than problems in $NP$. Clearly $P \subset
+NP$ because an exponential function also serves as an upper bounds for problems in $P$.
+The P versus NP problem asks if $P = NP$. That is, if a problem can be verified
+in polynomial time, can a solution also be found in polynomial time?
+
+
+The solution of $P$ versus $NP$ has several important consequences. A proof that
+$P = NP$ would mean that many problems which we thought were difficult in fact
+have an efficient solution. As a result, many of our cyptographic systems,
+such as RSA and AES, would be vulnerable, as an efficient way to break them
+exists. However, most computer scientists have the opinion that $P \neq NP$. The
+consequences of proving this are far less exciting. However, a proof that $P
+\neq NP$ would still be considered quite useful, as it solves a problem which
+has puzzled computer scientists since 1971.
+
+
+\end{document}
