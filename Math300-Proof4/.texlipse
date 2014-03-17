@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun Mar 16 21:38:32 CDT 2014
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=proof4.tex
+outputFile=proof4.pdf
+langSpell=en
+markDer=true
+srcDir=

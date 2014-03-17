@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\doublespace
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Proof 4}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{prop}
+  If $n > 0$, then 
+  $$
+    \frac{(2n)!}{n!^2}
+  $$
+  is an even integer.
+\end{prop}
+\begin{proof}
+We will induct on $n$. When $n=1$, we have
+$$
+  \frac{(2 \cdot 1)!}{1!^2} = 2
+$$
+Assume for inductive hypothesis that for some integer $k$ we have
+$$ 
+  \frac{(2n)!}{n!^2} = 2k
+$$
+Then
+\begin{align*}
+  \frac{(2(n+1))!}{(n+1)!^2}
+    &= \frac{(2n+2)!}{(n+1)!^2} \\
+    &= \frac{(2n)! \cdot (2n+1)(2n+2)}{(n)!^2 (n+1)^2} \\
+    &= \frac{(2n)!}{n!^2} \cdot \frac{(2n+1)(2n+2)}{(n+1)^2} \\
+    &= 2k \cdot \frac{(2n+1)(2n+2)}{(n+1)^2}
+\end{align*}
+is even. Hence, if $n > 0$
+$$
+  \frac{(2n)!}{n!^2}
+$$
+is even.
+\end{proof}
+
+\end{document}
