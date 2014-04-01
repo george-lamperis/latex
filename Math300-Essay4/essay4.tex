@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+\newtheorem*{claim}{Claim}
+\doublespace
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Essay 4}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+Because of what the visitor says, the islanders will deduce that there is at
+least one person on the island with blue eyes. First, suppose only one person on
+the island has blue eyes. This person would look around at the other islanders
+and notice that they all have brown eyes. Since this person knows that there is 
+at least one person with blue eyes, this person will conclude that their eyes
+must be blue. Then, at noon, this islander would leave.
+
+Now suppose that there are two people who have blue eyes. Both will see each
+other and notice that the other has blue eyes, while the rest of the islanders
+have brown eyes. They both deduce that ``If I don't have blue eyes, then the
+islander I see with blue eyes will leave today''. When this does not happen,
+both will deduce that they have blue eyes, and both of them leave the following
+day.
+
+Let's examine one more case: suppose there are three islanders with blue eyes.
+Each of these three will reason that, ``If I don't have blue eyes, then the
+two with blue eyes will leave tomorrow.'' When nobody leaves on day 2, each of
+them concludes that they have blue eyes, and all three leave the island on day
+3.
+
+\begin{claim}
+  If there are $n$ islanders with blue eyes, then on the $n$-th day, all the
+  blue-eyed islanders will realize that they have blue eyes. Thus, on the $n$-th
+  day, all the islanders with blue eyes must leave.
+\end{claim}
+\begin{proof}
+  If there is only one person with blue eyes, he will look at the other
+  islanders and realize that none of them have blue eyes. Hence, this person
+  concludes that he must have blue eyes, and thus leaves the island at noon.
+  
+  Now suppose that if there are $n > 1$ people on the island who have blue eyes,
+  then on the $n$-th day, they all deduce their eye color is blue.
+  
+  Then if there are $n+1$ people with blue eyes, each will look around at the
+  other islanders and notice $n$ of them with blue eyes.
+  
+  Each of these people deduces that either there are only $n$ people on the
+  island with blue eyes, or that they have blue eyes too. So they all wait $n$
+  days. When nobody with blue eyes has left the island, each of them now knows
+  that they have blue eyes too. And so, on the $n+1$-th day, all $n+1$ blue-eyed
+  islanders leaves.
+\end{proof}
+
+
+\end{document}
