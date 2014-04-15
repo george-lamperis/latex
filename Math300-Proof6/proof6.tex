@@ -41,10 +41,26 @@
   also tangent to the curve $y = \sin x$.
 \end{prop}
 \begin{proof}
+  Recall that a line passing through the points $(0,0)$ and $(x,y)$ is
+  described by the equation $y=mx$ and has slope $m$.
+  
+  We are looking for points $(x, \sin(x))$ such that:
+  $$
+    \frac{\sin x}{x} = \sin(x)^\prime 
+  $$
+  Given such a point, we have:
+  \begin{align*}
+    \frac{\sin x}{x} = \sin(x)^\prime 
+    &\implies \frac{\sin x}{x} = \cos x \\
+    &\implies x = \tan x
+  \end{align*}
 
-(x,sin(x)) is such a tangency point iff its slope sin(x)/x = the derivative of sin at x, namely cos(x), so the condition is x = sin(x)/cos(x)  which means: x is a fixed-point of tan
-<Z-module> if you look at the graph of tan, you can see it intersects the line y = x infinitely often
-
+  Notice that $\tan x$ has infinitely many fixed points, i.e. points such that 
+  $x = \tan x$. You can confirm this by graphing $f(x) = x - \tan x$ and
+  noticing that this function has infinitely many zeros.
+  
+  Then it follows that there are infinitely many lines that pass
+  through the origin and are also tangent to the curve $y = \sin x$.
 \end{proof}
 
 \end{document}
