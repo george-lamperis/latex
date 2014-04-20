@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb,amscd}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+
+
+\newtheoremstyle{mystyle}% name
+    {2ex}       % Space above
+    {2ex}       % Space below
+    {}          % Body font
+    {}          % Indent amount (empty = no indent, \parindent = para indent)
+    {\bfseries} % Thm head font
+    {.}         % Punctuation after thm head
+    {\newline}  % Space after thm head: \newline = linebreak
+    {}          % Thm head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+%\doublespace
+
+% Number sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% ------------------------------------------------------------------------------
+% Begin Document
+% ------------------------------------------------------------------------------
+\title{Math 300 - Final Paper}
+\author{George Lamperis}
+\date{}
+
+\begin{document}
+\maketitle
+
+% \begin{defn}
+%   Let $e = \lim_{n \to \infty} \left( 1 + \frac{1}{n}\right)^n $
+% \end{defn}
+% \begin{proof}
+% 
+% \end{proof}
+% 
+% 
+% \begin{defn}
+%   Let $\ln x = \log_e(x)$
+% \end{defn}
+% \begin{proof}
+% 
+% \end{proof}
+% 
+% 
+% \begin{prop}
+%   $ \frac{d}{dx} \ln x = \frac{1}{x} $
+% \end{prop}
+% \begin{proof}
+% This proof is not original. \cite{proofwiki1}
+% 
+% \begin{align*}
+%     \frac{d}{dx} \ln x 
+%         &= \lim_{h \to 0} \frac{\ln(x+h) - \ln(x)}{h} \\
+%         &= \lim_{h \to 0} \frac{1}{h} \cdot \ln \left(\frac{x+h}{x} \right) \\
+%         &= \lim_{h \to 0} \frac{1}{h} \cdot \ln \left(1 + \frac{h}{x} \right)
+%         \\
+% \end{align*}
+% 
+% Next let $u = \lvert \frac{x}{h} \rvert$
+% 
+% 
+% \end{proof}
+
+Provide clarification for $E,L$ notation.
+
+\begin{defn}
+  Define the function $L(x)$ as follows:
+  $$ L(x) = \int_1^x \frac{dt}{t} $$
+  for $x > 0$.
+  
+  
+  
+  The function $x \mapsto 1/x$ is continuous. Therefore, by the Fundamental
+  Theorem of Calculus, $L$ is differentiable and
+  $$ L^\prime(x) = \frac{1}{x} $$.
+\end{defn}
+
+
+
+\begin{thm}
+  There is a unique number $e$, which lies between 2 and 3, such that 
+  $$ L(e) = \int_1^e \frac{dt}{t} = 1 $$
+\end{thm}
+
+\begin{defn}
+  Since $L$ is differentiable and monotone increasing, there is a monotone
+  increasing and differentiable inverse fuction $L^{-1}: \R \mapsto (0, \infty)$,
+  which we will denote by $E$. And so we have
+  \begin{align*}
+    E(L(X)) = x \\
+    L(E(x)) = x
+  \end{align*} 
+\end{defn}
+
+
+\begin{thm}
+  The function $E$ is its own derivative, i.e., $E^\prime(x) = E(x)$
+\end{thm}
+\begin{proof}
+  \begin{align*}
+    E^\prime(x) 
+        &= \frac{1}{L^\prime(L^{-1}(x))}  & \text{(Howie, Theorem 4.15)} \\
+        &= L^\prime(x) \\
+        &= E(x)
+  \end{align*}
+\end{proof}
+
+
+\begin{thm}
+  For all $x,y \in \R$, we have
+  $$ E(x+y) = E(x)E(y) $$
+  and
+  $$ E(-x) = \frac{1}{E(x)}$$
+\end{thm}
+
+Now let us gather this information and introduce a new notation.
+
+\begin{thm}
+  Define $e^x$ as $E(x)$ and also define $\log_e (y)$ as $L(y)$. 
+  
+  If $y = e^x$, then 
+  
+  Now let us express what we know about $L$ and $E$ using this new notation.
+  Recall that $E$ and $L$ are inverses. Thus,
+  $$ e^{\ln x} = x \text{ and } \ln(e^x) = x $$
+  We also have the following properties:
+  \begin{align*}
+    \int_{1}^x \frac{dt}{t} = \ln x \\
+    \frac{d}{dx}(\ln x) = \frac{1}{x} \\
+    \frac{d}{dx}(e^x) = e^x \\
+  \end{align*}
+    
+\end{thm}
+
+
+\begin{defn}
+  If $a$ is a positive real number, we define
+  $a^x = e^{x \log a}$
+\end{defn}
+
+
+Interesting fact: Bernoulli used this to approximate the value of $e$.
+\begin{prop}
+  $$ \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^n = e^x $$
+\end{prop}
+
+
+\begin{thm}
+  The number $e$ is irrational. 
+\end{thm}
+
+
+Maybe include some old-fashioned tricks for evaluating numbers with logs.
+
+% ------------------------------------------------------------------------------
+% References
+% ------------------------------------------------------------------------------
+\begin{thebibliography}{10}
+
+\bibitem{howie}
+John M. Howie, Real Analysis
+
+\bibitem{proofwiki1}
+\url{http://www.proofwiki.org/wiki/Derivative_of_Natural_Logarithm_Function/Proof_2}
+
+\end{thebibliography}
+
+
+\end{document}
