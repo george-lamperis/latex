@@ -79,14 +79,12 @@
 % 
 % \end{proof}
 
-Provide clarification for $E,L$ notation.
+Provide clarification for $E,L$ notation here.
 
 \begin{defn}
   Define the function $L(x)$ as follows:
   $$ L(x) = \int_1^x \frac{dt}{t} $$
   for $x > 0$.
-  
-  
   
   The function $x \mapsto 1/x$ is continuous. Therefore, by the Fundamental
   Theorem of Calculus, $L$ is differentiable and
@@ -94,11 +92,17 @@ Provide clarification for $E,L$ notation.
 \end{defn}
 
 
+\begin{prop}
+  For all $x,y \in (0, \infty)$,
+  $$ L(xy) = L(x) + L(y) \text{ and } L(1/x) = -L(x)$$
+\end{prop}
+
 
 \begin{thm}
   There is a unique number $e$, which lies between 2 and 3, such that 
   $$ L(e) = \int_1^e \frac{dt}{t} = 1 $$
 \end{thm}
+
 
 \begin{defn}
   Since $L$ is differentiable and monotone increasing, there is a monotone
@@ -134,9 +138,8 @@ Provide clarification for $E,L$ notation.
 Now let us gather this information and introduce a new notation.
 
 \begin{thm}
-  Define $e^x$ as $E(x)$ and also define $\log_e (y)$ as $L(y)$. 
-  
-  If $y = e^x$, then 
+  Define $e^x$ as $E(x)$ and also define $\log_e (y)$ (or equivalently $\ln y$
+  as $L(y)$. If $y = e^x$, then $\ln y = x$
   
   Now let us express what we know about $L$ and $E$ using this new notation.
   Recall that $E$ and $L$ are inverses. Thus,
@@ -151,13 +154,17 @@ Now let us gather this information and introduce a new notation.
 \end{thm}
 
 
+Before this result, the function $a^x$ is only defined for rational numbers. The
+following result defines $a^x$ for any real number $x$.
 \begin{defn}
-  If $a$ is a positive real number, we define
-  $a^x = e^{x \log a}$
+  If $a$ is a positive real number, we define $a^x$ as
+  $$ a^x = e^{x \ln a} $$
+  and
+  $$ \log_a x = \frac{\ln x}{\ln a} $$
 \end{defn}
 
 
-Interesting fact: Bernoulli used this to approximate the value of $e$.
+% Interesting fact: Bernoulli used this to approximate the value of $e$.
 \begin{prop}
   $$ \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^n = e^x $$
 \end{prop}
@@ -168,7 +175,7 @@ Interesting fact: Bernoulli used this to approximate the value of $e$.
 \end{thm}
 
 
-Maybe include some old-fashioned tricks for evaluating numbers with logs.
+% Maybe include some old-fashioned tricks for evaluating numbers with logs.
 
 % ------------------------------------------------------------------------------
 % References
