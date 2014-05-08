@@ -44,47 +44,33 @@
 \begin{document}
 \maketitle
 
-% \begin{defn}
-%   Let $e = \lim_{n \to \infty} \left( 1 + \frac{1}{n}\right)^n $
-% \end{defn}
-% \begin{proof}
-% 
-% \end{proof}
-% 
-% 
-% \begin{defn}
-%   Let $\ln x = \log_e(x)$
-% \end{defn}
-% \begin{proof}
-% 
-% \end{proof}
-% 
-% 
-% \begin{prop}
-%   $ \frac{d}{dx} \ln x = \frac{1}{x} $
-% \end{prop}
-% \begin{proof}
-% This proof is not original. \cite{proofwiki1}
-% 
-% \begin{align*}
-%     \frac{d}{dx} \ln x 
-%         &= \lim_{h \to 0} \frac{\ln(x+h) - \ln(x)}{h} \\
-%         &= \lim_{h \to 0} \frac{1}{h} \cdot \ln \left(\frac{x+h}{x} \right) \\
-%         &= \lim_{h \to 0} \frac{1}{h} \cdot \ln \left(1 + \frac{h}{x} \right)
-%         \\
-% \end{align*}
-% 
-% Next let $u = \lvert \frac{x}{h} \rvert$
-% 
-% 
-% \end{proof}
+\section{Introduction}
+The number $e$ is extremely important to mathematics. It's called Euler's number
+or Napier's number. The number $e$ is intimately related to the logarithm.
+
+The number $e$ was discovered through the study of logarithms. The motivation
+for the development of logarithms was an attempt to make multiplication easier
+by turning it into addition instead. In 1618, John Napier release an essay which
+is considered to be the first work on logarithms. In this essay appears a table
+of logarithms to the base $e$. However, Napier was unaware of the number $e$
+and it's connection to logarithms.
+
+In 1683, Jacob Bernoulli was studying compound interest. He tried to find the
+limit of $(1 + 1/n)^n$ as $n$ tends to infinity. Although this limit is equal to
+$e$, Bernoulli likely did not realize the connection between $e$ and the
+logarithm.
+
+A Swiss mathematican named Leonhard Euler, after whom the number $e$ is named.
+Euler discovered many remarkable properties of the number $e$.
+
+
+
+\section{Results}
 
 Provide clarification for $E,L$ notation here.
-
 \begin{defn}
-  Define the function $L(x)$ as follows:
+  Define the function $L: (0, \infty) \mapsto \R$ as follows:
   $$ L(x) = \int_1^x \frac{dt}{t} $$
-  for $x > 0$.
   
   The function $x \mapsto 1/x$ is continuous. Therefore, by the Fundamental
   Theorem of Calculus, $L$ is differentiable and
@@ -96,12 +82,45 @@ Provide clarification for $E,L$ notation here.
   For all $x,y \in (0, \infty)$,
   $$ L(xy) = L(x) + L(y) \text{ and } L(1/x) = -L(x)$$
 \end{prop}
+\begin{proof}
+  \begin{align*}
+    L(xy) &= \int_{1}^{xy} \frac{dt}{t} \\
+          &= \int_{1}^{x} \frac{dt}{t} + \int_{x}^{xy} \frac{dt}{t} \\
+          &= L(x) + \int_{x}^{xy} \frac{dt}{t}
+  \end{align*}
+  Now in the remaining integral, substitute $u = t/x$. 
+  \begin{align*}
+          &= L(x) + \int_{1}^{y} \frac{du}{u} \\
+          &= L(x) + L(y)
+  \end{align*}
+  as desired.
+  
+  The next property follows immediately from this:
+  \begin{align*}
+    L(x) + L(1/x) &= L(x \cdot 1/x) \\
+                  &= L(1) \\
+                  &= 0
+  \end{align*}  
 
+\end{proof}
 
 \begin{thm}
-  There is a unique number $e$, which lies between 2 and 3, such that 
+  There is a unique number $e$ such that 
   $$ L(e) = \int_1^e \frac{dt}{t} = 1 $$
 \end{thm}
+\begin{proof}
+  Recall that $L'(x) > 0$ on the interval $(0, \infty)$. By Howie,
+  Theorem 4.13, we have that $L(x)$ is strictly monotone increasing on its 
+  entire domain.
+  
+  Now apply the Integral Test, (Howie, Theorem 5.37): Since the series
+  $\sum_1^n \frac{1}{x}$ diverges, it follows that $L(x)$ diverges also.
+  
+  We know that $L(1) = 0$. Additionally, because $L(x)$ diverges, there is a $c$
+  such that $L(c) > 1$. Now, apply the Intermediate Value Theorem and we have
+  that there exists a number $e$, such that $1 < e < c$, and $L(x) = 1$. Because
+  $L(x)$ is strictly monotone increasing, it follows that $e$ is unique.
+\end{proof}
 
 
 \begin{defn}
@@ -128,12 +147,33 @@ Provide clarification for $E,L$ notation here.
 \end{proof}
 
 
+Also prove $\ln x^n = n \cdot \ln x$.
+
 \begin{thm}
   For all $x,y \in \R$, we have
   $$ E(x+y) = E(x)E(y) $$
   and
   $$ E(-x) = \frac{1}{E(x)}$$
 \end{thm}
+\begin{proof}
+  Let $x,y \in \R$. Then
+  \begin{align*}
+    E(x+y) &= E[L(E(x)) + L(E(y))] \\
+           &= E[L(E(x)E(y))] \\
+           &= E(x)E(y)
+  \end{align*}
+  
+  The second property follows since
+  $$ E(x)E(-x) = E(x +(-x)) = E(0) = 1 $$
+\end{proof}
+
+
+
+From the previous theorem, we can deduce that
+  $$E(x)^2 = E(x)E(x) = E(x+x) = E(2x)$$
+  or more generally, for a real number $y$,
+  $$ E(x)^y = E(yx)$$.
+  Now take $x  1$
 
 Now let us gather this information and introduce a new notation.
 
@@ -164,6 +204,21 @@ following result defines $a^x$ for any real number $x$.
 \end{defn}
 
 
+\begin{prop}
+  If $b > 0$ and $\frac{d}{dx} b^x = b^x$, then $b = e$.
+\end{prop}
+\begin{proof}
+  \begin{align*}
+    (b^x)' &= (e^{x \ln b})^\prime \\
+           &= (e^{x \ln b}) \cdot (x \ln b)^\prime  \\
+           &= b^x \cdot \ln b
+  \end{align*}
+  
+  Hence, it must the case that $\ln b = 1$. Since $e$ is the unique number such
+  that $\ln e = 1$, it follows that $b=e$.
+\end{proof}
+
+
 % Interesting fact: Bernoulli used this to approximate the value of $e$.
 \begin{prop}
   $$ \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^n = e^x $$
@@ -174,6 +229,25 @@ following result defines $a^x$ for any real number $x$.
   The number $e$ is irrational. 
 \end{thm}
 
+It would be good to talk about why showing that $e$ is irrational is important
+to mathematics.
+
+\section{Practical uses}
+\begin{example}
+  Here is a clever trick used to make multiplication of large numbers easier.
+  This was commonly used by physicists and engineers before calculators and
+  computers were available. 
+  \begin{align*}
+    xy &= e^{\ln xy} \\
+       &= e^{\ln x + \ln y} \\
+  \end{align*}
+  This is particularly useful when $x$ and $y$ are very large numbers.
+  Calculating their product using the typical method for multiplying is quite
+  tedious. But using this trick, you look up $\ln x$ and $\ln y$ in a log table.
+
+  Scientific notation really helps.
+  % http://turner.faculty.swau.edu/mathematics/math110de/materials/logtable/  
+\end{example}
 
 % Maybe include some old-fashioned tricks for evaluating numbers with logs.
 
