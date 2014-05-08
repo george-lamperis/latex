@@ -225,9 +225,29 @@ following result defines $a^x$ for any real number $x$.
 \end{prop}
 
 
+\begin{remark}
+  If we apply the Taylor-Maclaurin Theorem to $e^x$, we have
+  \begin{align*}
+    e^x &= e^0 + xe^0 + \frac{x^2}{2!}e^0 + \frac{x^3}{3!} +  \ldots \\
+        &= \sum_1^\infty \frac{x^n}{n!}
+  \end{align*}
+\end{remark}
+
 \begin{thm}
   The number $e$ is irrational. 
 \end{thm}
+\begin{proof}
+  Suppose for contradiction that $e = p/q$ for integers $p,q$. Let $n$ be an
+  integer such that $n > max(q,3)$. It follows that $n!e$ is an integer. Now
+  apply Taylor's Theorem:
+  $$ e = 2 + \frac{1}{2!} + \ldots + \frac{1}{n!} + \frac{1}{(n+1)!}e^\theta $$
+  where $0 < \theta < 1$. Hence
+  $$ \frac{e^\theta}{n+1} = n!e - 2n! - \frac{n!}{2!} - \ldots - \frac{n!}{n!} $$
+  is an integer. On the other hand, $1 < e^\theta < 3$, and so 
+  $$ 0< \frac{e^\theta}{n_1} < \frac{3}{n+1} < 1 $$
+  and so we have a contradiction. Therefore, we deduce that $e$ is irrational.
+  
+\end{proof}
 
 It would be good to talk about why showing that $e$ is irrational is important
 to mathematics.
