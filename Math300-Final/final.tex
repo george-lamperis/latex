@@ -25,7 +25,7 @@
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{remark}[thm]{Remark}
 \newtheorem{example}[thm]{Example}
-%\doublespace
+\doublespace
 
 % Number sets
 \newcommand{\N}{\mathbb{N}}
@@ -45,24 +45,28 @@
 \maketitle
 
 \section{Introduction}
-The number $e$ is extremely important to mathematics. It's called Euler's number
-or Napier's number. The number $e$ is intimately related to the logarithm.
+The number $e$ is extremely important to mathematics. According to Howard
+Whitley Eves, ``the number $e$ is of eminent importance in mathematics,
+alongside 0, 1, $\pi$ and $i$. \cite{wikipedia} '' The number $e$ is often
+called Euler's number.
 
 The number $e$ was discovered through the study of logarithms. The motivation
 for the development of logarithms was an attempt to make multiplication easier
-by turning it into addition instead. In 1618, John Napier release an essay which
-is considered to be the first work on logarithms. In this essay appears a table
-of logarithms to the base $e$. However, Napier was unaware of the number $e$
-and it's connection to logarithms.
+by turning it into addition instead. Several mathematicians would inadvertantly
+discover the number $e$. In 1618, John Napier release an essay which is
+considered to be the first work on logarithms. In this essay appears a table of 
+logarithms to the base $e$. However, Napier was unaware of the number $e$
+and it's connection to logarithms.  Several mathematicians would inadvertantly
+discover the number $e$. In 1683, Jacob Bernoulli was studying compound interest. 
+He tried to find the limit of $(1 + 1/n)^n$ as $n$ tends to infinity. Although
+this limit is equal to $e$, Bernoulli likely did not realize the connection
+between $e$ and the logarithm. \cite{USAS}
 
-In 1683, Jacob Bernoulli was studying compound interest. He tried to find the
-limit of $(1 + 1/n)^n$ as $n$ tends to infinity. Although this limit is equal to
-$e$, Bernoulli likely did not realize the connection between $e$ and the
-logarithm.
-
-A Swiss mathematican named Leonhard Euler, after whom the number $e$ is named.
-Euler discovered many remarkable properties of the number $e$.
-
+There is some debate over who was the first mathematician to discover the
+connection between logarithms and $e$. However, Leonard Euler discovered some
+remarkable properties of $e$ as well as it's connection to the logarithm, which
+he published in \textit{Introductio in Analysin infinitorum}. It is because of
+this that the number $e$ is named after Euler.
 
 
 \section{Results}
@@ -261,28 +265,46 @@ following result defines $a^x$ for any real number $x$.
   $$ e^x = \sum_1^\infty \frac{x^n}{n!} $$
   
   Because this series converges extremely fast, it provides us with an accurate
-  way to approximate the value of $e$. In fact, Euler used this series to give
-  the approximation.
+  way to approximate the value of $e$. Leonard Euler used this fact to give
+  the approximation of
+  $$ e = 2.718281828459045235 $$
+  by taking 20 terms of the series. \cite{USAS}
 \end{example}
 
 
 \begin{example}
-  Here is a clever trick used to make multiplication of large numbers easier.
-  This was commonly used by physicists and engineers before calculators and
-  computers were available. 
+  Recall that the original motivation for the logarithm was to simplify the
+  multiplication of large numbers. The multiplication algorithm taught in grade
+  school works quite well for smaller numbers, but quickly becomes tedious and
+  time consuming when the numbers get larger. 
+  
+  Before computers and calculators were available, base-10 logarithms were used
+  as a way to approximate multiplication. To calculate the value of a
+  logarithm, one would simply look up the value in a logarithm table, which
+  commonly contained the values for $\log_{10} x$ for $0 < x \leq 10$ up to
+  three decimal places of accuracy \cite[Remark 6.3]{howie}.
+  
+  Suppose we want to approximate 
+  $$325.7 \times 48.43$$. 
+  First write these numbers in scientific notation, then apply properties of
+  the logarithm:
   \begin{align*}
-    xy &= e^{\ln xy} \\
-       &= e^{\ln x + \ln y} \\
+    3.257 \cdot 10^2 \times 4.843 \cdot 10 
+      &= 10^{\log(3.257 \times 10 ^2)} \cdot  10^{\log(4.843 \cdot 10)} \\
+      &= 10^{\log 3.257 + \log 10^2} \cdot  10^{\log 4.843 + \log 10} \\
+      &= 10^{\log 3.257 + 2} \cdot  10^{\log 4.843 + 1} \\
+      &= 10^{4.1979} \\
   \end{align*}
-  This is particularly useful when $x$ and $y$ are very large numbers.
-  Calculating their product using the typical method for multiplying is quite
-  tedious. But using this trick, you look up $\ln x$ and $\ln y$ in a log table.
-
-  Scientific notation really helps.
-   
+  
+  Now perform a reverse lookup to evalauate $10^4.1979 = 15770$. The exact
+  answer is $15773.651$, but this approximation is quite accurate and sufficient
+  for practical applications.
+  
+  Using this method, we are able to get a quite accurate approximation of the
+  product by performing three table lookups and one addition. This is quite an
+  impovement in efficency over the standard multiplication algorithm.
 \end{example}
 
-% Maybe include some old-fashioned tricks for evaluating numbers with logs.
 
 % ------------------------------------------------------------------------------
 % References
@@ -292,11 +314,18 @@ following result defines $a^x$ for any real number $x$.
 \bibitem{howie}
 John M. Howie, Real Analysis
 
-\bibitem{proofwiki1}
-\url{http://www.proofwiki.org/wiki/Derivative_of_Natural_Logarithm_Function/Proof_2}
-
 \bibitem{SWAU}
 \url{http://turner.faculty.swau.edu/mathematics/math110de/materials/logtable/}
+
+\bibitem{USAS}
+\url{http://www-history.mcs.st-and.ac.uk/HistTopics/e.html}
+
+\bibitem{sliderule}
+\url{http://riker.ps.missouri.edu/RicksPage/SlideRule02/index.html}
+
+\bibitem{wikipedia}
+\url{http://en.wikipedia.org/wiki/E_(mathematical_constant)}
+
 \end{thebibliography}
 
 
