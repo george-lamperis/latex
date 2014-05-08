@@ -67,7 +67,6 @@ Euler discovered many remarkable properties of the number $e$.
 
 \section{Results}
 
-Provide clarification for $E,L$ notation here.
 \begin{defn}
   Define the function $L: (0, \infty) \mapsto \R$ as follows:
   $$ L(x) = \int_1^x \frac{dt}{t} $$
@@ -75,14 +74,25 @@ Provide clarification for $E,L$ notation here.
   The function $x \mapsto 1/x$ is continuous. Therefore, by the Fundamental
   Theorem of Calculus, $L$ is differentiable and
   $$ L^\prime(x) = \frac{1}{x} $$.
+  
+  Notice also that
+  $$L(1) = 0$$
+  
+  Since $L'(x) > 0$ for all $x \in (0, \R)$,  we can deduce that $L(x)$ is
+  strictly monotone increasing on its entire domain \cite[Theorem 4.13]{howie}.
+  
+  Additionally, since $L(x)$ is monotone increasing, we can apply the Integral
+  Test, \cite[Theorem 5.37]{howie}. Since the series $\sum_1^n \frac{1}{x}$
+  diverges, it follows that $L(x)$ diverges also.
 \end{defn}
 
 
-\begin{prop}
+\begin{thm}
   For all $x,y \in (0, \infty)$,
   $$ L(xy) = L(x) + L(y) \text{ and } L(1/x) = -L(x)$$
-\end{prop}
+\end{thm}
 \begin{proof}
+  This proof borrows heavily from \cite[Theorem 6.1]{howie}
   \begin{align*}
     L(xy) &= \int_{1}^{xy} \frac{dt}{t} \\
           &= \int_{1}^{x} \frac{dt}{t} + \int_{x}^{xy} \frac{dt}{t} \\
@@ -104,22 +114,17 @@ Provide clarification for $E,L$ notation here.
 
 \end{proof}
 
+
 \begin{thm}
   There is a unique number $e$ such that 
   $$ L(e) = \int_1^e \frac{dt}{t} = 1 $$
 \end{thm}
 \begin{proof}
-  Recall that $L'(x) > 0$ on the interval $(0, \infty)$. By Howie,
-  Theorem 4.13, we have that $L(x)$ is strictly monotone increasing on its 
-  entire domain.
-  
-  Now apply the Integral Test, (Howie, Theorem 5.37): Since the series
-  $\sum_1^n \frac{1}{x}$ diverges, it follows that $L(x)$ diverges also.
-  
   We know that $L(1) = 0$. Additionally, because $L(x)$ diverges, there is a $c$
   such that $L(c) > 1$. Now, apply the Intermediate Value Theorem and we have
   that there exists a number $e$, such that $1 < e < c$, and $L(x) = 1$. Because
-  $L(x)$ is strictly monotone increasing, it follows that $e$ is unique.
+  $L(x)$ is strictly monotone increasing, and thus bijective, it follows that
+  $e$ is unique.
 \end{proof}
 
 
@@ -130,7 +135,10 @@ Provide clarification for $E,L$ notation here.
   \begin{align*}
     E(L(X)) = x \\
     L(E(x)) = x
-  \end{align*} 
+  \end{align*}
+  
+  Note also that
+  $$ E(0) = 1 \text{ and } E(1) = e $$
 \end{defn}
 
 
@@ -138,6 +146,7 @@ Provide clarification for $E,L$ notation here.
   The function $E$ is its own derivative, i.e., $E^\prime(x) = E(x)$
 \end{thm}
 \begin{proof}
+  This proof is taken from \cite[p. 168]{howie}:
   \begin{align*}
     E^\prime(x) 
         &= \frac{1}{L^\prime(L^{-1}(x))}  & \text{(Howie, Theorem 4.15)} \\
@@ -147,8 +156,6 @@ Provide clarification for $E,L$ notation here.
 \end{proof}
 
 
-Also prove $\ln x^n = n \cdot \ln x$.
-
 \begin{thm}
   For all $x,y \in \R$, we have
   $$ E(x+y) = E(x)E(y) $$
@@ -156,6 +163,7 @@ Also prove $\ln x^n = n \cdot \ln x$.
   $$ E(-x) = \frac{1}{E(x)}$$
 \end{thm}
 \begin{proof}
+  This proof is taken from \cite[Theorem 6.2]{howie}
   Let $x,y \in \R$. Then
   \begin{align*}
     E(x+y) &= E[L(E(x)) + L(E(y))] \\
@@ -168,29 +176,29 @@ Also prove $\ln x^n = n \cdot \ln x$.
 \end{proof}
 
 
-
 From the previous theorem, we can deduce that
   $$E(x)^2 = E(x)E(x) = E(x+x) = E(2x)$$
-  or more generally, for a real number $y$,
-  $$ E(x)^y = E(yx)$$.
-  Now take $x  1$
+or more generally, for a real number $n$,
+  $$ E(x)^n = E(nx)$$.
 
 Now let us gather this information and introduce a new notation.
 
 \begin{thm}
-  Define $e^x$ as $E(x)$ and also define $\log_e (y)$ (or equivalently $\ln y$
-  as $L(y)$. If $y = e^x$, then $\ln y = x$
+  Define $e^x$ as $E(x)$ and also define $\log_e (y)$ (or equivalently $\ln y$)
+  as $L(y)$.
   
   Now let us express what we know about $L$ and $E$ using this new notation.
   Recall that $E$ and $L$ are inverses. Thus,
   $$ e^{\ln x} = x \text{ and } \ln(e^x) = x $$
+  
   We also have the following properties:
   \begin{align*}
     \int_{1}^x \frac{dt}{t} = \ln x \\
     \frac{d}{dx}(\ln x) = \frac{1}{x} \\
+    \ln xy = \ln x + \ln y \\
+    \ln(1/x) = - \ln x \\
     \frac{d}{dx}(e^x) = e^x \\
   \end{align*}
-    
 \end{thm}
 
 
@@ -204,9 +212,9 @@ following result defines $a^x$ for any real number $x$.
 \end{defn}
 
 
-\begin{prop}
+\begin{thm}
   If $b > 0$ and $\frac{d}{dx} b^x = b^x$, then $b = e$.
-\end{prop}
+\end{thm}
 \begin{proof}
   \begin{align*}
     (b^x)' &= (e^{x \ln b})^\prime \\
@@ -217,12 +225,6 @@ following result defines $a^x$ for any real number $x$.
   Hence, it must the case that $\ln b = 1$. Since $e$ is the unique number such
   that $\ln e = 1$, it follows that $b=e$.
 \end{proof}
-
-
-% Interesting fact: Bernoulli used this to approximate the value of $e$.
-\begin{prop}
-  $$ \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^n = e^x $$
-\end{prop}
 
 
 \begin{remark}
@@ -237,6 +239,7 @@ following result defines $a^x$ for any real number $x$.
   The number $e$ is irrational. 
 \end{thm}
 \begin{proof}
+  This proof is taken from \cite[Example 6.10]{howie}
   Suppose for contradiction that $e = p/q$ for integers $p,q$. Let $n$ be an
   integer such that $n > max(q,3)$. It follows that $n!e$ is an integer. Now
   apply Taylor's Theorem:
@@ -249,10 +252,20 @@ following result defines $a^x$ for any real number $x$.
   
 \end{proof}
 
-It would be good to talk about why showing that $e$ is irrational is important
-to mathematics.
+
 
 \section{Practical uses}
+
+\begin{example}
+  Recall that when we apply the Taylor-Maclaurin Theorem to $e^x$, we have
+  $$ e^x = \sum_1^\infty \frac{x^n}{n!} $$
+  
+  Because this series converges extremely fast, it provides us with an accurate
+  way to approximate the value of $e$. In fact, Euler used this series to give
+  the approximation.
+\end{example}
+
+
 \begin{example}
   Here is a clever trick used to make multiplication of large numbers easier.
   This was commonly used by physicists and engineers before calculators and
@@ -266,7 +279,7 @@ to mathematics.
   tedious. But using this trick, you look up $\ln x$ and $\ln y$ in a log table.
 
   Scientific notation really helps.
-  % http://turner.faculty.swau.edu/mathematics/math110de/materials/logtable/  
+   
 \end{example}
 
 % Maybe include some old-fashioned tricks for evaluating numbers with logs.
@@ -282,6 +295,8 @@ John M. Howie, Real Analysis
 \bibitem{proofwiki1}
 \url{http://www.proofwiki.org/wiki/Derivative_of_Natural_Logarithm_Function/Proof_2}
 
+\bibitem{SWAU}
+\url{http://turner.faculty.swau.edu/mathematics/math110de/materials/logtable/}
 \end{thebibliography}
 
 
